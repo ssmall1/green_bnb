@@ -1,0 +1,20 @@
+body { 
+    display: flex;
+    justify-content: center;
+}
+
+form { 
+    display: flex;
+    justify-content: center;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+form.login-form {
+    background-color: lightblue;
+    width: 60vw;
+}
+
+form > * {
+    padding: 5px;
+}

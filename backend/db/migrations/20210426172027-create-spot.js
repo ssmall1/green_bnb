@@ -17,7 +17,7 @@ module.exports = {
         allowNull: false,
       },
       ecoFeatures: {
-        type: DataTypes.TEXT,
+        type: Sequelize.TEXT,
         allowNull: false
       },
       description: {

@@ -15,6 +15,8 @@ module.exports = {
           zip: '92268',
           country: 'United States',
           ownerId: 1,
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
         {
           title: 'The Roost Treehouse',
@@ -28,6 +30,8 @@ module.exports = {
           zip: '27408',
           country: 'United States',
           ownerId: 2,
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
         {
           title: 'The O2Haus',
@@ -41,6 +45,8 @@ module.exports = {
           zip: '97229',
           country: 'United States',
           ownerId: 3,
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
         {
           title: 'Dreamy Tropical Tree House',
@@ -54,6 +60,8 @@ module.exports = {
           zip: '96771',
           country: 'United States',
           ownerId: 4,
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
         {
           title: 'Modern Beach Container Home',
@@ -67,6 +75,8 @@ module.exports = {
           zip: '28428',
           country: 'United States',
           ownerId: 5,
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
         {
           title: 'Silo Studio Cottage',
@@ -80,6 +90,8 @@ module.exports = {
           zip: '01264',
           country: 'United States',
           ownerId: 6,
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
         {
           title: 'Glamping Eco-Pod',
@@ -93,6 +105,8 @@ module.exports = {
           zip: '93555',
           country: 'United States',
           ownerId: 7,
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
         {
           title: 'Eco-Friendly Villa',
@@ -106,6 +120,8 @@ module.exports = {
           zip: '87715',
           country: 'United States',
           ownerId: 8,
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
         {
           title: 'Tree House Cabin',
@@ -119,6 +135,8 @@ module.exports = {
           zip: '28740',
           country: 'United States',
           ownerId: 9,
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
         {
           title: 'Hand-Made Hut',
@@ -132,6 +150,8 @@ module.exports = {
           zip: '84627',
           country: 'United States',
           ownerId: 10,
+          createdAt: new Date(),
+          updatedAt: new Date()
         },
 
     ], {});

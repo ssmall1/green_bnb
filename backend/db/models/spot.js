@@ -9,6 +9,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.NUMERIC,
       allowNull: false
     },
+    ecoFeatures: {
+      type: DataTypes.TEXT,
+      allowNull: false
+    },
     description: {
       type: DataTypes.TEXT,
       allowNull: false
@@ -27,6 +31,10 @@ module.exports = (sequelize, DataTypes) => {
     },
     state: {
       type: DataTypes.STRING(50),
+      allowNull: false
+    },
+    zip: {
+      type: DataTypes.INTEGER,
       allowNull: false
     },
     country: {

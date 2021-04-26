@@ -16,6 +16,10 @@ module.exports = {
         type: Sequelize.NUMERIC,
         allowNull: false,
       },
+      ecoFeatures: {
+        type: DataTypes.TEXT,
+        allowNull: false
+      },
       description: {
         type: Sequelize.TEXT,
         allowNull: false,
@@ -35,6 +39,10 @@ module.exports = {
       state: {
         type: Sequelize.STRING(50),
         allowNull: false,
+      },
+      zip: {
+        type: Sequelize.INTEGER,
+        allowNull: false
       },
       country: {
         type: Sequelize.STRING(50),

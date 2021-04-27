@@ -26,9 +26,11 @@ function Navigation({ isLoaded }){
 
   return (
     <div className="nav-container">
-      <NavLink exact to="/welcome">GreenBnB</NavLink>
+      <div className="welcome-link">
+        <NavLink exact to="/welcome">GreenBnB</NavLink>
+      </div>
       
-      <div>
+      <div className="session-links">
         {isLoaded && sessionLinks}
       </div>
     </div>

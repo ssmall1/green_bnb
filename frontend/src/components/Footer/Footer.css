@@ -1,0 +1,8 @@
+.footer-container {
+    height: 10em;
+    background-image: url(../../images/footer3.jpg);
+    border-top: 3px solid black;
+    color: white;
+    opacity: 0.7;
+  }
+  

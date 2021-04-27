@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import './Navigation.css';
-import logo from "../../images/logo.png";
 
 function Navigation({ isLoaded }){
   const sessionUser = useSelector(state => state.session.user);
@@ -11,7 +10,10 @@ function Navigation({ isLoaded }){
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
-      <ProfileButton user={sessionUser} />
+      <>
+        <ProfileButton user={sessionUser} />
+        <NavLink to="/">Listings</NavLink>
+      </>
     );
   } else {
     sessionLinks = (
@@ -23,13 +25,12 @@ function Navigation({ isLoaded }){
   }
 
   return (
-    <div>
-      <NavLink exact to="/"><img className="logo" src={logo}/></NavLink>
-      <ul>
-        <li>
+    <div className="nav-container">
+      <NavLink exact to="/welcome">GreenBnB</NavLink>
+      
+      <div>
         {isLoaded && sessionLinks}
-        </li>
-      </ul>
+      </div>
     </div>
   );
 }

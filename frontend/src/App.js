@@ -6,6 +6,8 @@ import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
 import HomePage from './components/HomePage';
+import WelcomePage from './components/WelcomePage';
+import Footer from './components/Footer';
 
 function App() {
   const dispatch = useDispatch();
@@ -19,6 +21,9 @@ function App() {
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
+          <Route exact path='/welcome'>
+            <WelcomePage />
+          </Route>
           <Route exact path='/'>
             <HomePage />
           </Route>
@@ -33,6 +38,7 @@ function App() {
           </Route>
         </Switch>
       )}
+      <Footer />
     </>
   );
 }

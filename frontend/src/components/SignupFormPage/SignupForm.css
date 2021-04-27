@@ -1,20 +1,24 @@
 .signup-wrapper { 
     display: flex;
     justify-content: center;
-    background-image: url(../../images/trees.jpg);
+    background-image: url(../../images/landscape-forest.gif);
     background-repeat: no-repeat;
-    background-size: 99%;
+    background-size: 80%;
     background-position: center;
     height: 80vh;
 }
 
 form.signup-form {
-    background-color: rgba(144, 238, 144, 0.8);
+    background-color: rgba(84, 129, 84, 0.8);
     width: 70vw;
-    color: darkgreen;
+    color: white;
     border: 3px solid darkgreen;
     margin-top: 100px;
     width: 80vw;
+}
+
+form input { 
+    border-radius: 10px;
 }
 
 button {

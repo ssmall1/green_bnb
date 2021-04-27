@@ -1,3 +1,7 @@
+.nav-container {
+    border-bottom: 4px solid black;
+}
+
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -27,9 +31,4 @@ button {
 
 button:hover { 
     background-color: rgb(184, 190, 185);
-}
-
-.logo {
-    height: 100px;
-    width: 100px;
 }

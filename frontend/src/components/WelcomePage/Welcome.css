@@ -1,3 +1,7 @@
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 .welcome-wrapper { 
     display: grid;
     height: 2000px;
@@ -28,6 +32,7 @@
     grid-column: 5 / 9;
     grid-row: 4 / 5;
     font-size: 30px;
+    padding-top: 10px;
 }
 
 .get-started-link {
@@ -130,6 +135,7 @@
 
 .message-2 i {
     padding-left: 5px;
+    font-size: 35px;
 }
 
 .feature-3 {

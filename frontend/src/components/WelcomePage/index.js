@@ -8,7 +8,7 @@ function WelcomePage() {
         <div className="welcome-wrapper">  
             <div className="forest-div">
                 <div className="welcome-message">
-                    Reconnect with the restorative power of nature through ecologically-conscious hospitality
+                    Reconnect with nature through hospitality that's friendly to you and the planet
                 </div>
                 <div className="get-started">
                     <i class="fas fa-angle-right"></i>

@@ -5,7 +5,7 @@ function Footer () {
     return(
         <>
             <div className="footer-container">
-                This the footer yo
+                <div className="copyright">© 2021 GreenBnB</div>
             </div>
         </>
     )

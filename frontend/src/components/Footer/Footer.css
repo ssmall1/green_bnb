@@ -1,5 +1,17 @@
 .footer-container {
-    height: 7em;
-    border-top: 3px solid black;
+    display: grid;
+    height: 10em;
+    background-image: url(../../images/cream.jpg);
+    background-position: bottom;
+    grid-template-columns: repeat(12, 1fr);
   }
   
+  .copyright {
+    display: flex;
+    grid-column: 10 / 13;
+    justify-self: end;
+    align-items: center;
+    padding-right: 30px;
+    font-size: 20px;
+    color: rgb(46, 46, 46);
+}

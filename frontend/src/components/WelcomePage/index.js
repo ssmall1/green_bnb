@@ -12,7 +12,7 @@ function WelcomePage() {
                 </div>
                 <div className="get-started">
                     <i class="fas fa-angle-right"></i>
-                    <Link className="get-started-link" to="/signup"> get started</Link>
+                    <Link className="get-started-link" to="/signup"> Your Adventure Starts Here</Link>
                 </div>
             </div>
             <div className="description-div">

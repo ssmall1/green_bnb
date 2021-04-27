@@ -1,4 +1,18 @@
+/* body { 
+    display: flex;
+    justify-content: center;
+    background-image: url(../../images/trees.jpg);
+    background-repeat: no-repeat;
+    background-size: 90%;
+    background-position: center;
+} */
+
 form.signup-form {
     background-color: lightgreen;
-    width: 80vw;
+    width: 70vw;
+}
+
+
+button {
+    border-radius: 50%;
 }

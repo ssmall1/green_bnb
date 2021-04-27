@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import * as sessionActions from "../../store/session";
+import './SignupForm.css';
 
 function SignupFormPage() {
   const dispatch = useDispatch();
@@ -28,7 +29,7 @@ function SignupFormPage() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="signup-form">
       <ul>
         {errors.map((error, idx) => <li key={idx}>{error}</li>)}
       </ul>

@@ -1,0 +1,22 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+    height: 50px;
+    font-size: 25px;
+}
+
+button {
+    border-radius: 40px;
+    margin-left: 20px;
+    height: 40px;
+    font-size: 20px;
+    align-items: center;
+    background-color: white;
+    
+}

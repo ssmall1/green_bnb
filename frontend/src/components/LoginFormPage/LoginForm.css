@@ -5,7 +5,7 @@
     justify-content: center;
     background-image: url(../../images/mountain-trees.jpg);
     background-repeat: no-repeat;
-    background-size: 90%;
+    background-size: 99%;
     background-position: center;
 }
 
@@ -21,7 +21,7 @@ form.login-form {
     color: darkblue;
     border: 3px solid darkblue;
     margin-top: 100px;
-    width: 40vw;
+    width: 50vw;
 }
 
 form > * {

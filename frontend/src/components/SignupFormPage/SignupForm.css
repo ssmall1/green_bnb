@@ -3,7 +3,7 @@
     justify-content: center;
     background-image: url(../../images/trees.jpg);
     background-repeat: no-repeat;
-    background-size: 90%;
+    background-size: 99%;
     background-position: center;
     height: 80vh;
 }
@@ -14,7 +14,7 @@ form.signup-form {
     color: darkgreen;
     border: 3px solid darkgreen;
     margin-top: 100px;
-    width: 70vw;
+    width: 80vw;
 }
 
 button {

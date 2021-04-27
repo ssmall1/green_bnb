@@ -11,6 +11,11 @@ form {
     font-size: 25px;
 }
 
+form input {
+    height: 25px;
+    font-size: 20px;
+}
+
 button {
     border-radius: 40px;
     margin-left: 20px;
@@ -18,5 +23,13 @@ button {
     font-size: 20px;
     align-items: center;
     background-color: white;
+}
 
+button:hover { 
+    background-color: rgb(184, 190, 185);
+}
+
+.logo {
+    height: 100px;
+    width: 100px;
 }

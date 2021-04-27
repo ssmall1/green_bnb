@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom';
+import './Spots.css';
 
 function Spots(spot) {
     // console.log(spot.spot);
@@ -14,7 +15,7 @@ function Spots(spot) {
 
     return (
         <div className="spots__container">
-            <div>{spot.imageUrl}</div>
+            <img src={spot.imageUrl}/>
             <h2 value={spot.id} onClick={handleClick}>{spot.title}</h2>
             <div>${spot.price} / Night</div>
         </div>

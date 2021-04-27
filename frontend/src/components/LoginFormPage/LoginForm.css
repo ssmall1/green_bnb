@@ -1,14 +1,12 @@
-body { 
+
+.login-wrapper {
+    height: 80vh;
     display: flex;
     justify-content: center;
     background-image: url(../../images/mountain-trees.jpg);
     background-repeat: no-repeat;
     background-size: 90%;
     background-position: center;
-}
-
-.login-wrapper {
-    height: 60vh;
 }
 
 form { 
@@ -21,7 +19,7 @@ form {
 form.login-form {
     background-color: rgba(173, 216, 230, 0.8);
     color: darkblue;
-    border: 3px solid darkgrey;
+    border: 3px solid darkblue;
     margin-top: 100px;
     width: 40vw;
 }

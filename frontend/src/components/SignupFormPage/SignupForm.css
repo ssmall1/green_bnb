@@ -1,18 +1,26 @@
-/* body { 
+.signup-wrapper { 
     display: flex;
     justify-content: center;
     background-image: url(../../images/trees.jpg);
     background-repeat: no-repeat;
     background-size: 90%;
     background-position: center;
-} */
+    height: 80vh;
+}
 
 form.signup-form {
-    background-color: lightgreen;
+    background-color: rgba(144, 238, 144, 0.8);
+    width: 70vw;
+    color: darkgreen;
+    border: 3px solid darkgreen;
+    margin-top: 100px;
     width: 70vw;
 }
 
-
 button {
     border-radius: 50%;
+}
+
+form > * {
+    padding: 10px;
 }

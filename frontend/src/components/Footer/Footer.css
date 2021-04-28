@@ -4,14 +4,32 @@
     background-image: url(../../images/cream.jpg);
     background-position: bottom;
     grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(46, 46, 46);
   }
   
   .copyright {
     display: flex;
     grid-column: 10 / 13;
+    grid-row: 2 / 3;
     justify-self: end;
     align-items: center;
     padding-right: 30px;
-    font-size: 20px;
-    color: rgb(46, 46, 46);
+  }
+
+.linkedin {
+  display: flex;
+  grid-column: 10 / 13;
+  grid-row: 3 / 4;
+  justify-self: end;
+  align-items: center;
+  padding-right: 30px;
+}
+
+.linkedin > a {
+  text-decoration: none;
+  padding-left: 5px;
+  color: rgb(46, 46, 46);
 }

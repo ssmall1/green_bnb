@@ -21,6 +21,15 @@ function HomePage() {
     if (!spots) {
         return null
     };
+    
+    let things = [];
+    function listings(places) {
+        for (let i = 0; i < 6; i++) {
+            things.push(places[i]);
+            
+        }
+    }
+    listings(spots);
 
     return (
         <div className='home-wrapper'>
@@ -30,7 +39,7 @@ function HomePage() {
                 </div>
             </div>
             <div className="spots-wrapper">
-                    {spots.map((spot) => {
+                {things.map((spot) => {
                         return (
                             <div key={spot.id}>
                                 <Spots spot={spot}/>

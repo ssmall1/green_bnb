@@ -1,27 +1,33 @@
-
 .login-wrapper {
-    height: 80vh;
-    display: flex;
-    justify-content: center;
-    background-image: url(../../images/landscape-forest.gif);
+    height: 1250px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(6, 1fr);    
+    background-image: url(../../images/map.png);
     background-repeat: no-repeat;
-    background-size: 80%;
-    background-position: center;
+    background-size: 55%;
+    background-position: center top;
 }
-
+/* 
 form { 
-    display: flex;
+    grid-column: 5 / 9;
+    grid-row: 3 / 4;
     justify-content: center;
     border: 1px solid black;
+    height: 200px;
     padding: 10px;
-}
+} */
 
-form.login-form {
-    background-color: rgba(173, 216, 230, 0.8);
+.login-form {
+    background-color: rgba(173, 216, 230, 0.9);
     color: darkblue;
     border: 3px solid darkblue;
-    margin-top: 100px;
-    width: 50vw;
+    border-radius: 10px;
+    font-size: 25px;
+    height: 200px;
+    width: 380px;
+    grid-column: 6 / 9;
+    grid-row: 3 / 4;
 }
 
 form > * {

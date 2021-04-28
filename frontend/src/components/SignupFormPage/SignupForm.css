@@ -1,28 +1,24 @@
 .signup-wrapper { 
-    display: flex;
-    justify-content: center;
-    background-image: url(../../images/landscape-forest.gif);
+    height: 1250px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(6, 1fr);    
+    background-image: url(../../images/map.png);
     background-repeat: no-repeat;
-    background-size: 80%;
-    background-position: center;
-    height: 80vh;
+    background-size: 55%;
+    background-position: center top;
 }
 
-form.signup-form {
-    background-color: rgba(84, 129, 84, 0.8);
-    width: 70vw;
-    color: white;
-    border: 3px solid darkgreen;
-    margin-top: 100px;
-    width: 80vw;
-}
-
-form input { 
+.signup-form-wrapper {
+    background-color: rgba(173, 216, 230, 0.9);
+    color: darkblue;
+    border: 3px solid darkblue;
     border-radius: 10px;
-}
-
-button {
-    border-radius: 50%;
+    font-size: 25px;
+    height: 200px;
+    width: 380px;
+    grid-column: 6 / 9;
+    grid-row: 3 / 4;
 }
 
 form > * {

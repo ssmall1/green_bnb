@@ -8,6 +8,7 @@ import Navigation from "./components/Navigation";
 import HomePage from './components/HomePage';
 import WelcomePage from './components/WelcomePage';
 import Footer from './components/Footer';
+import Spot from './components/Spot';
 
 function App() {
   const dispatch = useDispatch();
@@ -32,6 +33,9 @@ function App() {
           </Route>
           <Route path="/signup">
             <SignupFormPage />
+          </Route>
+          <Route path="/spots/:id">
+            <Spot />
           </Route>
           <Route>
             <h1>Page Not Found</h1>

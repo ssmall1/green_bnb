@@ -27,7 +27,7 @@
     grid-column: 9 / 13;
     grid-row: 2 / 3;
     align-items: center;
-    font-size: 28px;
+    font-size: 25px;
 }
 
 .login, .signup, .curious {
@@ -37,6 +37,10 @@
     padding: 10px 15px;
     margin-right: 40px;
 }
+
+/* .login:hover, .signup:hover {
+    border: 3px solid #2e2e2e;
+} */
 
 .curious {
     border: 3px solid #2e2e2e;

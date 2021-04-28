@@ -14,7 +14,7 @@ function HomePage() {
     }, [dispatch]);
 
     if (!sessionUser) return (
-        <Redirect to='/login' />
+        <Redirect to='/welcome' />
     );
 
     if (!spots) {

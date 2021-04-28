@@ -2,7 +2,7 @@
     display: grid;
     height: 2000px;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(30, 1fr)
+    grid-template-rows: repeat(30, 1fr);
 }
 
 .forest-div {
@@ -17,7 +17,7 @@
     text-shadow: 2px 2px #000000;
     
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(6, 1fr)
+    grid-template-rows: repeat(6, 1fr);
 }
 
 .welcome-message {

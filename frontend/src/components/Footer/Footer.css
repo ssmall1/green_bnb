@@ -1,6 +1,6 @@
 .footer-container {
     display: grid;
-    height: 10em;
+    height: 8em;
     background-image: url(../../images/cream.jpg);
     background-position: bottom;
     grid-template-columns: repeat(12, 1fr);

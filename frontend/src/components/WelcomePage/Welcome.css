@@ -27,7 +27,7 @@
 .welcome-message {
     grid-column: 4 / 10;
     grid-row: 3 / 4;
-    font-size: 80px;
+    font-size: 70px;
 }
 
 .get-started {
@@ -52,8 +52,10 @@
 }
 
 .description-message {
-    font-size: 40px;
+
+    font-size: 35px;
     text-align: center;
+    padding-top: 25px;
     color:rgb(46, 46, 46);
 
     grid-column: 4 / 10;

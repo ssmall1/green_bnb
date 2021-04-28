@@ -23,8 +23,22 @@
 }
 
 .session-links {
-    grid-column: 10 / 12;
+    display: flex;
+    grid-column: 9 / 12;
     grid-row: 2 / 3;
+    align-items: center;
+    font-size: 35px;
+}
+
+.login, .signup {
+    text-decoration: none;
+    font-weight: bold;
+    color: #2e2e2e;
+    /* background-color: rgba(236, 224, 205, 0.6); */
+    padding: 10px 15px;
+    margin-right: 40px;
+    /* border: 3px solid #2e2e2e;
+    border-radius: 25px; */
 }
 
 form {

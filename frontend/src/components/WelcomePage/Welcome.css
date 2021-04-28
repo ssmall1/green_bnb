@@ -14,6 +14,8 @@
     grid-column: 1 / 13;
     grid-row: 1 / 18;
     background-image: url(../../images/landscape-forest.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
     color: rgb(236, 224, 205);
     font-weight: bold;
     text-shadow: 2px 2px #000000;
@@ -67,7 +69,7 @@
 
 .globe > i, .paper-plane > i {
     font-size: 120px;
-    color:rgb(46, 46, 46);
+    color:#2e2e2e;
 }
 
 .paper-plane {

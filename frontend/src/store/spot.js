@@ -18,7 +18,7 @@ export const getSpots = () => async dispatch => {
 const initialState = { spots: {} };
 
 const spotsReducer = (state = initialState, action) => {
-    let newState;
+    // let newState;
     switch (action.type) {
         case LOAD: {
             const allSpots = [];

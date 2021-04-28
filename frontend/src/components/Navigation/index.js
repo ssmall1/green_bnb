@@ -31,7 +31,7 @@ function Navigation({ isLoaded }){
     <div className="nav-container">
       <div className="welcome-link">
         <NavLink exact to="/welcome">
-          <img src={logo} className="logo"/>
+          <img src={logo} alt="greenbnb logo" className="logo"/>
         </NavLink>
       </div>
       

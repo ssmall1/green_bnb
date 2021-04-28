@@ -30,7 +30,7 @@
     font-size: 25px;
 }
 
-.login, .signup, .curious {
+.login, .signup, .curious, .listings {
     text-decoration: none;
     font-weight: bold;
     color: #2e2e2e;
@@ -38,37 +38,10 @@
     margin-right: 40px;
 }
 
-/* .login:hover, .signup:hover {
-    border: 3px solid #2e2e2e;
-} */
-
 .curious {
     border: 3px solid #2e2e2e;
 }
 
-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 40px;
-    height: 50px;
-    font-size: 25px;
-}
-
-form input {
-    height: 25px;
-    font-size: 20px;
-}
-
-button {
-    border-radius: 40px;
-    margin-left: 20px;
-    height: 50px;
-    font-size: 20px;
-    align-items: center;
-    background-color: white;
-}
-
-button:hover { 
-    background-color: rgb(184, 190, 185);
+.curious:hover {
+    background-color: rgba(255, 255, 255, 0.6);
 }

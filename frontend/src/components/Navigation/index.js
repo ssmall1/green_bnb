@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import './Navigation.css';
-// import logo from "../../images/logo.png";
 import logo from "../../images/logo1.png";
 
 function Navigation({ isLoaded }){
@@ -13,8 +12,8 @@ function Navigation({ isLoaded }){
   if (sessionUser) {
     sessionLinks = (
       <>
+        <NavLink to="/" className="listings">Listings</NavLink>
         <ProfileButton user={sessionUser} />
-        <NavLink to="/">Listings</NavLink>
       </>
     );
   } else {

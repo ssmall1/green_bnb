@@ -1,4 +1,22 @@
-img { 
-    height: 300px;
-    width: auto;
+.spot-container img { 
+    height: 525px;
+    width: 637px;
+    border: 5px solid rgb(46, 46, 46);
+}
+
+.spot-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: 0px 50px;
+    font-size: 20px;
+    padding: 50px 0px;
+    text-align: center;
+    color: rgb(46, 46, 46);
+}
+
+.price {
+    margin-top: 20px;
+    font-size: 30px;
+    color: rgb(46, 46, 46);
 }

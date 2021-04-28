@@ -1,0 +1,39 @@
+home-wrapper { 
+    display: grid;
+    height: 2000px;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+}
+
+.path-div {
+    display: grid;
+    grid-column: 1 / 13;
+    grid-row: 1 / 6;
+    background-image: url(../../images/woods.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: rgb(236, 224, 205);
+    font-weight: bold;
+    text-shadow: 2px 2px #000000;
+    
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+}
+
+.home-message {
+    grid-column: 4 / 10;
+    grid-row: 3 / 4;
+    font-size: 70px;
+}
+
+.spots-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    grid-column: 1 / 13;
+    grid-row: 6 / 13;
+    background-color: rgba(236, 224, 205, 0.5);
+    border-bottom: 3px solid rgb(46, 46, 46);
+    border-top: 5px solid rgb(46, 46, 46);
+    padding: 50px 50px;
+}

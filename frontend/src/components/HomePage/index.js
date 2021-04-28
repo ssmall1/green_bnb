@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import Spots from '../Spots/index';
 import * as spotReducer from '../../store/spot';
+import './HomePage.css';
 
 function HomePage() {
     const dispatch = useDispatch();
@@ -22,15 +23,22 @@ function HomePage() {
     };
 
     return (
-        <div className='home_container'>
-            {spots.map((spot) => {
-                return (
-                    <div key={spot.id}>
-                        <Spots spot={spot}/>
-                    </div>
-                    // <NavLink key={spot.id} to={`/spots/${spot.id}`}> {spot.title}</NavLink>
-                )
-            })}
+        <div className='home-wrapper'>
+             <div className="path-div">
+                <div className="home-message">
+                    Browse from coast to coast and beyond...
+                </div>
+            </div>
+            <div className="spots-wrapper">
+                    {spots.map((spot) => {
+                        return (
+                            <div key={spot.id}>
+                                <Spots spot={spot}/>
+                            </div>
+                            // <NavLink key={spot.id} to={`/spots/${spot.id}`}> {spot.title}</NavLink>
+                        )
+                    })}
+            </div>
         </div>
     )
 }

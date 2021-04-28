@@ -1,9 +1,9 @@
-home-wrapper { 
+/* home-wrapper { 
     display: grid;
     height: 2000px;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(12, 1fr);
-}
+} */
 
 .path-div {
     display: grid;

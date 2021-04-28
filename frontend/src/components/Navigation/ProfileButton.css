@@ -4,9 +4,10 @@
 
 .profile-button {
     display: flex;
-    font-size: 35px;
+    font-size: 40px;
     padding: 5px 12px;
     justify-content: center;
+    border-radius: 10px;
     cursor: pointer;
 }
 

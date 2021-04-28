@@ -2,6 +2,7 @@
     height: 525px;
     width: 637px;
     border: 5px solid rgb(46, 46, 46);
+    border-radius: 8px;
 }
 
 .spot-container {
@@ -15,8 +16,14 @@
     color: rgb(46, 46, 46);
 }
 
+.location {
+    font-size: 25px;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
 .price {
-    margin-top: 20px;
-    font-size: 30px;
+    margin-top: 10px;
+    font-size: 20px;
     color: rgb(46, 46, 46);
 }

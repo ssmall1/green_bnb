@@ -17,6 +17,7 @@ function Spots(spot) {
         <div className="spot-container">
             <h2 value={spot.id} onClick={handleClick}>{spot.title}</h2>
             <img src={spot.imageUrl} alt={spot.title}/>
+            <div className="location">{spot.city}, {spot.state}</div>
             <div className="price">${spot.price} / night</div>
         </div>
     )

@@ -24,21 +24,22 @@
 
 .session-links {
     display: flex;
-    grid-column: 9 / 12;
+    grid-column: 9 / 13;
     grid-row: 2 / 3;
     align-items: center;
     font-size: 35px;
 }
 
-.login, .signup {
+.login, .signup, .curious {
     text-decoration: none;
     font-weight: bold;
     color: #2e2e2e;
-    /* background-color: rgba(236, 224, 205, 0.6); */
     padding: 10px 15px;
     margin-right: 40px;
-    /* border: 3px solid #2e2e2e;
-    border-radius: 25px; */
+}
+
+.curious {
+    border: 3px solid #2e2e2e;
 }
 
 form {

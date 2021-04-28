@@ -5,12 +5,12 @@ function Footer () {
     return(
         <>
             <div className="footer-container">
+                <div className="quote">"The clearest way into the Universe is through a forest wilderness."</div>
                 <div className="copyright">© 2021 GreenBnB</div>
                 <div className="linkedin">
                     <a href="https://www.linkedin.com/in/schuler-small/" target="_blank" rel="noreferrer">
                         <div className="connect">
-                            <i className="fab fa-linkedin-in"></i>
-                             ~Connect with me
+                             Connect with me
                         </div>
                     </a>
                 </div>

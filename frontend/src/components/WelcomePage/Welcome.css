@@ -77,7 +77,7 @@
     text-align: center;
 }
 
-.features-div {
+.links-div {
     display: grid;
     grid-column: 1 / 13;
     grid-row: 21 / 31;

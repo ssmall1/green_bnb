@@ -20,20 +20,19 @@ function WelcomePage() {
                     <i className="fa fa-globe" aria-hidden="true"></i>
                 </div>
                 <div className="description-message">
-                    Tourism is responsible for 8% of global carbon emissions. We're here to provide the best options for you and the planet
+                    Tourism is responsible for 8% of global carbon emissions. We're here to provide the best options for you and the 🌎
                 </div>
                 <div className="paper-plane">
                     <i className="fa fa-paper-plane" aria-hidden="true"></i>
                 </div>
             </div>
-            <div className="features-div">
-                <div className="message-1">Offset Your Carbon!</div>
+            <div id="links" className="links-div">
+                <div className="message-1">Offset Your Carbon!🏭</div>
                 <div className="message-2">
                     Check Out My Work!
                     <i className="fab fa-github" aria-hidden="true"></i>
                 </div>
-                <div className="message-3">Find a National Park!</div>
-
+                <div className="message-3">Find a National Park!🏞️</div>
                 <div className="feature-1">
                     <a href="https://www.terrapass.com/product/flight-carbon-offset" target="_blank" rel="noreferrer">
                         <div className="offset-div">

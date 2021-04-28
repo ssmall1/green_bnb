@@ -22,6 +22,7 @@ function Navigation({ isLoaded }){
       <>
         <NavLink to="/login" className="login">Login</NavLink>
         <NavLink to="/signup" className="signup">Sign-up</NavLink>
+        <a href="#links" className="curious">Curious?</a>
       </>
     );
   }

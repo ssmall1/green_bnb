@@ -9,6 +9,12 @@
     font-weight: bold;
     color: rgb(46, 46, 46);
   }
+
+  .quote {
+    grid-column: 2 / 9;
+    grid-row: 3 / 4;
+    font-size: 30px;
+  }
   
   .copyright {
     display: flex;
@@ -16,7 +22,7 @@
     grid-row: 2 / 3;
     justify-self: end;
     align-items: center;
-    padding-right: 30px;
+    padding-right: 25px;
   }
 
 .linkedin {

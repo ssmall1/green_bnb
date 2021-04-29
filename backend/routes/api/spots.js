@@ -47,7 +47,7 @@ router.post('/book', asyncHandler(async (req, res) => {
     const { userId, spotId, startDate, endDate } = req.body;
 
     const booking = await Booking.build({
-      userId: userId,
+      bookerId: userId,
       spotId: spotId,
       startDate: startDate,
       endDate: endDate,

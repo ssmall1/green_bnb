@@ -2,18 +2,23 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router';
 import { Redirect, useHistory } from 'react-router-dom';
+import DatePicker from 'react-date-picker';
 import * as spotReducer from '../../store/spot';
 import Reviews from '../Reviews/';
+
 import './Spot.css';
 
 function Spot() { 
     const { id } = useParams();
     const [body, setBody] = useState('');
     const [rating, setRating] = useState(1);
+    const [startDate, setStartDate] = useState(new Date());
+    const [endDate, setEndDate] = useState(new Date());
 
     const sessionUser = useSelector(state => state.session.user);
     const spot = useSelector(state => state.spots[id]);
     const reviews = useSelector(state => state.spots.reviews);
+    
     // const authorId = useSelector(state => state.session.user.id);
 
     const updateBody = (e) => setBody(e.target.value);
@@ -27,13 +32,13 @@ function Spot() {
         dispatch(spotReducer.getSpots());
     }, [dispatch]);
 
-    useEffect(async () => { 
-        let singleSpot = await dispatch(spotReducer.getOneSpot(id));
+    useEffect(() => { 
+        let singleSpot = dispatch(spotReducer.getOneSpot(id));
         if (singleSpot === null) {
             history.push('/');
         }
         dispatch(spotReducer.getReviews(id));
-    }, [id, dispatch]);
+    }, [id, dispatch, history]);
 
     // useEffect(() => {
     //     window.scrollTo(0,0);
@@ -52,8 +57,6 @@ function Spot() {
         return null
     }
 
-    console.log(reviews, "reviews")
-
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -63,9 +66,24 @@ function Spot() {
             authorId,
             rating,
             body
-        }
+        };
 
         await dispatch(spotReducer.postReview(payload))
+    }
+
+    const handleBook = async (e) => {
+        e.preventDefault();
+
+        const userId = sessionUser.id;
+        const payload = {
+            userId: userId,
+            spotId: id,
+            startDate: startDate,
+            endDate: endDate
+        };
+
+        await dispatch(spotReducer.postBooking(payload))
+
     }
 
     return(
@@ -112,6 +130,29 @@ function Spot() {
                             <Reviews review={review} key={spot.id + review.id}/>
                         )
                     })}
+                </div>
+
+                <div className="booking-form">
+                    <form onSubmit={handleBook}>
+                        <div>Book This Spot 🏠</div>
+                        <div>
+                            Start Date
+                            <DatePicker
+                                className='datePicker'
+                                onChange={setStartDate}
+                                value={startDate}
+                            />
+                        </div>
+                        <div>
+                            End Date
+                            <DatePicker
+                                className='datePicker'
+                                onChange={setEndDate}
+                                value={endDate}
+                            />
+                        </div>
+                        <button type='submit'>Book</button>
+                    </form>
                 </div>
             </div>
         </>

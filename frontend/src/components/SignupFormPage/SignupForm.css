@@ -1,24 +1,28 @@
 .signup-wrapper { 
-    height: 1250px;
-    display: grid;
+    height: 750px;
+    display: flex;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(6, 1fr);    
     background-image: url(../../images/map.png);
     background-repeat: no-repeat;
-    background-size: 55%;
-    background-position: center top;
+    background-size: 50%;
+    background-position: 50% 50%;
+    justify-content: center;
+    align-items: center;
 }
 
 .signup-form-wrapper {
-    background-color: rgba(173, 216, 230, 0.9);
+    display: flex;
+    background-color: rgba(173, 216, 230, 0.7);
     color: darkblue;
     border: 3px solid darkblue;
     border-radius: 10px;
     font-size: 25px;
     height: 200px;
     width: 380px;
-    grid-column: 6 / 9;
-    grid-row: 3 / 4;
+    justify-content: center;
+    align-items: center;
+
 }
 
 form > * {

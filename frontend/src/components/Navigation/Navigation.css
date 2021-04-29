@@ -6,7 +6,7 @@
     display: grid;
     position: fixed;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgb(236, 224, 205, 0.6);
     height: 5em;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(4, 1fr);

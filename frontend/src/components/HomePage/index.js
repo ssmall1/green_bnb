@@ -20,7 +20,7 @@ function HomePage() {
     );
 
     if (!spots) {
-        return null
+        return null;
     };
     
     let things = [];

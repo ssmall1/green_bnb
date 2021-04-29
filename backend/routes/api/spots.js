@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const asyncHandler = require('express-async-handler');
 const { restoreUser, requireAuth } = require ('../../utils/auth');
-const { Spot, Booking, Review } = require('../../db/models');
+const { User, Spot, Booking, Review } = require('../../db/models');
 
 router.get('/', asyncHandler( async (req, res) => {
     const spots = await Spot.findAll();
@@ -10,8 +10,9 @@ router.get('/', asyncHandler( async (req, res) => {
 }));
 
 router.get('/:id', asyncHandler(async function(req, res) {
-  const spot = await Spot.findByPk(req.params.id, {
-    include: [{ Booking }, { Review }],
+  const id = req.params.id;
+  const spot = await Spot.findByPk(id, {
+    include: [{ model: Booking, required: false, where: { spotId: id } }, { model: Review, required: false, where: { spotId: id } }],
   });
   
   return res.json(spot);

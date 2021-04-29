@@ -1,0 +1,29 @@
+.no-wrapper { 
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    height: 700px;
+    justify-content: center;
+}
+
+.no-go {
+    grid-column: 4 / 8;
+    grid-row: 1 / 2;
+}
+
+.bug {
+    height: 600px; 
+    width: auto;
+}
+
+.no-go-message { 
+    display: flex;
+    justify-content: center;
+    grid-column: 5 / 9;
+    grid-row: 2 / 3;
+}
+
+.home {
+    text-decoration: none;
+    color: green;
+}

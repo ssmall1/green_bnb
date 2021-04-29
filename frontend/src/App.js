@@ -10,6 +10,7 @@ import WelcomePage from './components/WelcomePage';
 import Footer from './components/Footer';
 import Spot from './components/Spot';
 import ScrollToTop from './components/ScrollToTop';
+import PageNotFound from './components/PageNotFound';
 
 function App() {
   const dispatch = useDispatch();
@@ -40,7 +41,7 @@ function App() {
             <Spot />
           </Route>
           <Route>
-            <h1>Page Not Found</h1>
+            <PageNotFound />
           </Route>
         </Switch>
       )}

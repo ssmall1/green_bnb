@@ -43,6 +43,8 @@ function Spot() {
         return null
     }
 
+    console.log(reviews, "reviews")
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 

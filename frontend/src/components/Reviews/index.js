@@ -2,12 +2,14 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 function Reviews({ review }) {
-    const spot = useSelector(state => state.spots.spot);
+    // const spots = useSelector(state => state.spots);
+    // console.log(spot)
+    // console.log("here")
+    // if(!spots){
+    //     return null
+    // }
 
-    if(!spot){
-        return null
-    }
-
+    // console.log(review, "review")
     return (
         <div className='review-container'>
             <div>{review.User.firstname} {review.User.lastName}</div>

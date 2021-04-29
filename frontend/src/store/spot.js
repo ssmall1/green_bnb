@@ -4,6 +4,7 @@ const LOAD = 'spots/LOAD';
 const LOAD_ONE = 'spots/LOAD_ONE';
 const GET_REVIEWS = 'spot/GET_REVIEWS';
 const POST_REVIEW = 'spot/POST_REVIEW';
+const POST_BOOKING = 'spot/POST_BOOKING';
 
 const load = spots => ({
     type: LOAD,
@@ -23,6 +24,11 @@ const loadReviews = reviews => ({
 const sendReview = review => ({
     type: POST_REVIEW,
     review
+});
+
+const sendBooking = booking => ({
+    type: POST_BOOKING,
+    booking
 });
 
 export const getSpots = () => async dispatch => {
@@ -72,24 +78,34 @@ export const postReview = (review) => async dispatch => {
   }
 };
 
+export const postBooking = (booking) => async dispatch => {
+  const response = await csrfFetch(`/api/spots/book`, {
+      method: 'POST',
+      body: JSON.stringify(booking),
+      headers: {
+          'Content-Type': 'application/json'
+      }
+  });
+
+  if (response.ok) {
+      const booked = await response.json();
+      dispatch(sendBooking(booked));
+      return booked;
+  }
+};
+
 // const initialState = { spots: [] };
 
 const spotsReducer = (state = {}, action) => {
-    // let newState;
+    let bookingState;
     switch (action.type) {
         case LOAD: {
             let newState = {};
             action.spots.forEach(spot => {
               newState[spot.id] = spot;
             });
-            // const allSpots = [];
-            // action.spots.forEach(spot => {
-            //     allSpots.push(spot);
-            // });
             return {
-                // ...action.spots,
                 ...state,
-                // allSpots
                 ...newState
             };
         }
@@ -123,6 +139,9 @@ const spotsReducer = (state = {}, action) => {
             reviewState = { ...state }
             reviewState.reviews = [...state.reviews, action.review]
             return reviewState
+        }
+        case POST_BOOKING: {
+            return bookingState = { ...state }
         }
         default: 
             return state;

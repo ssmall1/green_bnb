@@ -43,7 +43,7 @@ router.post('/:id/post/review', asyncHandler(async (req, res) => {
     return res.json(newReview);
 }));
 
-router.post('/bookSpot', asyncHandler(async (req, res) => {
+router.post('/book', asyncHandler(async (req, res) => {
     const { userId, spotId, startDate, endDate } = req.body;
 
     const booking = await Booking.build({

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router';
-import { Redirect } from 'react-router-dom';
+import { Redirect, useHistory } from 'react-router-dom';
 import * as spotReducer from '../../store/spot';
 import Reviews from '../Reviews/';
 import './Spot.css';
@@ -21,15 +21,24 @@ function Spot() {
 
 
     const dispatch = useDispatch();
-
-    useEffect(() => { 
-        dispatch(spotReducer.getOneSpot(id));
-        dispatch(spotReducer.getReviews(id));
-    }, [id, dispatch]);
-
+    const history = useHistory();
+    
     useEffect(() => {
         dispatch(spotReducer.getSpots());
     }, [dispatch]);
+
+    useEffect(async () => { 
+        let singleSpot = await dispatch(spotReducer.getOneSpot(id));
+        if (singleSpot === null) {
+            history.push('/');
+        }
+        dispatch(spotReducer.getReviews(id));
+    }, [id, dispatch]);
+
+    // useEffect(() => {
+    //     window.scrollTo(0,0);
+    // }, []);
+
 
     if (!sessionUser) return (
         <Redirect to='/welcome' />

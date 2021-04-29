@@ -39,7 +39,11 @@ export const getOneSpot = (spotId) => async dispatch => {
     
     if (response.ok) {
         let spot = await response.json();
+        if (spot === null) {
+          return null
+        } else {
         dispatch(loadOneSpot(spot));
+        }
     }
 };
 
@@ -68,9 +72,9 @@ export const postReview = (review) => async dispatch => {
   }
 };
 
-const initialState = { spots: [] };
+// const initialState = { spots: [] };
 
-const spotsReducer = (state = initialState, action) => {
+const spotsReducer = (state = {}, action) => {
     // let newState;
     switch (action.type) {
         case LOAD: {

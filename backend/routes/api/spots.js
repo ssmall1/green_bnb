@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const asyncHandler = require('express-async-handler');
-const { restoreUser, requireAuth } = require ('../../utils/auth');
 const { User, Spot, Booking, Review } = require('../../db/models');
 
 router.get('/', asyncHandler( async (req, res) => {
@@ -44,5 +43,20 @@ router.post('/:id/post/review', asyncHandler(async (req, res) => {
     return res.json(newReview);
 }));
 
+router.post('/bookSpot', asyncHandler(async (req, res) => {
+    const { userId, spotId, startDate, endDate } = req.body;
+
+    const booking = await Booking.build({
+      userId: userId,
+      spotId: spotId,
+      startDate: startDate,
+      endDate: endDate,
+      createdAt: new Date(),
+    });
+
+    await booking.save();
+
+    return res.json(booking);
+}));
 
 module.exports = router;

@@ -9,6 +9,7 @@ import HomePage from './components/HomePage';
 import WelcomePage from './components/WelcomePage';
 import Footer from './components/Footer';
 import Spot from './components/Spot';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   const dispatch = useDispatch();
@@ -19,6 +20,7 @@ function App() {
 
   return (
     <>
+      <ScrollToTop />
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>

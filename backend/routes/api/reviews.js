@@ -8,7 +8,7 @@ router.get('/:id', asyncHandler(async function(req, res) {
     where: {
       spotId: req.params.id
     }, 
-    include: { User },
+    include: { User, Spot },
     order: [['updatedAt', 'DESC']]
   });
   return res.json(reviews);
@@ -16,9 +16,16 @@ router.get('/:id', asyncHandler(async function(req, res) {
 }))
 
 router.post('/', asyncHandler(async function (req, res) {
-    const newReview = await Review.create(req.body);
+    const review = await Review.create(req.body);
+    const newReview = await Review.findOne({
+      where: {
+        id: id
+      },
+      include: { User, Spot }
+    });
     return res.json(newReview);
   })
 );
+
 
 module.exports = router;

@@ -1,3 +1,5 @@
+import { csrfFetch } from './csrf';
+
 const LOAD = 'spots/LOAD';
 const LOAD_ONE = 'spots/LOAD_ONE';
 const GET_REVIEWS = 'spot/GET_REVIEWS';
@@ -113,9 +115,10 @@ const spotsReducer = (state = initialState, action) => {
             }
           }
         case POST_REVIEW: {
-            newState = { ...state }
-            newState.reviews = [...state.reviews, action.review]
-            return newState
+            let reviewState = {}
+            reviewState = { ...state }
+            reviewState.reviews = [...state.reviews, action.review]
+            return reviewState
         }
         default: 
             return state;

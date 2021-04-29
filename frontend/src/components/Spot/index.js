@@ -14,7 +14,7 @@ function Spot() {
     const sessionUser = useSelector(state => state.session.user);
     const spot = useSelector(state => state.spots[id]);
     const reviews = useSelector(state => state.spots.reviews);
-    const authorId = useSelector(state => state.session.user.id);
+    // const authorId = useSelector(state => state.session.user.id);
 
     const updateBody = (e) => setBody(e.target.value);
     const updateRating = (e) => setRating(e.target.value);
@@ -48,6 +48,7 @@ function Spot() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        const authorId = sessionUser.id;
         const payload = {
             id,
             authorId,

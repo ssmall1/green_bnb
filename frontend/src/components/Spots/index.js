@@ -1,21 +1,20 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { Redirect, NavLink } from 'react-router-dom';
 import './Spots.css';
 
-function Spots(spot) {
+function Spots({ spot }) {
+    const sessionUser = useSelector(state => state.session.user);
     // console.log(spot.spot);
-    spot = spot.spot
-
-    const handleClick = (e) => {
-        // const spotId = e.target.attributes.value;
-        return (
-            <Redirect to='/' />
-        )
-    }
+    // spot = spot.spot
+    
+    if (!sessionUser) return (
+        <Redirect to='/welcome' />
+    );
 
     return (
         <div className="spot-container">
-            <h2 value={spot.id} onClick={handleClick}>{spot.title}</h2>
+            <h2 value={spot.id}>{spot.title}</h2>
             <NavLink key={spot.id} to={`/spots/${spot.id}`}> 
                 <img src={spot.imageUrl} alt={spot.title}/>
             </NavLink>

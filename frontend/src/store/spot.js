@@ -1,5 +1,7 @@
 const LOAD = 'spots/LOAD';
 const LOAD_ONE = 'spots/LOAD_ONE';
+const GET_REVIEWS = 'spot/GET_REVIEWS';
+const POST_REVIEW = 'spot/POST_REVIEW';
 
 const load = spots => ({
     type: LOAD,
@@ -11,18 +13,22 @@ const loadOneSpot = spot => ({
     spot,
   });
 
+const loadReviews = reviews => ({
+    type: GET_REVIEWS,
+    reviews
+});
+
+const sendReview = review => ({
+    type: POST_REVIEW,
+    review
+});
+
 export const getSpots = () => async dispatch => {
     const response = await fetch(`/api/spots`);
 
     if (response.ok) {
         const spots = await response.json();
         dispatch(load(spots));
-
-      // const spots = await response.json();
-      // let objSpots = {};
-      // spots.forEach(spot => objSpots[spot.id] = spot)
-      // console.log(objSpots)
-      // return dispatch(load(objSpots))
     }
 };
 
@@ -35,28 +41,30 @@ export const getOneSpot = (spotId) => async dispatch => {
     }
 };
 
-// export const fetchReviews = () => async(dispatch) => {
-//   const res = await csrfFetch('/api/reviews')
-//   if(!res.ok) throw res;
-//   try{
-//       let reviews = await res.json()
-//       let objRev = {}
-//       reviews.forEach(review => objRev[review.id] = review)
-//       return dispatch(setReviews(objRev))
+export const getReviews = (id) => async dispatch => {
+  const response = await fetch(`/api/spots/${id}/reviews`);
 
-//   }catch (err) {
-//       console.log(err)
-//   }
+  if(response.ok) {
+      const reviews = await response.json();
+      dispatch(loadReviews(reviews));
+  }
+}
 
-// }
+export const postReview = (review) => async dispatch => {
+  const response = await csrfFetch(`/api/spots/${review.id}/post/review`, {
+      method: 'POST',
+      body: JSON.stringify(review),
+      headers: {
+          'Content-Type': 'application/json'
+      }
+  });
 
-
-// let newState = {};
-// 			action.reviews.forEach(review => {
-// 				newState[review.id] = review;
-// 			});
-
-
+  if(response.ok) {
+      const review = await response.json();
+      dispatch(sendReview(review));
+      return review;
+  }
+};
 
 const initialState = { spots: [] };
 
@@ -97,7 +105,18 @@ const spotsReducer = (state = initialState, action) => {
               }
             };
           }
-
+        case GET_REVIEWS: {
+            const reviews = action.reviews
+            return {
+                ...state,
+                reviews
+            }
+          }
+        case POST_REVIEW: {
+            newState = { ...state }
+            newState.reviews = [...state.reviews, action.review]
+            return newState
+        }
         default: 
             return state;
     }

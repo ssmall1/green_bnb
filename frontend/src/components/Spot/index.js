@@ -1,21 +1,30 @@
-import React from 'react';
-import { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router';
 import { Redirect } from 'react-router-dom';
 import * as spotReducer from '../../store/spot';
-import CreateReviewForm from '../CreateReviewForm';
+import Reviews from '../Reviews/';
 import './Spot.css';
 
 function Spot() { 
     const { id } = useParams();
+    const [body, setBody] = useState('');
+    const [rating, setRating] = useState(1);
+
     const sessionUser = useSelector(state => state.session.user);
     const spot = useSelector(state => state.spots[id]);
+    const reviews = useSelector(state => state.spots.reviews);
+    const authorId = useSelector(state => state.session.user.id);
+
+    const updateBody = (e) => setBody(e.target.value);
+    const updateRating = (e) => setRating(e.target.value);
+
 
     const dispatch = useDispatch();
 
     useEffect(() => { 
         dispatch(spotReducer.getOneSpot(id));
+        dispatch(spotReducer.getReviews(id));
     }, [id, dispatch]);
 
     useEffect(() => {
@@ -29,6 +38,23 @@ function Spot() {
     if (!spot) {
         return null;
     };
+
+    if (!reviews) {
+        return null
+    }
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        const payload = {
+            id,
+            authorId,
+            rating,
+            body
+        }
+
+        await dispatch(spotReducer.postReview(payload))
+    }
 
     return(
         <>
@@ -47,7 +73,34 @@ function Spot() {
                     {spot.description}
                 </div>
                 
-                <CreateReviewForm id="review-form" user={sessionUser} spot={id}/>
+                <div className="review-form">
+                    <form onSubmit={handleSubmit}>
+                        <label>
+                            Review
+                        </label>
+                        <div>
+                            <textarea type='text-area' value={body} onChange={updateBody} required></textarea>
+                        </div>
+                        <label>
+                            Rating
+                            <select onChange={updateRating}>
+                                <option value='1'>1</option>
+                                <option value='2'>2</option>
+                                <option value='3'>3</option>
+                                <option value='4'>4</option>
+                                <option value='5'>5</option>
+                            </select>
+                        </label>
+                        <button type='submit'>Submit Review</button>
+                    </form>
+                </div>
+                <div>
+                    {reviews.map(review => {
+                        return (
+                            <Reviews review={review} key={spot.id + review.id}/>
+                        )
+                    })}
+                </div>
             </div>
         </>
     )

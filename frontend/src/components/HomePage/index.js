@@ -24,7 +24,7 @@ function HomePage() {
     };
     
     let things = [];
-    if (spots, "these spots") {
+    if (spots) {
 
         function listings(places) {
             let i = 0;

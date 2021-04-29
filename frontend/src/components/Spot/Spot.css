@@ -42,3 +42,31 @@
     grid-row: 2 / 3 ;
 }
 
+.review-form-wrapper {
+    grid-column: 5 / 7;
+    grid-row: 2 / 3 ;
+    margin-top: 25px;
+}
+
+.review-form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    width: 300px;
+}
+
+.review-form > textarea {
+    height: 100px;
+    width: 200px;
+}
+
+#submit-review {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    height: 30px;
+    width: 70px;
+    border-radius: 15px;
+}
+

@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router';
 import { Redirect } from 'react-router-dom';
 import * as spotReducer from '../../store/spot';
+import CreateReviewForm from '../CreateReviewForm';
 import './Spot.css';
 
 function Spot() { 
@@ -45,6 +46,8 @@ function Spot() {
                 <div id="spot-description">
                     {spot.description}
                 </div>
+                
+                <CreateReviewForm id="review-form" user={sessionUser} spot={id}/>
             </div>
         </>
     )

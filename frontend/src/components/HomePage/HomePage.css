@@ -23,7 +23,7 @@
 .home-message {
     grid-column: 4 / 10;
     grid-row: 3 / 4;
-    font-size: 70px;
+    font-size: 50px;
 }
 
 .spots-wrapper {
@@ -34,6 +34,6 @@
     grid-row: 6 / 13;
     background-color: rgba(236, 224, 205, 0.5);
     border-bottom: 3px solid rgb(46, 46, 46);
-    border-top: 5px solid rgb(46, 46, 46);
-    padding: 50px 50px;
+    border-top: 4px solid rgb(46, 46, 46);
+    padding: 37px 37px;
 }

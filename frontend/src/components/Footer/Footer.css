@@ -5,7 +5,7 @@
     background-position: bottom;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(4, 1fr);
-    font-size: 20px;
+    font-size: 15px;
     font-weight: bold;
     color: rgb(46, 46, 46);
   }
@@ -13,7 +13,7 @@
   .quote {
     grid-column: 2 / 9;
     grid-row: 3 / 4;
-    font-size: 30px;
+    font-size: 20px;
   }
   
   .copyright {
@@ -31,7 +31,7 @@
   grid-row: 3 / 4;
   justify-self: end;
   align-items: center;
-  padding-right: 30px;
+  padding-right: 22px;
 }
 
 .linkedin > a {

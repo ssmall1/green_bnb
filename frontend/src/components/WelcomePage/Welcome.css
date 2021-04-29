@@ -1,6 +1,6 @@
 .welcome-wrapper { 
     display: grid;
-    height: 2000px;
+    height: 1500px;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(30, 1fr);
 }
@@ -23,14 +23,14 @@
 .welcome-message {
     grid-column: 4 / 10;
     grid-row: 3 / 4;
-    font-size: 70px;
+    font-size: 50px;
 }
 
 .get-started {
     grid-column: 5 / 9;
     grid-row: 4 / 5;
-    font-size: 30px;
-    padding-top: 10px;
+    font-size: 22px;
+    padding-top: 8px;
 }
 
 .get-started-link {
@@ -48,10 +48,9 @@
 }
 
 .description-message {
-
-    font-size: 35px;
+    font-size: 25px;
     text-align: center;
-    padding-top: 25px;
+    padding-top: 20px;
     color:rgb(46, 46, 46);
 
     grid-column: 4 / 10;
@@ -66,7 +65,7 @@
 }
 
 .globe > i, .paper-plane > i {
-    font-size: 120px;
+    font-size: 90px;
     color:#2e2e2e;
 }
 
@@ -88,11 +87,14 @@
 
 .feature-1 {
     background-image: url(../../images/floating.png);
+    grid-column: 2 / 5;
+    grid-row: 2 / 6;
+}
+
+.feature-1, .feature-2, .feature-3 {
     background-size: contain;
     background-repeat: no-repeat;
     border: 3px solid rgb(236, 224, 205);
-    grid-column: 2 / 5;
-    grid-row: 2 / 6;
 }
 
 .message-1 {
@@ -106,7 +108,7 @@
     align-items: flex-end;
     padding-bottom: 15px;
     color:rgb(46, 46, 46);
-    font-size: 25px;
+    font-size: 15px;
 }
 
 .feature-1:hover, .feature-2:hover, .feature-3:hover{
@@ -121,9 +123,6 @@
 
 .feature-2 {
     background-image: url(../../images/developer.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    border: 3px solid rgb(236, 224, 205);
     grid-column: 6 / 9;
     grid-row: 2 / 6;
 }
@@ -135,14 +134,11 @@
 
 .message-2 i {
     padding-left: 5px;
-    font-size: 35px;
+    font-size: 25px;
 }
 
 .feature-3 {
     background-image: url(../../images/park.png);
-    background-size: contain;
-    background-repeat: no-repeat;
-    border: 3px solid rgb(236, 224, 205);
     grid-column: 10 / 13;
     grid-row: 2 / 6;
 }

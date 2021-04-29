@@ -7,7 +7,7 @@
     position: fixed;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.6);
-    height: 7em;
+    height: 5em;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(4, 1fr);
 }
@@ -18,7 +18,7 @@
 }
 
 .logo {
-    height: 100px;
+    height: 75px;
     border-radius: 25px;
 }
 
@@ -27,19 +27,19 @@
     grid-column: 9 / 13;
     grid-row: 2 / 3;
     align-items: center;
-    font-size: 25px;
+    font-size: 18px;
 }
 
 .login, .signup, .curious, .listings {
     text-decoration: none;
     font-weight: bold;
     color: #2e2e2e;
-    padding: 10px 15px;
-    margin-right: 40px;
+    padding: 7px 11px;
+    margin-right: 20px;
 }
 
 .curious {
-    border: 3px solid #2e2e2e;
+    border: 2px solid #2e2e2e;
 }
 
 .curious:hover {

@@ -1,7 +1,6 @@
 .spot-container img { 
-    height: 525px;
-    width: 637px;
-    border: 5px solid rgb(46, 46, 46);
+    height: 393px;
+    width: 478px;
     border-radius: 8px;
 }
 
@@ -9,21 +8,21 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    margin: 0px 50px;
-    font-size: 20px;
-    padding: 50px 0px;
+    margin: 0px 38px;
+    font-size: 15px;
+    padding: 38px 0px;
     text-align: center;
     color: rgb(46, 46, 46);
 }
 
 .location {
-    font-size: 25px;
-    margin-top: 5px;
+    font-size: 18px;
+    margin-top: 4px;
     font-weight: bold;
 }
 
 .price {
-    margin-top: 10px;
-    font-size: 20px;
+    margin-top: 8px;
+    font-size: 15px;
     color: rgb(46, 46, 46);
 }

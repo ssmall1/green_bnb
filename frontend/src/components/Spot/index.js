@@ -31,16 +31,18 @@ function Spot() {
 
     return(
         <>
-            <div className="spot-container">
-                <div>{spot.title}</div>
-                <div id="spot-address">{spot.address}</div>
-                <div className="spot-image">
+            <div id="single-spot" className="spot-container">
+                <div id="spot-image">
                     <img src={spot.imageUrl} alt="spot"></img>
                 </div>
-                <div className="price">
-                      ${spot.price} / night
+                <div id="spot-information">
+                    <div id="spot-title">{spot.title}</div>
+                    <div id="spot-location">{spot.city}, {spot.state} {spot.zip}</div>
+                    <div id="spot-price">
+                        ${spot.price} / night
+                    </div>
                 </div>
-                <div className="spot-description">
+                <div id="spot-description">
                     {spot.description}
                 </div>
             </div>

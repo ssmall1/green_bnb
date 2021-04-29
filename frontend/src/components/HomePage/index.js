@@ -8,7 +8,8 @@ import './HomePage.css';
 function HomePage() {
     const dispatch = useDispatch();
     const sessionUser = useSelector(state => state.session.user);
-    const spots = useSelector(state => state.spots.allSpots);
+    const spots = useSelector(state => state.spots);
+    console.log(spots)
 
     useEffect(() => {
         dispatch(spotReducer.getSpots());
@@ -23,14 +24,23 @@ function HomePage() {
     };
     
     let things = [];
-    function listings(places) {
-        for (let i = 0; i < 6; i++) {
-            things.push(places[i]);
-            
-        }
-    }
-    listings(spots);
+    if (spots, "these spots") {
 
+        function listings(places) {
+            let i = 0;
+            for (let key in places) {
+                if (i === 6) return;
+                things.push(places[key]);
+                i++;
+            }
+            // for (let i = 0; i < 6; i++) {
+            //     things.push(places[i]);
+                
+            // }
+        }
+        listings(spots);
+        console.log(things, "these things")
+    }
     return (
         <div className='home-wrapper'>
              <div className="path-div">
@@ -44,7 +54,6 @@ function HomePage() {
                             <div key={spot.id}>
                                 <Spots spot={spot}/>
                             </div>
-                            // <NavLink key={spot.id} to={`/spots/${spot.id}`}> {spot.title}</NavLink>
                         )
                     })}
             </div>

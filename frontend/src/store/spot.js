@@ -17,6 +17,12 @@ export const getSpots = () => async dispatch => {
     if (response.ok) {
         const spots = await response.json();
         dispatch(load(spots));
+
+      // const spots = await response.json();
+      // let objSpots = {};
+      // spots.forEach(spot => objSpots[spot.id] = spot)
+      // console.log(objSpots)
+      // return dispatch(load(objSpots))
     }
 };
 
@@ -29,21 +35,48 @@ export const getOneSpot = (spotId) => async dispatch => {
     }
 };
 
+// export const fetchReviews = () => async(dispatch) => {
+//   const res = await csrfFetch('/api/reviews')
+//   if(!res.ok) throw res;
+//   try{
+//       let reviews = await res.json()
+//       let objRev = {}
+//       reviews.forEach(review => objRev[review.id] = review)
+//       return dispatch(setReviews(objRev))
 
-const initialState = { spots: {} };
+//   }catch (err) {
+//       console.log(err)
+//   }
+
+// }
+
+
+// let newState = {};
+// 			action.reviews.forEach(review => {
+// 				newState[review.id] = review;
+// 			});
+
+
+
+const initialState = { spots: [] };
 
 const spotsReducer = (state = initialState, action) => {
     // let newState;
     switch (action.type) {
         case LOAD: {
-            const allSpots = [];
+            let newState = {};
             action.spots.forEach(spot => {
-                allSpots.push(spot);
+              newState[spot.id] = spot;
             });
+            // const allSpots = [];
+            // action.spots.forEach(spot => {
+            //     allSpots.push(spot);
+            // });
             return {
-                ...action.spots,
+                // ...action.spots,
                 ...state,
-                allSpots
+                // allSpots
+                ...newState
             };
         }
         case LOAD_ONE: {

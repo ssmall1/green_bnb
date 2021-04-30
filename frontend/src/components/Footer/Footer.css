@@ -1,11 +1,12 @@
 .footer-container {
     display: grid;
-    height: 7em;
-    background-image: url(../../images/cream.jpg);
+    height: 6em;
+    background-image: url(../../images/cream.png);
+    background-repeat: no-repeat;
+    background-size: cover;
     background-position: bottom;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(4, 1fr);
-    font-size: 15px;
     font-weight: bold;
     color: rgb(46, 46, 46);
     border-top: 2px solid rgb(46, 46, 46);
@@ -14,7 +15,7 @@
   .quote {
     grid-column: 2 / 9;
     grid-row: 3 / 4;
-    font-size: 20px;
+    font-size: 1em;
   }
   
   .copyright {
@@ -31,12 +32,16 @@
   grid-column: 10 / 13;
   grid-row: 3 / 4;
   justify-self: end;
-  align-items: flex-end;
+  align-items: center;
   padding-right: 22px;
 }
 
+.linkedin, .copyright { 
+  font-size: 12px;
+}
+
 .linkedin > a {
-  text-decoration: none;
+  /* text-decoration: none; */
   padding-left: 5px;
   color: rgb(46, 46, 46);
 }

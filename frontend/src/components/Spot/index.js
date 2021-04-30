@@ -83,7 +83,7 @@ function Spot() {
     }
 
     return(
-        <>
+        <div className="spot">
             <div id="single-spot" className="spot-container">
                 <div id="spot-image">
                     <img src={spot.imageUrl} alt="spot"></img>
@@ -120,7 +120,7 @@ function Spot() {
                         <button type='submit'>Submit Review</button>
                     </form>
                 </div>
-                <div>
+                <div className="reviews">
                     {reviews.map(review => {
                         return (
                             <Reviews review={review} key={spot.id + review.id}/>
@@ -151,7 +151,7 @@ function Spot() {
                     </form>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 

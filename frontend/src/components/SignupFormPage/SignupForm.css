@@ -1,9 +1,13 @@
+.signup-max {
+    background-image: linear-gradient(to bottom, rgba(173, 216, 230, 0.7), rgba(117, 163, 119, 0.7));
+}
+
 .signup-wrapper { 
     height: 750px;
     display: flex;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(6, 1fr);    
-    background-image: url(../../images/map.png);
+    background-image: url(../../images/map2.png);
     background-repeat: no-repeat;
     background-size: 50%;
     background-position: 50% 50%;

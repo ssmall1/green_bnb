@@ -11,9 +11,8 @@ function Reviews({ review }) {
     // console.log(review, "review")
     return (
         <div className='review-container'>
-            <div>{review.User.firstname} {review.User.lastName}</div>
+            <div className=''>{review.User.firstName} {review.User.lastName}</div>
             <div>{review.body}</div>
-            <div>{review.createdAt}</div>
         </div>
     );
 }

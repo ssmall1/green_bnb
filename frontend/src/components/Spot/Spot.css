@@ -1,4 +1,4 @@
-body { 
+.spot {
     background-image: linear-gradient(to top, white, #75a377);
 }
 
@@ -6,7 +6,8 @@ body {
     padding-top: 140px;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 400px 300px;
+    grid-template-rows: 400px 200px 600px;
+    /* background-image: linear-gradient(to top, white, #75a377); */
 }
 
 #spot-image {
@@ -62,6 +63,11 @@ body {
 .review-form > textarea {
     height: 100px;
     width: 200px;
+}
+
+.reviews {
+    grid-column: 1 / 4;
+    grid-row: 3 / 4;
 }
 
 #submit-review {

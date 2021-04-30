@@ -22,7 +22,20 @@
     width: 380px;
     justify-content: center;
     align-items: center;
+}
 
+.errors {
+    padding-left: 20px;
+    font-size: 15px;
+    list-style-type: none;
+}
+
+.submit {
+    height: 30px;
+    width: 70px;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
 }
 
 form > * {

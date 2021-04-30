@@ -28,11 +28,11 @@ function LoginFormPage() {
   return (
     <div className="login-wrapper">
       <div className="login-form">
-        <form onSubmit={handleSubmit}>
-          <ul>
+        <form id="login" onSubmit={handleSubmit}>
+          <ul className="errors">
             {errors.map((error, idx) => <li key={idx}>{error}</li>)}
           </ul>
-          <label>
+          <label id="email">
             Username or Email
             <input
               type="text"
@@ -41,7 +41,7 @@ function LoginFormPage() {
               required
             />
           </label>
-          <label>
+          <label id="password">
             Password
             <input
               type="password"

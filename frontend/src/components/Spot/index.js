@@ -29,6 +29,7 @@ function Spot() {
     const history = useHistory();
     
     useEffect(() => {
+        window.scrollTo(0, 0);
         dispatch(spotReducer.getSpots());
     }, [dispatch]);
 
@@ -39,11 +40,6 @@ function Spot() {
         }
         dispatch(spotReducer.getReviews(id));
     }, [id, dispatch, history]);
-
-    // useEffect(() => {
-    //     window.scrollTo(0,0);
-    // }, []);
-
 
     if (!sessionUser) return (
         <Redirect to='/welcome' />

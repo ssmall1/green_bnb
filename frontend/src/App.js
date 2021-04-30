@@ -9,7 +9,6 @@ import HomePage from './components/HomePage';
 import WelcomePage from './components/WelcomePage';
 import Footer from './components/Footer';
 import Spot from './components/Spot';
-import ScrollToTop from './components/ScrollToTop';
 import PageNotFound from './components/PageNotFound';
 
 function App() {
@@ -21,7 +20,6 @@ function App() {
 
   return (
     <>
-      <ScrollToTop />
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>

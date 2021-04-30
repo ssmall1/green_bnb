@@ -1,3 +1,7 @@
+body { 
+    background-image: linear-gradient(to top, white, #75a377);
+}
+
 #single-spot {
     padding-top: 140px;
     display: grid;

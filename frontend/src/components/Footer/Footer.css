@@ -1,6 +1,6 @@
 .footer-container {
     display: grid;
-    height: 8em;
+    height: 7em;
     background-image: url(../../images/cream.jpg);
     background-position: bottom;
     grid-template-columns: repeat(12, 1fr);
@@ -8,6 +8,7 @@
     font-size: 15px;
     font-weight: bold;
     color: rgb(46, 46, 46);
+    border-top: 2px solid rgb(46, 46, 46);
   }
 
   .quote {

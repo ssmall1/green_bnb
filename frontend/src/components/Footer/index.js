@@ -10,7 +10,7 @@ function Footer () {
                 <div className="linkedin">
                     <a href="https://www.linkedin.com/in/schuler-small/" target="_blank" rel="noreferrer">
                         <div className="connect">
-                             Connect with me
+                             Connect with the creator, Schuler Small
                         </div>
                     </a>
                 </div>

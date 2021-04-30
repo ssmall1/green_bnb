@@ -22,11 +22,10 @@
     border: 3px solid darkblue;
     border-radius: 10px;
     font-size: 25px;
-    height: 200px;
+    height: 300px;
     width: 380px;
     justify-content: center;
     align-items: center;
-
 }
 
 form > * {

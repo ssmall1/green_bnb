@@ -32,12 +32,23 @@ function SignupFormPage() {
     return setErrors(['Confirm Password field must be the same as the Password field']);
   };
 
+  const demoSubmit = (e) => {
+    e.preventDefault();
+    const credential = 'Demo-lition';
+    const password = 'password';
+    return dispatch(sessionActions.login({ credential, password }))
+    .catch(async (res) => {
+      const data = await res.json();
+      // if (data && data.errors) setErrors(data.errors);
+    });
+  }
+
   return (
     <div className="signup-max">
       <div className="signup-wrapper">
         <div className="signup-form-wrapper">
           <form onSubmit={handleSubmit} className="signup-form">
-            <ul>
+            <ul className="errors">
               {errors.map((error, idx) => <li key={idx}>{error}</li>)}
             </ul>
             <label>
@@ -77,6 +88,7 @@ function SignupFormPage() {
               />
             </label>
             <button type="submit">Sign Up</button>
+            <button onClick={demoSubmit} type="button">Demo Login</button>
           </form>
         </div>
       </div>

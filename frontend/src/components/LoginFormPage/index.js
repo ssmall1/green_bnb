@@ -29,6 +29,17 @@ function LoginFormPage() {
       });
   }
 
+  const demoSubmit = (e) => {
+    e.preventDefault();
+    const credential = 'Demo-lition';
+    const password = 'password';
+    return dispatch(sessionActions.login({ credential, password }))
+    .catch(async (res) => {
+      const data = await res.json();
+      // if (data && data.errors) setErrors(data.errors);
+    });
+  }
+
   return (
     <div className="login-max">
       <div className="login-wrapper">
@@ -56,6 +67,7 @@ function LoginFormPage() {
               />
             </label>
             <button className="submit" type="submit">Log In</button>
+            <button onClick={demoSubmit} type="button">Demo Login</button>
           </form>
         </div>
       </div>

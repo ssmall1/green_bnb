@@ -31,7 +31,7 @@
   grid-column: 10 / 13;
   grid-row: 3 / 4;
   justify-self: end;
-  align-items: center;
+  align-items: flex-end;
   padding-right: 22px;
 }
 

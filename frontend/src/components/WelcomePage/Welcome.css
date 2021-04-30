@@ -21,9 +21,9 @@
 }
 
 .welcome-message {
-    grid-column: 4 / 10;
+    grid-column: 5 / 10;
     grid-row: 3 / 4;
-    font-size: 50px;
+    font-size: 47px;
 }
 
 .get-started {
@@ -31,6 +31,7 @@
     grid-row: 4 / 5;
     font-size: 22px;
     padding-top: 8px;
+    padding-left: 50px;
 }
 
 .get-started-link {

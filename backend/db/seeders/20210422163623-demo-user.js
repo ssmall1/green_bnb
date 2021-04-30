@@ -11,6 +11,7 @@ module.exports = {
         hashedPassword: bcrypt.hashSync('password'),
         firstName: 'Demo',
         lastName: 'User',
+        imageUrl: faker.image.avatar(),
       },
       {
         email: faker.internet.email(),
@@ -18,6 +19,7 @@ module.exports = {
         hashedPassword: bcrypt.hashSync(faker.internet.password()),
         firstName: faker.name.firstName(),
         lastName: faker.name.lastName(),
+        imageUrl: faker.image.avatar(),
       },
       {
         email: faker.internet.email(),
@@ -25,6 +27,7 @@ module.exports = {
         hashedPassword: bcrypt.hashSync(faker.internet.password()),
         firstName: faker.name.firstName(),
         lastName: faker.name.lastName(),
+        imageUrl: faker.image.avatar(),
       },
       {
         email: faker.internet.email(),
@@ -32,6 +35,7 @@ module.exports = {
         hashedPassword: bcrypt.hashSync(faker.internet.password()),
         firstName: faker.name.firstName(),
         lastName: faker.name.lastName(),
+        imageUrl: faker.image.avatar(),
       },
       {
         email: faker.internet.email(),
@@ -39,6 +43,7 @@ module.exports = {
         hashedPassword: bcrypt.hashSync(faker.internet.password()),
         firstName: faker.name.firstName(),
         lastName: faker.name.lastName(),
+        imageUrl: faker.image.avatar(),
       },
       {
         email: faker.internet.email(),
@@ -46,6 +51,7 @@ module.exports = {
         hashedPassword: bcrypt.hashSync(faker.internet.password()),
         firstName: faker.name.firstName(),
         lastName: faker.name.lastName(),
+        imageUrl: faker.image.avatar(),
       },
       {
         email: faker.internet.email(),
@@ -53,6 +59,7 @@ module.exports = {
         hashedPassword: bcrypt.hashSync(faker.internet.password()),
         firstName: faker.name.firstName(),
         lastName: faker.name.lastName(),
+        imageUrl: faker.image.avatar(),
       },
       {
         email: faker.internet.email(),
@@ -60,6 +67,7 @@ module.exports = {
         hashedPassword: bcrypt.hashSync(faker.internet.password()),
         firstName: faker.name.firstName(),
         lastName: faker.name.lastName(),
+        imageUrl: faker.image.avatar(),
       },
       {
         email: faker.internet.email(),
@@ -67,6 +75,7 @@ module.exports = {
         hashedPassword: bcrypt.hashSync(faker.internet.password()),
         firstName: faker.name.firstName(),
         lastName: faker.name.lastName(),
+        imageUrl: faker.image.avatar(),
       },
       {
         email: faker.internet.email(),
@@ -74,6 +83,7 @@ module.exports = {
         hashedPassword: bcrypt.hashSync(faker.internet.password()),
         firstName: faker.name.firstName(),
         lastName: faker.name.lastName(),
+        imageUrl: faker.image.avatar(),
       },
       {
         email: faker.internet.email(),
@@ -81,6 +91,7 @@ module.exports = {
         hashedPassword: bcrypt.hashSync(faker.internet.password()),
         firstName: faker.name.firstName(),
         lastName: faker.name.lastName(),
+        imageUrl: faker.image.avatar(),
       },
       {
         email: faker.internet.email(),
@@ -88,6 +99,7 @@ module.exports = {
         hashedPassword: bcrypt.hashSync(faker.internet.password()),
         firstName: faker.name.firstName(),
         lastName: faker.name.lastName(),
+        imageUrl: faker.image.avatar(),
       },
       {
         email: faker.internet.email(),
@@ -95,6 +107,7 @@ module.exports = {
         hashedPassword: bcrypt.hashSync(faker.internet.password()),
         firstName: faker.name.firstName(),
         lastName: faker.name.lastName(),
+        imageUrl: faker.image.avatar(),
       },
       {
         email: faker.internet.email(),
@@ -102,6 +115,7 @@ module.exports = {
         hashedPassword: bcrypt.hashSync(faker.internet.password()),
         firstName: faker.name.firstName(),
         lastName: faker.name.lastName(),
+        imageUrl: faker.image.avatar(),
       },
       {
         email: faker.internet.email(),
@@ -109,6 +123,7 @@ module.exports = {
         hashedPassword: bcrypt.hashSync(faker.internet.password()),
         firstName: faker.name.firstName(),
         lastName: faker.name.lastName(),
+        imageUrl: faker.image.avatar(),
       },
     ], {});
   },

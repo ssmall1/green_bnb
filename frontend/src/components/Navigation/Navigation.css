@@ -24,11 +24,19 @@
 
 .session-links {
     display: flex;
-    grid-column: 10 / 13;
+    grid-column: 6 / 13;
     grid-row: 2 / 3;
     align-items: center;
     font-size: 18px;
 }
+
+/* .search-comp {
+    padding-right: 200px;
+} */
+
+/* .listings {
+    padding-left: 200px;
+} */
 
 .login, .signup, .curious, .listings {
     text-decoration: none;

@@ -4,9 +4,15 @@ import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import './Navigation.css';
 import logo from "../../images/logo1.png";
+// import * as spotReducer from '../../store/spot';
 
 function Navigation({ isLoaded }){
   const sessionUser = useSelector(state => state.session.user);
+  const spots = useSelector(state => state.spots);
+
+  if(!spots){
+    return null;
+  }
 
   let sessionLinks;
   if (sessionUser) {

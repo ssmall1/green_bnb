@@ -1,48 +1,63 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import * as spotReducer from '../../store/spot';
-import './Filter.css';
+import './Search.css';
 
-function FilterSearch({ setFilter, setSearchTerm, setNewSpots, searchTerm, newSpots}) {
+function Search({ search, setSearch, searchTerm, setSearchTerm, newSpots, setNewSpots}) {
   const dispatch = useDispatch();
-  const spots = useSelector(state => state.spots.allSpots);
+  const spots = useSelector(state => state.spots);
 
   const handleClick = () => {
-    dispatch(spotReducer.sortSpots())
-    setFilter('filtered')
+    dispatch(spotReducer.searchSpots());
   }
 
+  let newSpotsArr = [];
+
   useEffect(()=> {
-
-    let newSpotsArr = []
-
-    if(searchTerm !== ''){
-      for(let i = 0; i < spots.length; i++) {
-        let spot = spots[i];
-        if(spot.city.includes(searchTerm)) {
-          newSpotsArr.push(spot)
+    if (searchTerm !== ''){
+        console.log(searchTerm, 'SEARCH TERM');
+        for(let key in spots) {
+            if (isNaN(key)) break;
+            let spot = spots[key];
+            if (spot.title.includes(searchTerm) || spot.city.includes(searchTerm) || spot.state.includes(searchTerm)) {
+                newSpotsArr.push(spot);
+            }
         }
-      }
-      setNewSpots(newSpotsArr)
+        console.log(newSpotsArr, "newSpotsArr")
+        setNewSpots(newSpotsArr);
     }
-  },[searchTerm, setNewSpots, spots])
+  },[searchTerm, setNewSpots, spots]);
 
+  console.log(newSpots, "newSpots")
 
+  function random() {
+      return Math.random();
+  }
+
+  if (!newSpots) {
+      return null
+  }
 
   return (
-    <div className='filter__container'>
-      <h4 className='filter-title'>Filter</h4>
-      <div className='search-btn-div'>
-        <button className='search-btn' onClick={handleClick} >Lowest Price</button>
-      </div>
-      <div className='search-bar-title'>
-        Search
-      </div>
-      <div className='search-bar'>
-        <input onChange={(e) => setSearchTerm(e.target.value)}></input>
-      </div>
-    </div>
+        <div className='search-wrapper'>
+            <div className='search-button-container'>
+                <button className='search-button' onClick={handleClick} >Search</button>
+            </div>
+            <div className='search-bar'>
+                <input onChange={(e) => setSearchTerm(e.target.value)}></input>
+            </div>
+        { searchTerm ? <div className="search-results">
+            {newSpotsArr.map((spot) => {
+                return (
+                    <div key={spot.id + random()}>
+                        {spot.title}
+                    </div>
+                        )
+            })}
+            </div> : <></>
+        }
+        </div>
   );
 }
 
-export default FilterSearch;
+export default Search;

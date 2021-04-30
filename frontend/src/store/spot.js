@@ -5,6 +5,7 @@ const LOAD_ONE = 'spots/LOAD_ONE';
 const GET_REVIEWS = 'spot/GET_REVIEWS';
 const POST_REVIEW = 'spot/POST_REVIEW';
 const POST_BOOKING = 'spot/POST_BOOKING';
+const SEARCH_SPOTS = 'spots/SEARCH_SPOTS';
 
 const load = spots => ({
     type: LOAD,
@@ -29,6 +30,10 @@ const sendReview = review => ({
 const sendBooking = booking => ({
     type: POST_BOOKING,
     booking
+});
+
+export const searchSpots = () => ({
+      type: SEARCH_SPOTS,
 });
 
 export const getSpots = () => async dispatch => {
@@ -97,7 +102,6 @@ export const postBooking = (booking) => async dispatch => {
 // const initialState = { spots: [] };
 
 const spotsReducer = (state = {}, action) => {
-    let bookingState;
     switch (action.type) {
         case LOAD: {
             let newState = {};
@@ -141,7 +145,13 @@ const spotsReducer = (state = {}, action) => {
             return reviewState
         }
         case POST_BOOKING: {
+            let bookingState;
             return bookingState = { ...state }
+        }
+        case SEARCH_SPOTS: {
+            let searchState = {}
+            searchState = { ...state }
+            return searchState
         }
         default: 
             return state;

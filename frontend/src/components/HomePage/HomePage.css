@@ -27,6 +27,13 @@
     padding-left: 75px;
 }
 
+.search-comp {
+    grid-column: 5 / 10;
+    grid-row: 4 / 5;
+    padding-top: 25px;
+    padding-left: 80px;
+}
+
 .spots-wrapper {
     display: flex;
     flex-wrap: wrap;

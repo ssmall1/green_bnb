@@ -1,15 +1,21 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import Spots from '../Spots/index';
 import * as spotReducer from '../../store/spot';
+import Search from '../Search';
 import './HomePage.css';
+
 
 function HomePage() {
     const dispatch = useDispatch();
     const sessionUser = useSelector(state => state.session.user);
     const spots = useSelector(state => state.spots);
     console.log(spots)
+
+    const [search, setSearch] = useState('');
+    const [searchTerm, setSearchTerm] = useState('');
+    const [newSpots, setNewSpots] = useState();
 
     useEffect(() => {
         dispatch(spotReducer.getSpots());
@@ -22,6 +28,11 @@ function HomePage() {
     if (!spots) {
         return null;
     };
+
+    if(!newSpots) {
+        setNewSpots(spots);
+        return null;
+      }
     
     let things = [];
     if (spots) {
@@ -33,19 +44,17 @@ function HomePage() {
                 things.push(places[key]);
                 i++;
             }
-            // for (let i = 0; i < 6; i++) {
-            //     things.push(places[i]);
-                
-            // }
         }
         listings(spots);
-        console.log(things, "these things")
     }
     return (
         <div className='home-wrapper'>
-             <div className="path-div">
+            <div className="path-div">
                 <div className="home-message">
                     Browse from coast to coast and beyond...
+                </div>
+                <div className="search-comp">
+                    <Search search={search} newSpots={newSpots} searchTerm={searchTerm} setSearch={setSearch} setSearchTerm={setSearchTerm} setNewSpots={setNewSpots}/>
                 </div>
             </div>
             <div className="spots-wrapper">

@@ -13,9 +13,7 @@ function HomePage() {
     const spots = useSelector(state => state.spots);
     console.log(spots)
 
-    const [search, setSearch] = useState('');
     const [searchTerm, setSearchTerm] = useState('');
-    const [newSpots, setNewSpots] = useState();
 
     useEffect(() => {
         dispatch(spotReducer.getSpots());
@@ -28,11 +26,6 @@ function HomePage() {
     if (!spots) {
         return null;
     };
-
-    if(!newSpots) {
-        setNewSpots(spots);
-        return null;
-      }
     
     let things = [];
     if (spots) {
@@ -54,7 +47,7 @@ function HomePage() {
                     Browse from coast to coast and beyond...
                 </div>
                 <div className="search-comp">
-                    <Search search={search} newSpots={newSpots} searchTerm={searchTerm} setSearch={setSearch} setSearchTerm={setSearchTerm} setNewSpots={setNewSpots}/>
+                    <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
                 </div>
             </div>
             <div className="spots-wrapper">

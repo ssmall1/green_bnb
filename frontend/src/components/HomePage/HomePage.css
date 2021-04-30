@@ -12,9 +12,6 @@
     background-image: url(../../images/woods.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    color: #ece0cd;
-    font-weight: bold;
-    text-shadow: 2px 2px #000000;
     
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(6, 1fr);
@@ -25,13 +22,16 @@
     grid-row: 3 / 4;
     font-size: 50px;
     padding-left: 75px;
+    color: #ece0cd;
+    font-weight: bold;
+    text-shadow: 2px 2px #000000;
 }
 
 .search-comp {
     grid-column: 5 / 10;
     grid-row: 4 / 5;
     padding-top: 25px;
-    padding-left: 80px;
+    padding-left: 100px;
 }
 
 .spots-wrapper {

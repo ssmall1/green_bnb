@@ -1,61 +1,58 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import * as spotReducer from '../../store/spot';
+// import * as spotReducer from '../../store/spot';
 import './Search.css';
 
-function Search({ search, setSearch, searchTerm, setSearchTerm, newSpots, setNewSpots}) {
+function Search({ searchTerm, setSearchTerm }) {
   const dispatch = useDispatch();
   const spots = useSelector(state => state.spots);
 
-  const handleClick = () => {
-    dispatch(spotReducer.searchSpots());
-  }
-
-  let newSpotsArr = [];
+  const [newSpotsArr, setNewSpotsArr] = useState([]);
 
   useEffect(()=> {
     if (searchTerm !== ''){
         console.log(searchTerm, 'SEARCH TERM');
+        let temp = [];
         for(let key in spots) {
             if (isNaN(key)) break;
             let spot = spots[key];
             if (spot.title.includes(searchTerm) || spot.city.includes(searchTerm) || spot.state.includes(searchTerm)) {
-                newSpotsArr.push(spot);
+                temp.push(spot);
             }
+            setNewSpotsArr(temp);
         }
-        console.log(newSpotsArr, "newSpotsArr")
-        setNewSpots(newSpotsArr);
+        // setNewSpots(newSpotsArr);
+    } else {
+        setNewSpotsArr([]);
     }
-  },[searchTerm, setNewSpots, spots]);
+},[searchTerm, spots]);
 
-  console.log(newSpots, "newSpots")
+console.log(newSpotsArr, "newSpotsArr")
 
   function random() {
       return Math.random();
   }
 
-  if (!newSpots) {
-      return null
-  }
-
   return (
         <div className='search-wrapper'>
-            <div className='search-button-container'>
+            {/* <div className='search-button-container'>
                 <button className='search-button' onClick={handleClick} >Search</button>
-            </div>
+            </div> */}
             <div className='search-bar'>
-                <input onChange={(e) => setSearchTerm(e.target.value)}></input>
+                <input className='search-input' onChange={(e) => setSearchTerm(e.target.value)}></input>
             </div>
-        { searchTerm ? <div className="search-results">
-            {newSpotsArr.map((spot) => {
-                return (
-                    <div key={spot.id + random()}>
-                        {spot.title}
-                    </div>
-                        )
-            })}
-            </div> : <></>
-        }
+            <div className='search-results-wrapper'>
+                { searchTerm ? <div className="search-results">
+                    {newSpotsArr.map((spot) => {
+                        return (
+                            <div key={spot.id + random()}>
+                                {spot.title}
+                            </div>
+                                )
+                    })}
+                    </div> : <></>
+                }
+            </div>
         </div>
   );
 }

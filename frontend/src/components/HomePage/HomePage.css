@@ -1,9 +1,9 @@
-/* home-wrapper { 
+home-wrapper { 
     display: grid;
     height: 2000px;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(12, 1fr);
-} */
+}
 
 .path-div {
     display: grid;
@@ -12,6 +12,7 @@
     background-image: url(../../images/woods.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    height: 725px;
     
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(6, 1fr);
@@ -29,7 +30,7 @@
 
 .search-comp {
     grid-column: 5 / 10;
-    grid-row: 4 / 5;
+    grid-row: 4 / 6;
     padding-top: 25px;
     padding-left: 100px;
 }

@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-// import * as spotReducer from '../../store/spot';
+import { useSelector } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import './Search.css';
 
 function Search({ searchTerm, setSearchTerm }) {
-  const dispatch = useDispatch();
   const spots = useSelector(state => state.spots);
 
   const [newSpotsArr, setNewSpotsArr] = useState([]);
@@ -21,7 +20,6 @@ function Search({ searchTerm, setSearchTerm }) {
             }
             setNewSpotsArr(temp);
         }
-        // setNewSpots(newSpotsArr);
     } else {
         setNewSpotsArr([]);
     }
@@ -35,18 +33,15 @@ console.log(newSpotsArr, "newSpotsArr")
 
   return (
         <div className='search-wrapper'>
-            {/* <div className='search-button-container'>
-                <button className='search-button' onClick={handleClick} >Search</button>
-            </div> */}
-            <div className='search-bar'>
-                <input className='search-input' onChange={(e) => setSearchTerm(e.target.value)}></input>
-            </div>
+            <input className='search-input' onChange={(e) => setSearchTerm(e.target.value)}></input>
             <div className='search-results-wrapper'>
                 { searchTerm ? <div className="search-results">
                     {newSpotsArr.map((spot) => {
                         return (
                             <div key={spot.id + random()}>
-                                {spot.title}
+                                <NavLink id="spot-link" key={spot.id} to={`/spots/${spot.id}`}> 
+                                    {spot.title}
+                                </NavLink>
                             </div>
                                 )
                     })}

@@ -12,3 +12,7 @@ body, ul, div, nav {
     padding: 0px;
     margin: 0px;
 }
+
+button:hover {
+    cursor: pointer;
+}

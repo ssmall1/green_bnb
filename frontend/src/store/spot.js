@@ -131,22 +131,25 @@ const spotsReducer = (state = {}, action) => {
             };
         }
         case LOAD_ONE: {
-            if (!state[action.spot.id]) {
-              const newState = {
-                ...state,
-                [action.spot.id]: action.spot
-              };
-              const spotList = newState.spots.map(id => newState[id]);
-              spotList.push(action.spot);
-              return newState;
-            }
-            return {
-              ...state,
-              [action.spot.id]: {
-                ...state[action.spot.id],
-                ...action.spot,
-              }
-            };
+            const spotState = { ...state }
+            spotState.currentSpot = action.spot
+            return spotState
+            // if (!state[action.spot.id]) {
+            //   const newState = {
+            //     ...state,
+            //     [action.spot.id]: action.spot
+            //   };
+            //   const spotList = newState.spots.map(id => newState[id]);
+            //   spotList.push(action.spot);
+            //   return newState;
+            // }
+            // return {
+            //   ...state,
+            //   [action.spot.id]: {
+            //     ...state[action.spot.id],
+            //     ...action.spot,
+            //   }
+            // };
           }
         case GET_REVIEWS: {
             const reviews = action.reviews
@@ -158,7 +161,7 @@ const spotsReducer = (state = {}, action) => {
         case POST_REVIEW: {
             let reviewState = {}
             reviewState = { ...state }
-            reviewState.reviews = [...state.reviews, action.review]
+            reviewState.reviews = [action.review, ...state.reviews]
             return reviewState
         }
         case POST_BOOKING: {
@@ -173,8 +176,12 @@ const spotsReducer = (state = {}, action) => {
         case DELETE_REVIEW:
             let deleteReviewState = {}
             deleteReviewState = { ...state }
-            const newReviews = deleteReviewState.reviews.filter(review => review.id !== action.reviewInfo);
-            return deleteReviewState.reviews = [...newReviews]
+            console.log("before", deleteReviewState)
+            const newReviews = deleteReviewState.reviews.filter(review => review.id !== action.review);
+            deleteReviewState.reviews = [...newReviews]
+            console.log("info", action.review)
+            console.log("after", deleteReviewState)
+            return deleteReviewState
         default: 
             return state;
     }

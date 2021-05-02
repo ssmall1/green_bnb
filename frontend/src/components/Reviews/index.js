@@ -10,7 +10,7 @@ function Reviews({ review, setUpdateReviews }) {
     const handleSubmit = async (e) => {
         e.preventDefault();
         dispatch(spotReducer.deleteReview(review.id));
-        setUpdateReviews('deleted');
+        setUpdateReviews(Math.random());
     }
 
     let score = review.rating;

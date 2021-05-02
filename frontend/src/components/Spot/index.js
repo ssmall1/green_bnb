@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router';
-import { Redirect, useHistory } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import DatePicker from 'react-date-picker';
 import * as spotReducer from '../../store/spot';
 import Reviews from '../Reviews/';
@@ -17,17 +17,14 @@ function Spot() {
     const [updateReviews, setUpdateReviews] = useState('there');
 
     const sessionUser = useSelector(state => state.session.user);
-    const spot = useSelector(state => state.spots[id]);
+    const spot = useSelector(state => state.spots.currentSpot);
     const reviews = useSelector(state => state.spots.reviews);
     
-    // const authorId = useSelector(state => state.session.user.id);
-
     const updateBody = (e) => setBody(e.target.value);
     const updateRating = (e) => setRating(e.target.value);
 
 
     const dispatch = useDispatch();
-    const history = useHistory();
     
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -35,12 +32,9 @@ function Spot() {
     }, [dispatch]);
 
     useEffect(() => { 
-        let singleSpot = dispatch(spotReducer.getOneSpot(id));
-        if (singleSpot === null) {
-            history.push('/');
-        }
         dispatch(spotReducer.getReviews(id));
-    }, [id, dispatch, history, updateReviews, reviews]);
+        dispatch(spotReducer.getOneSpot(id));
+    }, [id, dispatch, updateReviews]);
 
     if (!sessionUser) return (
         <Redirect to='/welcome' />
@@ -52,6 +46,17 @@ function Spot() {
 
     if (!reviews) {
         return null
+    }
+    console.log(reviews, "reviews")
+    let things = [];
+    if (reviews) {
+
+        function listings(reviews) {
+            for (let i = 0; i < 4; i++) {
+                things.push(reviews); 
+            }
+        }
+        listings(reviews);
     }
 
     const handleSubmit = async (e) => {
@@ -99,29 +104,33 @@ function Spot() {
                 <div id="spot-description">
                     {spot.description}
                 </div>
-                
-                <div className="review-form">
-                    <form onSubmit={handleSubmit}>
+                <div className="review-form-wrapper">
+                    <form id="review-form" onSubmit={handleSubmit}>
                         <label>
                             Review
                         </label>
                         <div>
                             <textarea type='text-area' value={body} onChange={updateBody} required></textarea>
                         </div>
-                        <label>
-                            Rating
-                            <select onChange={updateRating}>
-                                <option value='1'>1</option>
-                                <option value='2'>2</option>
-                                <option value='3'>3</option>
-                                <option value='4'>4</option>
-                                <option value='5'>5</option>
-                            </select>
-                        </label>
-                        <button type='submit'>Submit Review</button>
+                        <div>
+                            <label>
+                                Rating
+                                <select onChange={updateRating}>
+                                    <option value='1'>1</option>
+                                    <option value='2'>2</option>
+                                    <option value='3'>3</option>
+                                    <option value='4'>4</option>
+                                    <option value='5'>5</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div>
+                            <button className="submit" type='submit'>Submit Review</button>
+                        </div>
                     </form>
                 </div>
                 <div className="reviews">
+                    <div id="review-title"> Recent Reviews </div>
                     {reviews.map(review => {
                         return (
                             <Reviews setUpdateReviews={setUpdateReviews} review={review} key={spot.id + review.id}/>
@@ -148,7 +157,7 @@ function Spot() {
                                 value={endDate}
                             />
                         </div>
-                        <button type='submit'>Book</button>
+                        <button className="submit" type='submit'>Book</button>
                     </form>
                 </div>
             </div>

@@ -6,7 +6,7 @@
     padding-top: 140px;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 400px 200px 600px;
+    grid-template-rows: 400px 200px 100px;
     /* background-image: linear-gradient(to top, white, #75a377); */
 }
 
@@ -48,37 +48,40 @@
 }
 
 .review-form-wrapper {
-    grid-column: 5 / 7;
-    grid-row: 2 / 3 ;
-    margin-top: 25px;
-}
-
-.review-form {
     display: flex;
-    flex-wrap: wrap;
-    align-items: flex-end;
     width: 300px;
+    grid-column: 5 / 7;
+    grid-row: 2 / 3;
 }
 
-.review-form > textarea {
+#review-form textarea {
     height: 100px;
-    width: 200px;
+    width: 300px;
 }
 
 .reviews {
     margin: auto;
     margin-top: 0px;
-    grid-column: 1 / 4;
-    grid-row: 3 / 4;
+    grid-column: 5 / 7;
+    grid-row: 1 / 2 ;
 }
 
-#submit-review {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 10px;
-    height: 30px;
-    width: 70px;
-    border-radius: 15px;
+#review-title {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.booking-form {
+    grid-column: 9 / 13;
+}
+
+.submit{
+    border-radius: 10px;
+    border-style: none;
+    background-color: #2e2e2e;
+    color: white;
+    padding: 3px 5px;
+    margin: auto;
+    text-align: center;
 }
 

@@ -72,7 +72,7 @@ function Spot() {
             rating,
             body
         };
-
+        setBody('');
         await dispatch(spotReducer.postReview(payload))
     }
 

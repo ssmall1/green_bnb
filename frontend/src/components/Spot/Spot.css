@@ -66,6 +66,8 @@
 }
 
 .reviews {
+    margin: auto;
+    margin-top: 0px;
     grid-column: 1 / 4;
     grid-row: 3 / 4;
 }

@@ -40,7 +40,7 @@ function Spot() {
             history.push('/');
         }
         dispatch(spotReducer.getReviews(id));
-    }, [id, dispatch, history, updateReviews]);
+    }, [id, dispatch, history, updateReviews, reviews]);
 
     if (!sessionUser) return (
         <Redirect to='/welcome' />

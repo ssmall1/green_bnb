@@ -22,17 +22,17 @@ function Reviews({ review, setUpdateReviews }) {
     return (
         <div className='review-container'>
             <div className=''>{review.User.firstName} {review.User.lastName}</div> 
-            { review.authorId === userId ? 
-                <button type='submit' onClick={handleSubmit}>Delete Review</button>
-                : <></> }
             <div>{scoreArr.map((star) => {
                 return (
                     <span key={review.id + Math.random()} className="star">
                         ⭐
                     </span>
         )
-      })}</div>
+    })}</div>
             <div>{review.body}</div>
+            { review.authorId === userId ? 
+                <button id='delete-review' type='submit' onClick={handleSubmit}>Delete Review</button>
+                : <></> }
         </div>
     );
 }

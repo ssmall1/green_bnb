@@ -18,7 +18,7 @@ function Reviews({ review, setUpdateReviews }) {
     for (let i = 0; i < score; i++) {
         scoreArr.push("s")
     }
-
+    
     return (
         <div className='review-container'>
             <div className=''>{review.User.firstName} {review.User.lastName}</div> 

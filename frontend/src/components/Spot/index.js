@@ -47,13 +47,16 @@ function Spot() {
     if (!reviews) {
         return null
     }
-    console.log(reviews, "reviews")
+
     let things = [];
     if (reviews) {
 
         function listings(reviews) {
             for (let i = 0; i < 4; i++) {
-                things.push(reviews); 
+                let review = reviews[i]
+                if (review) {
+                things.push(review); 
+                }
             }
         }
         listings(reviews);
@@ -131,7 +134,7 @@ function Spot() {
                 </div>
                 <div className="reviews">
                     <div id="review-title"> Recent Reviews </div>
-                    {reviews.map(review => {
+                    {things.map(review => {
                         return (
                             <Reviews setUpdateReviews={setUpdateReviews} review={review} key={spot.id + review.id}/>
                         )

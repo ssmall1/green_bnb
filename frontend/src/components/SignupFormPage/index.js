@@ -48,67 +48,69 @@ function SignupFormPage() {
   return (
     <div className="signup-max">
       <div className="signup-wrapper">
-        <div className="signup-form-wrapper">
-          <form onSubmit={handleSubmit} className="signup-form">
+        <div className="signup-form">
+          <form onSubmit={handleSubmit} id="signup">
             <ul className="errors">
               {errors.map((error, idx) => <li key={idx}>{error}</li>)}
             </ul>
             <label>
               First Name
-              <input
-                type="text"
-                value={firstName}
-                onChange={(e) => setFirstName(e.target.value)}
-                required
-              />
             </label>
+            <input
+              type="text"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+              required
+            />
             <label>
               Last Name
-              <input
-                type="text"
-                value={lastName}
-                onChange={(e) => setLastName(e.target.value)}
-                required
-              />
             </label>
+            <input
+              type="text"
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
+              required
+            />
             <label>
               Email
-              <input
-                type="text"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
             </label>
+            <input
+              type="text"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
             <label>
               Username
-              <input
-                type="text"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                required
-              />
             </label>
+            <input
+              type="text"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              required
+            />
             <label>
               Password
-              <input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
             </label>
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
             <label>
-              Confirm Password
-              <input
-                type="password"
-                value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
-                required
-              />
+              Confirm 
             </label>
-            <button type="submit">Sign Up</button>
-            <button onClick={demoSubmit} type="button">Demo Login</button>
+            <input
+              type="password"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              required
+            />
+            <div className="submit-buttons">
+              <button type="submit">Sign Up</button>
+              <button id="demo-button" onClick={demoSubmit} type="button">Demo Login</button>
+            </div>
           </form>
         </div>
       </div>

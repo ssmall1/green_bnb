@@ -4,28 +4,32 @@
 
 .signup-wrapper { 
     height: 750px;
-    display: flex;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(6, 1fr);    
     background-image: url(../../images/map2.png);
     background-repeat: no-repeat;
     background-size: 40%;
     background-position: 10% 50%;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(6, 1fr);    
 }
 
-.signup-form-wrapper {
+#signup { 
     display: flex;
-    background-color: rgba(173, 216, 230, 0.7);
+    flex-direction: column;
+}
+
+.signup-form {
+    display: flex;
     color: darkblue;
-    border: 3px solid darkblue;
     border-radius: 10px;
-    font-size: 25px;
-    height: 300px;
+    font-size: 20px;
+    height: 200px;
     width: 380px;
-    justify-content: center;
-    align-items: center;
+    align-content: flex-start;
+    flex-wrap: column-wrap;
+    flex-direction: column;
+    grid-column: 8 / 10;
+    grid-row: 2 / 5;
 }
 
 form > * {
@@ -37,6 +41,17 @@ input {
     border-radius: 10px;
 }
 
-button { 
+.submit-buttons > button { 
     border-radius: 10px;
+    border-radius: 10px;
+    border-style: none;
+    background-color: #2e2e2e;
+    color: white;
+    padding: 10px 8px;
+    margin: auto;
+    text-align: center;
+}
+
+.submit-buttons > button:hover {
+    background-color: rgba(46, 46, 46, 0.8);
 }

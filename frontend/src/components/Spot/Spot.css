@@ -7,7 +7,6 @@
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: 400px 200px 100px;
-    /* background-image: linear-gradient(to top, white, #75a377); */
 }
 
 #spot-image {
@@ -54,6 +53,10 @@
     grid-row: 2 / 3;
 }
 
+#review-form label {
+    font-weight: bold;
+}
+
 #review-form textarea {
     height: 100px;
     width: 300px;
@@ -72,16 +75,30 @@
 }
 
 .booking-form {
+    color: #2e2e2e;
     grid-column: 9 / 13;
 }
 
-.submit{
+.booking-label {
+    font-weight: bold;
+}
+
+.date-picker {
+    margin-left: 10px;
+    font-weight: normal;
+    border-radius: 10px;
+}
+
+.review-button, .book{
     border-radius: 10px;
     border-style: none;
     background-color: #2e2e2e;
     color: white;
-    padding: 3px 5px;
+    padding: 10px 8px;
     margin: auto;
     text-align: center;
 }
 
+.review-button:hover, .book:hover, #delete-review:hover {
+    background-color: rgba(46, 46, 46, 0.8);
+}

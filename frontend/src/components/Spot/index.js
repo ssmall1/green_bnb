@@ -110,7 +110,7 @@ function Spot() {
                 <div className="review-form-wrapper">
                     <form id="review-form" onSubmit={handleSubmit}>
                         <label>
-                            Review
+                            Make a Review
                         </label>
                         <div>
                             <textarea type='text-area' value={body} onChange={updateBody} required></textarea>
@@ -128,7 +128,7 @@ function Spot() {
                             </label>
                         </div>
                         <div>
-                            <button className="submit" type='submit'>Submit Review</button>
+                            <button className="review-button" type='submit'>Submit Review</button>
                         </div>
                     </form>
                 </div>
@@ -143,24 +143,24 @@ function Spot() {
 
                 <div className="booking-form">
                     <form onSubmit={handleBook}>
-                        <div>Book This Spot 🏠</div>
-                        <div>
-                            Start Date
+                        <div className="booking-label">Book This Spot 🏠</div>
+                        <div className="booking-label">
+                            Start Date 
                             <DatePicker
-                                className='datePicker'
+                                className='date-picker'
                                 onChange={setStartDate}
                                 value={startDate}
                             />
                         </div>
-                        <div>
-                            End Date
+                        <div className="booking-label">
+                            End Date 
                             <DatePicker
-                                className='datePicker'
+                                className='date-picker'
                                 onChange={setEndDate}
                                 value={endDate}
                             />
                         </div>
-                        <button className="submit" type='submit'>Book</button>
+                        <button className="book" type='submit'>Book</button>
                     </form>
                 </div>
             </div>

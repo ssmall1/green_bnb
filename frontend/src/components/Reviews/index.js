@@ -1,17 +1,26 @@
 import React from 'react';
+import './Review.css';
 
 function Reviews({ review }) {
-    // const spots = useSelector(state => state.spots);
-    // console.log(spot)
-    // console.log("here")
-    // if(!spots){
-    //     return null
-    // }
+    let score = review.rating;
+    
+    let scoreArr = [];
 
-    // console.log(review, "review")
+    for (let i = 0; i < score; i++) {
+        scoreArr.push("⭐")
+    }
+
+    console.log(scoreArr)
     return (
         <div className='review-container'>
             <div className=''>{review.User.firstName} {review.User.lastName}</div>
+            <div>{scoreArr.map((star) => {
+                return (
+                    <span key={score.rating} className="star">
+                        ⭐
+                    </span>
+        )
+      })}</div>
             <div>{review.body}</div>
         </div>
     );

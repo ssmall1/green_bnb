@@ -39,7 +39,7 @@ function ProfileButton({ user }) {
           <li>{user.username}</li>
           <li>{user.email}</li>
           <li>
-            <button className="logout" onClick={logout}>Log Out</button><span> 🌿</span>
+            <button className="logout" onClick={logout}>Log Out</button>
           </li>
         </ul>
       )}

@@ -50,24 +50,26 @@ function LoginFormPage() {
             </ul>
             <label id="email">
               Username or Email
+            </label>
               <input
                 type="text"
                 value={credential}
                 onChange={(e) => setCredential(e.target.value)}
                 required
               />
-            </label>
             <label id="password">
               Password
+            </label>
               <input
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
               />
-            </label>
-            <button className="submit" type="submit">Log In</button>
-            <button onClick={demoSubmit} type="button">Demo Login</button>
+            <div className="submit-buttons">
+              <button type="submit">Log In</button>
+              <button id="demo-button" onClick={demoSubmit} type="button">Demo Login</button>
+            </div>
           </form>
         </div>
       </div>

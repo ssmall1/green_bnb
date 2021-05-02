@@ -9,8 +9,8 @@
     grid-template-rows: repeat(6, 1fr);    
     background-image: url(../../images/map2.png);
     background-repeat: no-repeat;
-    background-size: 50%;
-    background-position: 50% 50%;
+    background-size: 40%;
+    background-position: 10% 50%;
     justify-content: center;
     align-items: center;
 }
@@ -30,4 +30,13 @@
 
 form > * {
     padding: 10px;
+}
+
+input { 
+    height: 20px;
+    border-radius: 10px;
+}
+
+button { 
+    border-radius: 10px;
 }

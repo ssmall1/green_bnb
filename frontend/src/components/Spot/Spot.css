@@ -75,6 +75,7 @@
 }
 
 .booking-form {
+    margin-left: 40px;
     color: #2e2e2e;
     grid-column: 9 / 13;
 }

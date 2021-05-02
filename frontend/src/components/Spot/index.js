@@ -145,7 +145,7 @@ function Spot() {
                     <form onSubmit={handleBook}>
                         <div className="booking-label">Book This Spot 🏠</div>
                         <div className="booking-label">
-                            Start Date 
+                            Start Date
                             <DatePicker
                                 className='date-picker'
                                 onChange={setStartDate}
@@ -153,7 +153,7 @@ function Spot() {
                             />
                         </div>
                         <div className="booking-label">
-                            End Date 
+                            End Date   
                             <DatePicker
                                 className='date-picker'
                                 onChange={setEndDate}

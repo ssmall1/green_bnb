@@ -3,12 +3,14 @@ import { useSelector, useDispatch } from 'react-redux';
 import * as spotReducer from '../../store/spot';
 import './Review.css';
 
-function Reviews({ review }) {
+function Reviews({ review, setUpdateReviews }) {
+    const userId = useSelector(state => state.session.user.id);
+    const dispatch = useDispatch();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        dispatch(spotReducer.deleteReview(review.id))
-        setUpdate('deleted')
+        dispatch(spotReducer.deleteReview(review.id));
+        setUpdateReviews('deleted');
     }
 
     let score = review.rating;
@@ -19,10 +21,13 @@ function Reviews({ review }) {
 
     return (
         <div className='review-container'>
-            <div className=''>{review.User.firstName} {review.User.lastName}</div> <span><button type='submit' onClick={handleSubmit}>Delete Review</button></span>
+            <div className=''>{review.User.firstName} {review.User.lastName}</div> 
+            { review.authorId === userId ? 
+                <button type='submit' onClick={handleSubmit}>Delete Review</button>
+                : <></> }
             <div>{scoreArr.map((star) => {
                 return (
-                    <span key={score.rating} className="star">
+                    <span key={review.id + Math.random()} className="star">
                         ⭐
                     </span>
         )

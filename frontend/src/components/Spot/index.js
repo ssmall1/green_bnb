@@ -14,6 +14,7 @@ function Spot() {
     const [rating, setRating] = useState(1);
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
+    const [updateReviews, setUpdateReviews] = useState('there');
 
     const sessionUser = useSelector(state => state.session.user);
     const spot = useSelector(state => state.spots[id]);
@@ -39,7 +40,7 @@ function Spot() {
             history.push('/');
         }
         dispatch(spotReducer.getReviews(id));
-    }, [id, dispatch, history]);
+    }, [id, dispatch, history, updateReviews]);
 
     if (!sessionUser) return (
         <Redirect to='/welcome' />
@@ -123,7 +124,7 @@ function Spot() {
                 <div className="reviews">
                     {reviews.map(review => {
                         return (
-                            <Reviews review={review} key={spot.id + review.id}/>
+                            <Reviews setUpdateReviews={setUpdateReviews} review={review} key={spot.id + review.id}/>
                         )
                     })}
                 </div>

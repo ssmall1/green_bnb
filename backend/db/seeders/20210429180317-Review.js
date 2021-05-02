@@ -47,6 +47,7 @@ module.exports = {
         {
         authorId: 6,
         spotId: 5,
+        rating: 4,
         body: "Fully equipped and ready to entertain",
         createdAt: new Date(),
         updatedAt: new Date()

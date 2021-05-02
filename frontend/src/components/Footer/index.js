@@ -6,7 +6,12 @@ function Footer () {
     return(
         <>
             <div className="footer-container">
-                <div className="quote">"The clearest way into the Universe is through a forest wilderness."</div>
+                <div className="quote">
+                    "The clearest way into the Universe is through a forest wilderness."
+                    <a href="https://github.com/ssmall1/green_bnb" target="_blank" rel="noreferrer">
+                        <i className="fab fa-github" aria-hidden="true"></i>
+                    </a>
+                    </div>
                 <div className="copyright">© 2021 GreenBnB</div> 
                 <img src={icon} alt="greenbnb icon" id="icon"/>
                 <div className="linkedin">

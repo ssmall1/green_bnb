@@ -3,13 +3,13 @@
 }
 
 .login-wrapper {
-    height: 750px;
+    height: 690px;
     display: flex;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(6, 1fr);    
     background-image: url(../../images/map2.png);
     background-repeat: no-repeat;
-    background-size: 50%;
+    background-size: 40%;
     background-position: 50% 50%;
     justify-content: center;
     align-items: center;

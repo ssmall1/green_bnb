@@ -1,6 +1,6 @@
 .footer-container {
     display: grid;
-    height: 6em;
+    height: 5em;
     background-image: url(../../images/cream.png);
     background-repeat: no-repeat;
     background-size: cover;
@@ -17,14 +17,20 @@
     grid-row: 3 / 4;
     font-size: 1em;
   }
+
+  .quote a {
+    color: #2e2e2e;
+    font-size: 35px;
+    padding-left: 10px;
+  }
   
   .copyright {
     display: flex;
     grid-column: 11 / 13;
-    grid-row: 2 / 3;
+    grid-row: 3 / 3;
     justify-self: end;
     align-items: flex;
-    padding-right: 25px;
+    padding-right: 10px;
   }
 
 .linkedin {
@@ -47,8 +53,8 @@
 }
 
 #icon { 
-  margin-top: 3px;
-  height: 90px;
+  margin-top: 6px;
+  height: 65px;
   width: auto;
   grid-row: 1 / 4;
   grid-column: 13 / 13;

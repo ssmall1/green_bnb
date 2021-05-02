@@ -11,8 +11,7 @@ function HomePage() {
     const dispatch = useDispatch();
     const sessionUser = useSelector(state => state.session.user);
     const spots = useSelector(state => state.spots);
-    console.log(spots)
-
+    
     const [searchTerm, setSearchTerm] = useState('');
 
     useEffect(() => {

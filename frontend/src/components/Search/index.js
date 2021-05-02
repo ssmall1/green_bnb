@@ -10,7 +10,6 @@ function Search({ searchTerm, setSearchTerm }) {
 
   useEffect(()=> {
     if (searchTerm !== ''){
-        console.log(searchTerm, 'SEARCH TERM');
         let temp = [];
         for(let key in spots) {
             if (isNaN(key)) break;
@@ -24,8 +23,6 @@ function Search({ searchTerm, setSearchTerm }) {
         setNewSpotsArr([]);
     }
 },[searchTerm, spots]);
-
-console.log(newSpotsArr, "newSpotsArr")
 
   function random() {
       return Math.random();

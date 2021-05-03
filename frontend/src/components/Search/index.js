@@ -14,7 +14,7 @@ function Search({ searchTerm, setSearchTerm }) {
         for(let key in spots) {
             if (isNaN(key)) break;
             let spot = spots[key];
-            if (spot.title.includes(searchTerm) || spot.city.includes(searchTerm) || spot.state.includes(searchTerm)) {
+            if (spot.title.includes(searchTerm.toLowerCase() || searchTerm.toUpperCase()) || spot.city.includes(searchTerm.toLowerCase() || searchTerm.toUpperCase()) || spot.state.includes(searchTerm.toLowerCase() || searchTerm.toUpperCase())) {
                 temp.push(spot);
             }
             setNewSpotsArr(temp);

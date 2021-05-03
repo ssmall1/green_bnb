@@ -5,10 +5,12 @@
 .profile-button {
     display: flex;
     font-size: 30px;
+    color: #2e2e2e;
     padding: 5px 9px;
     justify-content: center;
     border-radius: 8px;
     cursor: pointer;
+    opacity: 0.9;
 }
 
 .profile-dropdown {

@@ -1,6 +1,6 @@
 .search-wrapper {
     width: 250px;
-    min-height: 100px;
+    min-height: 35px;
     height: auto;
     background-color: rgba(255, 255, 255, 0.7);
     border-radius: 15px;
@@ -25,7 +25,7 @@
 }
 
 .search-results {
-    font-size: 15px;
+    font-size: 14px;
 }
 
 #spot-link {

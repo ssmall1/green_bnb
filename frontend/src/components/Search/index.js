@@ -14,7 +14,7 @@ function Search({ searchTerm, setSearchTerm }) {
         for(let key in spots) {
             if (isNaN(key)) break;
             let spot = spots[key];
-            if (spot.title.includes(searchTerm.toLowerCase() || searchTerm.toUpperCase()) || spot.city.includes(searchTerm.toLowerCase() || searchTerm.toUpperCase()) || spot.state.includes(searchTerm.toLowerCase() || searchTerm.toUpperCase())) {
+            if (spot.title.includes(searchTerm) || spot.city.includes(searchTerm) || spot.state.includes(searchTerm)) {
                 temp.push(spot);
             }
             setNewSpotsArr(temp);
@@ -37,7 +37,7 @@ function Search({ searchTerm, setSearchTerm }) {
                         return (
                             <div key={spot.id + random()}>
                                 <NavLink id="spot-link" key={spot.id} to={`/spots/${spot.id}`}> 
-                                    {spot.title}
+                                    {spot.title} - {spot.city}, {spot.state}
                                 </NavLink>
                             </div>
                                 )

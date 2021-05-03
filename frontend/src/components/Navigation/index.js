@@ -1,4 +1,5 @@
 import React from 'react';
+// import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
@@ -8,10 +9,30 @@ import logo from "../../images/logo1.png";
 function Navigation({ isLoaded }){
   const sessionUser = useSelector(state => state.session.user);
   const spots = useSelector(state => state.spots);
+  // const [curiousState, setCuriousState] = useState();
+  // const [pathname, setPathName] = useState();
+  
+  
+  
+  // useEffect(() => {
+  //   setPathName(window.location.pathname);
+  //   console.log(pathname)
+    
+  //   setCuriousState(pathname);
+  // }, [setCuriousState, window.location.pathname]);
 
   if(!spots){
     return null;
   }
+
+
+  // let curious;
+
+  // if (curiousState === "/welcome") {
+  //   curious = (
+  //     <a href="#links" className="curious">Curious?</a>
+  //   );
+  // }
 
   let sessionLinks;
   if (sessionUser) {
@@ -26,7 +47,6 @@ function Navigation({ isLoaded }){
       <>
         <NavLink to="/login" className="login">Login</NavLink>
         <NavLink to="/signup" className="signup">Sign-up</NavLink>
-        <a href="#links" className="curious">Curious?</a>
       </>
     );
   }
@@ -41,6 +61,7 @@ function Navigation({ isLoaded }){
       
       <div className="session-links">
         {isLoaded && sessionLinks}
+        {/* {curious} */}
       </div>
     </div>
   );

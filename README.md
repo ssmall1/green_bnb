@@ -56,7 +56,7 @@ function Search({ searchTerm, setSearchTerm }) {
 
 ## Setup Instructions
 
-#To run this application:
+# To run this application:
 1. Clone the repository
 2. Run `npm install` in the root directory, as well as frontend and backend directories, to add the node dependencies
 3. Create a .env file in the `backend` directory according to the example file

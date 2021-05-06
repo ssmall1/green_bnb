@@ -54,9 +54,9 @@ function Search({ searchTerm, setSearchTerm }) {
 },[searchTerm, spots]);
 ```
 
-## Setup Instructions
+# Setup Instructions
 
-# To run this application:
+## To run this application:
 1. Clone the repository
 2. Run `npm install` in the root directory, as well as frontend and backend directories, to add the node dependencies
 3. Create a .env file in the `backend` directory according to the example file
@@ -64,7 +64,7 @@ function Search({ searchTerm, setSearchTerm }) {
 5. Run `npm run db:create`, `npm run db:migrate`, `npm run db:seed:all` in the `backend` directory to set up the database
 6. Run `npm start` in both the `backend` and `frontend` directories then navigate to `localhost:5000`
 
-## Future Developments
+# Future Developments
 - [ ] Add host and user profiles
   - [ ] To view, edit, and delete bookings
   - [ ] To view, edit, and delete hosted spots

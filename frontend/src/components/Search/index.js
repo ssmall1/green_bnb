@@ -24,10 +24,6 @@ function Search({ searchTerm, setSearchTerm }) {
     }
 },[searchTerm, spots]);
 
-  function random() {
-      return Math.random();
-  }
-
   return (
         <div className='search-wrapper'>
             <input className='search-input' onChange={(e) => setSearchTerm(e.target.value)}></input>
@@ -35,7 +31,7 @@ function Search({ searchTerm, setSearchTerm }) {
                 { searchTerm ? <div className="search-results">
                     {newSpotsArr.map((spot) => {
                         return (
-                            <div key={spot.id + random()}>
+                            <div key={spot.id + Math.random()}>
                                 <NavLink id="spot-link" key={spot.id} to={`/spots/${spot.id}`}> 
                                     {spot.title} - {spot.city}, {spot.state}
                                 </NavLink>

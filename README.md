@@ -1,5 +1,7 @@
 ### Welcome to **[GreenBnB](https://green-bnb.herokuapp.com/welcome)**
 
+![GreenBnB Welcome Page](./readme/welcome.gif)
+
 **GreenBnB** is a clone of [Airbnb](https://airbnb.com/) with a focus on environmentally friendly, sustainable, and off the grid adventures.
 
 # Technologies
@@ -26,6 +28,8 @@ The backend was built using a PostgreSQL database and an Express server. Its API
 
 The site attempts to clone the features and approach of Airbnb while calling attention to the plethora of environmentally-conscious options.
 
+![GreenBnB Search](/readme/search.gif)
+
 # Code Snippet and Functionality
 ```js
 function Search({ searchTerm, setSearchTerm }) {
@@ -49,7 +53,6 @@ function Search({ searchTerm, setSearchTerm }) {
     }
 },[searchTerm, spots]);
 ```
-![GreenBnB Search](/readme/search.gif)
 
 ## Setup Instructions
 
@@ -59,8 +62,7 @@ function Search({ searchTerm, setSearchTerm }) {
 3. Create a .env file in the `backend` directory according to the example file
 4. Create a user in `psql` with your specified credentials in the .env file
 5. Run `npm run db:create`, `npm run db:migrate`, `npm run db:seed:all` in the `backend` directory to set up the database
-6. Run `npm start` in both the `backend` and `frontend` directories then navigate to `localhost:3000`
-
+6. Run `npm start` in both the `backend` and `frontend` directories then navigate to `localhost:5000`
 
 ## Future Developments
 - [ ] Add host and user profiles

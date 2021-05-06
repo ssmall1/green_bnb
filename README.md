@@ -7,37 +7,24 @@
 # Technologies
 
 ## Front-End
-
 - React
 - Redux
 - CSS
 
 ## Back-End
-
 - Node.js
 - Express.js
 - PostgreSQL
 
-### Features
-
+# Features
 - Browse spots
 - Search for spots by name or location
 - Book spots
 - Write and delete reviews on spots
 
-### Code Snippets
-
-add intro to code snippet
-
-```js
-
-```
-![Muse Annotation](/readme/annotation.gif)
-
-### Instructions
+## Instructions
 
 #To run this application:
-
 1. Clone the repository
 2. Run `npm install` in the root directory, as well as frontend and backend directories, to add the node dependencies
 3. Create a .env file in the `backend` directory according to the example file
@@ -46,11 +33,12 @@ add intro to code snippet
 6. Run `npm start` in both the `backend` and `frontend` directories then navigate to `localhost:3000`
 
 
-### Future Developments
+## Future Developments
 - [ ] Add host and user profiles
   - [ ] To view, edit, and delete bookings
-  - [] To view, edit, and delete hosted spots
+  - [ ] To view, edit, and delete hosted spots
 - [ ] Add edit and delete functionality to bookings
 - [ ] Add more serendipity to rendering of spots
 - [ ] Add edit functionality to reviews
+- [ ] Add eco-features to spot descriptions
 - [ ] Google maps integration

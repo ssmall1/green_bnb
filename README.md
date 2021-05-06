@@ -1,7 +1,5 @@
 ### Welcome to **[GreenBnB](https://green-bnb.herokuapp.com/welcome)**
 
-![GreenBnB Welcome Page](./readme/welcome.gif)
-
 **GreenBnB** is a clone of [Airbnb](https://airbnb.com/) with a focus on environmentally friendly, sustainable, and off the grid adventures.
 
 # Technologies
@@ -11,10 +9,14 @@
 - Redux
 - CSS
 
+The site uses a Redux store to manage the front-end state along with React components. The top level reducers are Users and Spots, which contains reviews, bookings, and search. The site is styled in vanilla CSS with an emphasis on grid construction.
+
 ## Back-End
 - Node.js
 - Express.js
 - PostgreSQL
+
+The backend was built using a PostgreSQL database and an Express server. Its API routes follow RESTful convention and uses validation in both the database and server to maintain session-based security along with Bcrypt to store and verify user credentials.
 
 # Features
 - Browse spots
@@ -22,7 +24,34 @@
 - Book spots
 - Write and delete reviews on spots
 
-## Instructions
+The site attempts to clone the features and approach of Airbnb while calling attention to the plethora of environmentally-conscious options.
+
+# Code Snippet and Functionality
+```js
+function Search({ searchTerm, setSearchTerm }) {
+  const spots = useSelector(state => state.spots);
+
+  const [newSpotsArr, setNewSpotsArr] = useState([]);
+
+  useEffect(()=> {
+    if (searchTerm !== ''){
+        let temp = [];
+        for(let key in spots) {
+            if (isNaN(key)) break;
+            let spot = spots[key];
+            if (spot.title.includes(searchTerm) || spot.city.includes(searchTerm) || spot.state.includes(searchTerm)) {
+                temp.push(spot);
+            }
+            setNewSpotsArr(temp);
+        }
+    } else {
+        setNewSpotsArr([]);
+    }
+},[searchTerm, spots]);
+```
+![GreenBnB Search](/readme/search.gif)
+
+## Setup Instructions
 
 #To run this application:
 1. Clone the repository

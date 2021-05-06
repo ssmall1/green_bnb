@@ -1,6 +1,6 @@
 ### Welcome to **[GreenBnB](https://green-bnb.herokuapp.com/welcome)**
 
-![GreenBnB Homepage](/readme/welcome.gif)
+![GreenBnB Homepage](./readme/welcome.gif)
 
 **GreenBnB** is a clone of [Airbnb](https://airbnb.com/) with a focus on environmentally friendly hospitality.
 

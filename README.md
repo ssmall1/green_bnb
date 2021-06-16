@@ -18,7 +18,7 @@ The site uses a Redux store to manage the front-end state along with React compo
 - Express.js
 - PostgreSQL
 
-The backend was built using a PostgreSQL database and an Express server. Its API routes follow RESTful convention and uses validation in both the database and server to maintain session-based security along with Bcrypt to store and verify user credentials.
+The backend was built using a PostgreSQL database and an Express server. Its API routes follow RESTful convention and uses validation in both the database and server to maintain session-based security along with bcrypt to store and verify user credentials.
 
 # Features
 - Browse spots

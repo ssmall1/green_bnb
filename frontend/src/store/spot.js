@@ -7,6 +7,7 @@ const POST_REVIEW = 'spot/POST_REVIEW';
 const POST_BOOKING = 'spot/POST_BOOKING';
 const SEARCH_SPOTS = 'spots/SEARCH_SPOTS';
 const DELETE_REVIEW = 'spots/DELETE_REVIEW';
+const EDIT_REVIEW = 'spots/EDIT_REVIEW';
 
 
 const load = spots => ({
@@ -30,9 +31,14 @@ const sendReview = review => ({
 });
 
 const setDeletedReview = review => ({
-        type: DELETE_REVIEW,
-        review
+    type: DELETE_REVIEW,
+    review
 });
+
+const setEditedReview = review => ({
+    type: EDIT_REVIEW,
+    review
+})
 
 const sendBooking = booking => ({
     type: POST_BOOKING,
@@ -68,7 +74,7 @@ export const getOneSpot = (spotId) => async dispatch => {
 export const getReviews = (id) => async dispatch => {
   const response = await fetch(`/api/spots/${id}/reviews`);
 
-  if(response.ok) {
+  if (response.ok) {
       const reviews = await response.json();
       dispatch(loadReviews(reviews));
   }
@@ -83,7 +89,7 @@ export const postReview = (review) => async dispatch => {
       }
   });
 
-  if(response.ok) {
+  if (response.ok) {
       const review = await response.json();
       dispatch(sendReview(review));
       return review;
@@ -111,8 +117,22 @@ export const deleteReview = (id) => async dispatch => {
         method: 'DELETE'
     });
 
-    if(response.ok) {
+    if (response.ok) {
         dispatch(setDeletedReview(id));
+    }
+}
+
+export const editReview = (payload) => async dispatch => {
+    const response = await csrfFetch(`/api/spots/review/${payload.id}`, {
+        method: 'PUT',
+        body: JSON.stringify(payload),
+        headers: {
+          'Content-Type': 'application/json'
+      }
+    });
+
+    if (response.ok) {
+        dispatch(setEditedReview(payload));
     }
 }
 
@@ -131,38 +151,48 @@ const spotsReducer = (state = {}, action) => {
             };
         }
         case LOAD_ONE: {
-            const spotState = { ...state }
-            spotState.currentSpot = action.spot
-            return spotState
+            const spotState = { ...state };
+            spotState.currentSpot = action.spot;
+            return spotState;
         }
         case GET_REVIEWS: {
-            const reviews = action.reviews
+            const reviews = action.reviews;
             return {
                 ...state,
                 reviews
             }
         }
         case POST_REVIEW: {
-            let reviewState = {}
-            reviewState = { ...state }
-            reviewState.reviews = [action.review, ...state.reviews]
-            return reviewState
+            let reviewState = {};
+            reviewState = { ...state };
+            reviewState.reviews = [action.review, ...state.reviews];
+            return reviewState;
         }
         case POST_BOOKING: {
-            let bookingState = {}
-            return bookingState = { ...state }
+            let bookingState = {};
+            return bookingState = { ...state };
         }
         case SEARCH_SPOTS: {
-            let searchState = {}
-            searchState = { ...state }
-            return searchState
+            let searchState = {};
+            searchState = { ...state };
+            return searchState;
         }
         case DELETE_REVIEW:
-            let deleteReviewState = {}
-            deleteReviewState = { ...state }
+            let deleteReviewState = {};
+            deleteReviewState = { ...state };
             const newReviews = deleteReviewState.reviews.filter(review => review.id !== action.review);
-            deleteReviewState.reviews = [...newReviews]
-            return deleteReviewState
+            deleteReviewState.reviews = [...newReviews];
+            return deleteReviewState;
+        case EDIT_REVIEW:
+            let reviewState = {};
+            reviewState = { ...state };
+            console.log(action.review, "ACTION.REVIEW")
+            for (let i = 0; i < reviewState.reviews.length; i++) {
+                if (reviewState.reviews[i].id === action.review.id ) {
+                    reviewState.reviews[i] = action.review;
+                }
+            }
+            return reviewState;
         default: 
             return state;
     }

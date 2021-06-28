@@ -6,7 +6,7 @@ module.exports = {
         {
           title: 'Off-Grid itHouse',
           price: '481',
-          ecoFeatures: 'Solar panels, sliding doors made from Solarban 60 Glass, minimal living, fresh pressed juice delivery',
+          ecoFeatures: 'Solar panels, sliding doors made from Solarban 60 Glass, minimal living, fresh pressed juice delivery.',
           description: "The house is 100% off-grid, powered by solar panels for energy and hot water, and is located in a pristine remote valley in the beautiful California high desert. The house observes key green principals of smaller footprint, minimal disturbance to the natural beauty of the surrounding landscape, use of renewable resources, and living simply and minimally.",
           imageUrl: 'https://a0.muscache.com/im/pictures/45680811/f4987a12_original.jpg?im_w=1200',
           address: '5500 Roy Rodgers Rd',
@@ -21,7 +21,7 @@ module.exports = {
         {
           title: 'The Roost Treehouse',
           price: '92',
-          ecoFeatures: 'Toxin-free, foam-free, constructed with local & sustainable materials, LED lights',
+          ecoFeatures: 'Toxin-free, foam-free, constructed with local & sustainable materials, LED lights.',
           description: "The Roost is located 9 feet in the air and only has access via stairs. You can enjoy the cool breeze of the trees from the deck, where you also get a great view of the sunrise. Building The Roost has been a labor of love for me and my community of friends. The purpose was to build a beautiful structure that focused on natural, healthy, and local materials where possible. Many have contributed to it's success, and the result is a unique and beautiful, peaceful and healthy structure. Every time I enter The Roost, I love the fact that the only smell is that of wood!",
           imageUrl: 'https://a0.muscache.com/im/pictures/5f7953f6-1007-490c-8aef-e3af23e9b607.jpg?im_w=1200',
           address: '1607 Roseland St',
@@ -36,7 +36,7 @@ module.exports = {
         {
           title: 'The O2Haus',
           price: '115',
-          ecoFeatures: 'Certified as one of the most energy efficient homes in the world, solar panels, net-zero energy, reclaimed shipping crate hardwood floors, heat-recovery ventilation system',
+          ecoFeatures: 'Certified as one of the most energy efficient homes in the world, solar panels, net-zero energy, reclaimed shipping crate hardwood floors, heat-recovery ventilation system.',
           description: "Guests can rent a private room in The O2Haus, a 1,950-square-foot home overlooking the Tulatin Hills. The home sits on top of a 11,000-gallon potable water cistern and features composting toilets, stormwater catchment, and systems incorporated into the landscape for rainwater infiltration. The home potentially produces more energy than it consumes.",
           imageUrl: 'https://pdxlivingllc.files.wordpress.com/2013/10/o2haus-0011-dsc09493_4_5.jpg',
           address: '15657 NW Energia St',
@@ -51,7 +51,7 @@ module.exports = {
         {
           title: 'Dreamy Tropical Tree House',
           price: '300',
-          ecoFeatures: 'Solar power, rainwater catchment, natural lighting, cork shower, bamboo construction',
+          ecoFeatures: 'Solar power, rainwater catchment, natural lighting, cork shower, bamboo construction.',
           description: "Red cinder leads you through the dense jungle to your secluded bamboo treehouse. Nestled on top of stilts 15' up in the canopy of the local flora, ascend to your retreat via the trapdoor or begin your adventure in Volcano National Park 10 miles away. Upon arrival, let the red cinder path be your yellow brick road as you are lead through the jungle to your personal paradise. At ground level you will encounter a hanging bed, suspended beneath the floor of your new living quarters. Stop and relax or continue up the staircase to the trapdoor. It is through this trapdoor that you are allowed access to the lanai amongst the canopy of trees. A beautiful wrap around lanai allows for a 360 degree view of the lush jungle, while two sliding glass doors grant access to the bedroom.",
           imageUrl: 'https://a0.muscache.com/pictures/58855361/020a3302_original.jpg',
           address: '15 Lehuanani St',

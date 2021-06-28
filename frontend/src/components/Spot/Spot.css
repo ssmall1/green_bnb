@@ -39,8 +39,23 @@
     font-weight: bold;
 }
 
-#spot-description {
+#spot-features-title {
     padding-top: 20px;
+    font-weight: bold;
+    text-align: left;
+    grid-column: 1 / 4;
+    grid-row: 2 / 3 ;
+}
+
+#spot-features {
+    padding-top: 40px;
+    text-align: left;
+    grid-column: 1 / 4;
+    grid-row: 2 / 3 ;
+}
+
+#spot-description {
+    padding-top: 95px;
     text-align: left;
     grid-column: 1 / 4;
     grid-row: 2 / 3 ;

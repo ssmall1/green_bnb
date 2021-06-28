@@ -39,7 +39,7 @@
     font-weight: bold;
 }
 
-#spot-features-title {
+#spot-features-title{
     padding-top: 20px;
     font-weight: bold;
     text-align: left;
@@ -54,8 +54,16 @@
     grid-row: 2 / 3 ;
 }
 
+#spot-description-title {
+    padding-top: 90px;
+    font-weight: bold;
+    text-align: left;
+    grid-column: 1 / 4;
+    grid-row: 2 / 3 ;
+}
+
 #spot-description {
-    padding-top: 95px;
+    padding-top: 110px;
     text-align: left;
     grid-column: 1 / 4;
     grid-row: 2 / 3 ;
@@ -73,7 +81,7 @@
 }
 
 #review-form textarea {
-    height: 100px;
+    height: 125px;
     width: 300px;
 }
 
@@ -110,11 +118,15 @@
     border-style: none;
     background-color: #2e2e2e;
     color: white;
-    padding: 10px 8px;
+    padding: 8px 8px;
     margin: auto;
     text-align: center;
 }
 
 .review-button:hover, .book:hover, #delete-review:hover {
     background-color: rgba(46, 46, 46, 0.8);
+}
+
+#review-form select{
+    margin-left: 5px;
 }

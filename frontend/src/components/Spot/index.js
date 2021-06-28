@@ -110,6 +110,9 @@ function Spot() {
                 <div id="spot-features">
                     {spot.ecoFeatures}
                 </div>
+                <div id="spot-description-title">
+                    The Space:
+                </div>
                 <div id="spot-description">
                     {spot.description}
                 </div>

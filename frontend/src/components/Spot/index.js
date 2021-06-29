@@ -104,6 +104,15 @@ function Spot() {
                         ${spot.price} / night
                     </div>
                 </div>
+                <div id="spot-features-title">
+                    Features and Amenities Include:
+                </div>
+                <div id="spot-features">
+                    {spot.ecoFeatures}
+                </div>
+                <div id="spot-description-title">
+                    The Space:
+                </div>
                 <div id="spot-description">
                     {spot.description}
                 </div>

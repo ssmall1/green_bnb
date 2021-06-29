@@ -5,8 +5,6 @@ import './Spots.css';
 
 function Spots({ spot }) {
     const sessionUser = useSelector(state => state.session.user);
-    // console.log(spot.spot);
-    // spot = spot.spot
     
     if (!sessionUser) return (
         <Redirect to='/welcome' />
@@ -16,7 +14,7 @@ function Spots({ spot }) {
         <NavLink key={spot.id} to={`/spots/${spot.id}`} className="spot-link"> 
             <div className="spot-container">
                 <h2 value={spot.id}>{spot.title}</h2>
-                    <img src={spot.imageUrl} alt={spot.title}/>
+                    <img id="home-spot-img" src={spot.imageUrl} alt={spot.title}/>
                 <div className="location">{spot.city}, {spot.state}</div>
                 <div className="price">${spot.price} / night</div>
             </div>

@@ -94,6 +94,8 @@ function Spot() {
         };
 
         await dispatch(spotReducer.postBooking(payload))
+        setStartDate(new Date());
+        setEndDate(new Date());
         return setBooked(true);
     }
 

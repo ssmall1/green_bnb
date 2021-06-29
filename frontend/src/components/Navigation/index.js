@@ -9,30 +9,10 @@ import logo from "../../images/logo1.png";
 function Navigation({ isLoaded }){
   const sessionUser = useSelector(state => state.session.user);
   const spots = useSelector(state => state.spots);
-  // const [curiousState, setCuriousState] = useState();
-  // const [pathname, setPathName] = useState();
-  
-  
-  
-  // useEffect(() => {
-  //   setPathName(window.location.pathname);
-  //   console.log(pathname)
-    
-  //   setCuriousState(pathname);
-  // }, [setCuriousState, window.location.pathname]);
 
   if(!spots){
     return null;
   }
-
-
-  // let curious;
-
-  // if (curiousState === "/welcome") {
-  //   curious = (
-  //     <a href="#links" className="curious">Curious?</a>
-  //   );
-  // }
 
   let sessionLinks;
   if (sessionUser) {
@@ -61,7 +41,6 @@ function Navigation({ isLoaded }){
       
       <div className="session-links">
         {isLoaded && sessionLinks}
-        {/* {curious} */}
       </div>
     </div>
   );

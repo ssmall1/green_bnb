@@ -42,7 +42,6 @@ function HomePage() {
         listings(spots);
     }
 
-    console.log(map, "MAPSTATE")
     return (
         <div className='home-wrapper'>
             <div className="path-wrapper">

@@ -4,6 +4,7 @@ import { Redirect } from 'react-router-dom';
 import Spots from '../Spots/index';
 import * as spotReducer from '../../store/spot';
 import Search from '../Search';
+import GoogleApiWrapper from '../Map';
 import './HomePage.css';
 
 
@@ -48,6 +49,9 @@ function HomePage() {
                 <div className="search-comp">
                     <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
                 </div>
+            </div>
+            <div>
+                <GoogleApiWrapper />
             </div>
             <div className="spots-wrapper">
                 {things.map((spot) => {

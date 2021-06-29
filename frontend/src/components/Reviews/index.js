@@ -36,7 +36,7 @@ function Reviews({ review, setUpdateReviews }) {
         await dispatch(spotReducer.editReview(payload));
         setEditReview(false);
         setEditedReviewContent("");
-        // await dispatch(spotReducer.getReviews(spotId)); // USING THIS AS COPOUT WHEN I SHOULD UPDATE STATE
+        await dispatch(spotReducer.getReviews(spotId)); // USING THIS AS COPOUT WHEN I SHOULD UPDATE STATE
     }
 
     let score = review.rating;
@@ -44,6 +44,10 @@ function Reviews({ review, setUpdateReviews }) {
     for (let i = 0; i < score; i++) {
         scoreArr.push("s")
     }
+
+    // TODO
+    // Figure out why need to getReviews and editReview state not updating...
+    // change edit review form to include selector to change rating
     
     return (
         <div className='review-container'>
@@ -68,8 +72,8 @@ function Reviews({ review, setUpdateReviews }) {
                     >
                     </input>
                     <div className="edit-review-container">
-                        <button id="cancel-edit-review" onClick={() => setEditReview(false)}>Cancel</button>
-                        <button id="edit-review" disabled={editedReviewContent === ""} onClick={(e) => handleEditReview(e, review)}>Save</button>
+                        <button id="delete-review" onClick={() => setEditReview(false)}>Cancel</button>
+                        <button id="delete-review" disabled={editedReviewContent === ""} onClick={(e) => handleEditReview(e, review)}>Save</button>
                     </div>
                 </form>
                 : 
@@ -78,7 +82,7 @@ function Reviews({ review, setUpdateReviews }) {
             { review.authorId === userId & editReview === false ?
                 <>
                     <button id="delete-review" onClick={() => setEditReview(review.id)}>Edit</button>
-                    <button id='delete-review' type='submit' onClick={handleSubmit}>Delete Review</button>
+                    <button id='delete-review' type='submit' onClick={handleSubmit}>Delete</button>
                 </>
                 : <></> }
         </div>

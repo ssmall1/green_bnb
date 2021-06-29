@@ -80,7 +80,7 @@ router.put('/review/:id', asyncHandler(async (req, res) => {
         createdAt: new Date(),
         updatedAt: new Date(),
     },
-    { where: { id: id } }
+    { where: { id: id }, include: User }
   );
 
   const newReview = await Review.findOne({where: {id: id}, include: User});

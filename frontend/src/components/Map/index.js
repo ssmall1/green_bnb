@@ -6,7 +6,7 @@ import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 Geocode.setApiKey(process.env.REACT_APP_MAPS_KEY);
 
 const mapStyles = {
-    width: '90%',
+    width: '100%',
     height: '600px'
 };
 

@@ -37,28 +37,26 @@
     align-items: flex-start;
 }
 
-.search-comp span{
-    color: white;
+#map-button, #spot-button{
     font-weight: bold;
     color: #ece0cd;
     text-shadow: 2px 2px #000000;
     margin: 8px 8px;
 }
 
-.search-comp > span:hover{
+#map-button:hover{
     cursor: pointer;
 }
 
-#spot-button > a{
+#map-button > a, #spot-button > a{
     text-decoration: none;
     color: #ece0cd;
 }
 
-/* .map-wrapper{
+.map-wrapper{
     grid-column: 1 / 13;
     grid-row: 6 / 9;
-    margin: auto;
-} */
+}
 
 .spots-wrapper {
     display: flex;

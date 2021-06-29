@@ -50,15 +50,16 @@ function HomePage() {
                     Browse from coast to coast and beyond...
                 </div>
                 <div className="search-comp">
-                    <span id="map-button" 
-                    onClick={() => map ? setMap(false) : setMap(true)}
-                    >Show Map</span>
+                    <div id="map-button" 
+                    onClick={() => 
+                        map ? setMap(false) : setMap(true)}
+                    ><a href="#home-map">Show Map</a></div>
                     <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
-                    <span id="spot-button"><a href="#home-spots">Featured Spots</a></span>
+                    <div id="spot-button"><a href="#home-spots">Featured Spots</a></div>
                 </div>
             </div>
             { map ?
-            <div className="map-wrapper">
+            <div className="map-wrapper" id="home-map">
                 <GoogleApiWrapper />
             </div>
             : <></>

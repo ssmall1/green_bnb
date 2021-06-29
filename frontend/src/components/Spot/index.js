@@ -15,6 +15,8 @@ function Spot() {
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
     const [updateReviews, setUpdateReviews] = useState('there');
+    const [booked, setBooked] = useState(false);
+    const [bookingError, setBookingError] = useState('');
 
     const sessionUser = useSelector(state => state.session.user);
     const spot = useSelector(state => state.spots.currentSpot);
@@ -79,6 +81,10 @@ function Spot() {
     const handleBook = async (e) => {
         e.preventDefault();
 
+        if (startDate > endDate) {
+            return setBookingError("Start Date must be before End Date");
+        }
+
         const userId = sessionUser.id;
         const payload = {
             userId: userId,
@@ -88,7 +94,7 @@ function Spot() {
         };
 
         await dispatch(spotReducer.postBooking(payload))
-
+        return setBooked(true);
     }
 
     return(
@@ -165,12 +171,14 @@ function Spot() {
                             End Date   
                             <DatePicker
                                 className='date-picker'
-                                onChange={setEndDate}
+                                onChange={setEndDate} 
                                 value={endDate}
                             />
                         </div>
                         <button className="book" type='submit'>Book</button>
                     </form>
+                    { booked ? <div id="booked-msg">Get Ready For Your Adventure!!</div> : <></> }
+                    { bookingError ? <div id="booked-msg">{bookingError}</div> : <></> }
                 </div>
             </div>
         </div>

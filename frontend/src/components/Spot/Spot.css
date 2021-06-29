@@ -130,3 +130,8 @@
 #review-form select{
     margin-left: 5px;
 }
+
+#booked-msg{
+    font-weight: bold;
+    margin-top: 10px;
+}

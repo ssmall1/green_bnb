@@ -1,8 +1,17 @@
+.spot-link{
+    text-decoration: none;
+}
+
 .spot-container img { 
     height: 393px;
     width: 478px;
     border-radius: 8px;
-    box-shadow: 3px 3px 3px  rgb(46, 46, 46);
+}
+
+.spot-container img:hover{
+    transform: scaleY(1.04);
+    transform-origin: center;
+    box-shadow: 0px 0px 40px 20px rgba(0, 0, 0, 0.2);
 }
 
 .spot-container {
@@ -18,7 +27,7 @@
 
 .location {
     font-size: 18px;
-    margin-top: 4px;
+    margin-top: 12px;
     font-weight: bold;
 }
 

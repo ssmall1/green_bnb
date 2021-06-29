@@ -13,14 +13,14 @@ function Spots({ spot }) {
     );
 
     return (
-        <div className="spot-container">
-            <h2 value={spot.id}>{spot.title}</h2>
-            <NavLink key={spot.id} to={`/spots/${spot.id}`}> 
-                <img src={spot.imageUrl} alt={spot.title}/>
-            </NavLink>
-            <div className="location">{spot.city}, {spot.state}</div>
-            <div className="price">${spot.price} / night</div>
-        </div>
+        <NavLink key={spot.id} to={`/spots/${spot.id}`} className="spot-link"> 
+            <div className="spot-container">
+                <h2 value={spot.id}>{spot.title}</h2>
+                    <img src={spot.imageUrl} alt={spot.title}/>
+                <div className="location">{spot.city}, {spot.state}</div>
+                <div className="price">${spot.price} / night</div>
+            </div>
+        </NavLink>
     )
 }
 

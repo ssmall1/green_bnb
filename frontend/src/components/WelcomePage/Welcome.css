@@ -117,6 +117,7 @@
 .feature-1:hover, .feature-2:hover, .feature-3:hover{
     transform: scaleY(1.04);
     transform-origin: center;
+    box-shadow: 0px 0px 40px 20px rgba(0, 0, 0, 0.1);
   }
 
 .offset-div, .schu-div, .park-div {

@@ -1,18 +1,18 @@
-home-wrapper { 
+.home-wrapper { 
     display: grid;
     height: 2000px;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(12, 1fr);
 }
 
-.path-div {
+.path-wrapper {
     display: grid;
     grid-column: 1 / 13;
     grid-row: 1 / 6;
     background-image: url(../../images/woods.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 725px;
+    /* height: 725px; */
     
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(6, 1fr);
@@ -29,11 +29,36 @@ home-wrapper {
 }
 
 .search-comp {
-    grid-column: 5 / 10;
+    grid-column: 4 / 10;
     grid-row: 4 / 6;
     padding-top: 25px;
-    padding-left: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
 }
+
+.search-comp span{
+    color: white;
+    font-weight: bold;
+    color: #ece0cd;
+    text-shadow: 2px 2px #000000;
+    margin: 8px 8px;
+}
+
+.search-comp > span:hover{
+    cursor: pointer;
+}
+
+#spot-button > a{
+    text-decoration: none;
+    color: #ece0cd;
+}
+
+/* .map-wrapper{
+    grid-column: 1 / 13;
+    grid-row: 6 / 9;
+    margin: auto;
+} */
 
 .spots-wrapper {
     display: flex;

@@ -14,10 +14,11 @@ function HomePage() {
     const spots = useSelector(state => state.spots);
     
     const [searchTerm, setSearchTerm] = useState('');
+    const [map, setMap] = useState(false);
 
     useEffect(() => {
         dispatch(spotReducer.getSpots());
-    }, [dispatch]);
+    }, [dispatch, map]);
 
     if (!sessionUser) return (
         <Redirect to='/welcome' />
@@ -40,20 +41,29 @@ function HomePage() {
         }
         listings(spots);
     }
+
+    console.log(map, "MAPSTATE")
     return (
         <div className='home-wrapper'>
-            <div className="path-div">
+            <div className="path-wrapper">
                 <div className="home-message">
                     Browse from coast to coast and beyond...
                 </div>
                 <div className="search-comp">
+                    <span id="map-button" 
+                    onClick={() => map ? setMap(false) : setMap(true)}
+                    >Show Map</span>
                     <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
+                    <span id="spot-button"><a href="#home-spots">Featured Spots</a></span>
                 </div>
             </div>
-            <div>
+            { map ?
+            <div className="map-wrapper">
                 <GoogleApiWrapper />
             </div>
-            <div className="spots-wrapper">
+            : <></>
+            }
+            <div className="spots-wrapper" id="home-spots">
                 {things.map((spot) => {
                         return (
                             <div key={spot.id}>

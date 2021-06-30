@@ -8,7 +8,7 @@ function Reviews({ review }) {
     const dispatch = useDispatch();
 
     const [editedReviewContent, setEditedReviewContent] = useState("");
-    const [editReview, setEditReview] = useState(false);
+    const [openEditReview, setOpenEditReview] = useState(false);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -33,7 +33,7 @@ function Reviews({ review }) {
             body,
         }
         await dispatch(spotReducer.editReview(payload));
-        setEditReview(false);
+        setOpenEditReview(false);
         setEditedReviewContent("");
         // await dispatch(spotReducer.getReviews(spotId)); // USING THIS AS COPOUT WHEN I SHOULD UPDATE STATE
     }
@@ -58,7 +58,7 @@ function Reviews({ review }) {
                     </span>
         )
     })}</div>
-            {editReview === review.id ? 
+            {openEditReview === review.id ? 
                 <form id="edit-review-form">
                     <input
                         id="review-input"
@@ -71,16 +71,16 @@ function Reviews({ review }) {
                     >
                     </input>
                     <div className="edit-review-container">
-                        <button id="delete-review" onClick={() => setEditReview(false)}>Cancel</button>
+                        <button id="delete-review" onClick={() => setOpenEditReview(false)}>Cancel</button>
                         <button id="delete-review" disabled={editedReviewContent === ""} onClick={(e) => handleEditReview(e, review)}>Save</button>
                     </div>
                 </form>
                 : 
                 <div>{review.body}</div>
             }
-            { review.authorId === userId & editReview === false ?
+            { review.authorId === userId & openEditReview === false ?
                 <>
-                    <button id="delete-review" onClick={() => setEditReview(review.id)}>Edit</button>
+                    <button id="delete-review" onClick={() => setOpenEditReview(review.id)}>Edit</button>
                     <button id='delete-review' type='submit' onClick={handleSubmit}>Delete</button>
                 </>
                 : <></> }

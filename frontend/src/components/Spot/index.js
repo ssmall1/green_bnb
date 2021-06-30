@@ -84,6 +84,10 @@ function Spot() {
             return setBookingError("Start Date must be before End Date");
         }
 
+        else if (startDate.toDateString() === endDate.toDateString()) {
+            return setBookingError("Start Date and End Date must be different");
+        }
+
         const userId = sessionUser.id;
         const payload = {
             userId: userId,
@@ -93,6 +97,7 @@ function Spot() {
         };
 
         await dispatch(spotReducer.postBooking(payload))
+        setBookingError("");
         setStartDate(new Date());
         setEndDate(new Date());
         return setBooked(true);
@@ -123,6 +128,7 @@ function Spot() {
                 <div id="spot-description">
                     {spot.description}
                 </div>
+
                 <div className="review-form-wrapper">
                     <form id="review-form" onSubmit={handleSubmit}>
                         <label>

@@ -3,7 +3,8 @@ import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import Geocode from 'react-geocode';
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
-Geocode.setApiKey(process.env.REACT_APP_MAPS_KEY);
+const key = process.env.REACT_APP_MAPS_KEY;
+Geocode.setApiKey(key);
 
 const mapStyles = {
     width: '100%',
@@ -69,5 +70,5 @@ function MapContainer(props) {
 }
 
 export default GoogleApiWrapper({
-    apiKey: process.env.REACT_APP_MAPS_KEY
+    apiKey: key
 })(MapContainer);

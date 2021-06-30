@@ -45,7 +45,6 @@
 }
 
 #spot-features-title{
-    padding-top: 20px;
     font-weight: bold;
     text-align: left;
     grid-column: 1 / 4;
@@ -53,7 +52,7 @@
 }
 
 #spot-features {
-    padding-top: 40px;
+    padding-top: 20px;
     text-align: left;
     grid-column: 1 / 4;
     grid-row: 2 / 3 ;

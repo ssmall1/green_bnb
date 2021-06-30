@@ -188,13 +188,9 @@ const spotsReducer = (state = {}, action) => {
             reviewState = { ...state };
             for (let i = 0; i < reviewState.reviews.length; i++) {
                 if (reviewState.reviews[i].id === action.review.id) {
-                    console.log(reviewState.reviews[i], "THING TO REPLACE")
-                    console.log(action.review, "ACTION.REVIEW")
                     reviewState.reviews[i] = action.review;
-                    console.log(reviewState.reviews[i], "UPDATED THING")
                 }
             }
-            console.log(reviewState, "REVIEW STATE");
             return reviewState;
         default: 
             return state;

@@ -4,6 +4,7 @@ import { Redirect } from 'react-router-dom';
 import Spots from '../Spots/index';
 import * as spotReducer from '../../store/spot';
 import Search from '../Search';
+import GoogleApiWrapper from '../Map';
 import './HomePage.css';
 
 
@@ -13,10 +14,11 @@ function HomePage() {
     const spots = useSelector(state => state.spots);
     
     const [searchTerm, setSearchTerm] = useState('');
+    const [map, setMap] = useState(false);
 
     useEffect(() => {
         dispatch(spotReducer.getSpots());
-    }, [dispatch]);
+    }, [dispatch, map]);
 
     if (!sessionUser) return (
         <Redirect to='/welcome' />
@@ -26,31 +28,43 @@ function HomePage() {
         return null;
     };
     
-    let things = [];
+    let renderedSpots = [];
     if (spots) {
 
         function listings(places) {
             let i = 0;
             for (let key in places) {
                 if (i === 6) return;
-                things.push(places[key]);
+                renderedSpots.push(places[key]);
                 i++;
             }
         }
         listings(spots);
     }
+
     return (
         <div className='home-wrapper'>
-            <div className="path-div">
+            <div className="path-wrapper">
                 <div className="home-message">
-                    Browse from coast to coast and beyond...
+                    Adventures from coast to coast and beyond...
                 </div>
                 <div className="search-comp">
+                    <div id="map-button" 
+                    onClick={() => 
+                        map ? setMap(false) : setMap(true)}
+                    ><a href="#home-map">Show Map</a></div>
                     <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
+                    <div id="spot-button"><a href="#home-spots">Browse Spots</a></div>
                 </div>
             </div>
-            <div className="spots-wrapper">
-                {things.map((spot) => {
+            { map ?
+            <div className="map-wrapper" id="home-map">
+                <GoogleApiWrapper />
+            </div>
+            : <></>
+            }
+            <div className="spots-wrapper" id="home-spots">
+                {renderedSpots.map((spot) => {
                         return (
                             <div key={spot.id}>
                                 <Spots spot={spot}/>

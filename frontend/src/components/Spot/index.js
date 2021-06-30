@@ -14,7 +14,8 @@ function Spot() {
     const [rating, setRating] = useState(1);
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
-    const [updateReviews, setUpdateReviews] = useState('there');
+    const [booked, setBooked] = useState(false);
+    const [bookingError, setBookingError] = useState('');
 
     const sessionUser = useSelector(state => state.session.user);
     const spot = useSelector(state => state.spots.currentSpot);
@@ -34,7 +35,7 @@ function Spot() {
     useEffect(() => { 
         dispatch(spotReducer.getReviews(id));
         dispatch(spotReducer.getOneSpot(id));
-    }, [id, dispatch, updateReviews]);
+    }, [id, dispatch]);
 
     if (!sessionUser) return (
         <Redirect to='/welcome' />
@@ -48,14 +49,14 @@ function Spot() {
         return null
     }
 
-    let things = [];
+    let renderedReviews = [];
     if (reviews) {
 
         function listings(reviews) {
             for (let i = 0; i < 4; i++) {
                 let review = reviews[i]
                 if (review) {
-                things.push(review); 
+                renderedReviews.push(review); 
                 }
             }
         }
@@ -79,6 +80,14 @@ function Spot() {
     const handleBook = async (e) => {
         e.preventDefault();
 
+        if (startDate > endDate) {
+            return setBookingError("Start Date must be before End Date");
+        }
+
+        else if (startDate.toDateString() === endDate.toDateString()) {
+            return setBookingError("Start Date and End Date must be different");
+        }
+
         const userId = sessionUser.id;
         const payload = {
             userId: userId,
@@ -88,7 +97,10 @@ function Spot() {
         };
 
         await dispatch(spotReducer.postBooking(payload))
-
+        setBookingError("");
+        setStartDate(new Date());
+        setEndDate(new Date());
+        return setBooked(true);
     }
 
     return(
@@ -116,6 +128,7 @@ function Spot() {
                 <div id="spot-description">
                     {spot.description}
                 </div>
+
                 <div className="review-form-wrapper">
                     <form id="review-form" onSubmit={handleSubmit}>
                         <label>
@@ -143,9 +156,9 @@ function Spot() {
                 </div>
                 <div className="reviews">
                     <div id="review-title"> Recent Reviews </div>
-                    {things.map(review => {
+                    {renderedReviews.map(review => {
                         return (
-                            <Reviews setUpdateReviews={setUpdateReviews} review={review} key={spot.id + review.id}/>
+                            <Reviews review={review} key={spot.id + review.id}/>
                         )
                     })}
                 </div>
@@ -165,12 +178,14 @@ function Spot() {
                             End Date   
                             <DatePicker
                                 className='date-picker'
-                                onChange={setEndDate}
+                                onChange={setEndDate} 
                                 value={endDate}
                             />
                         </div>
                         <button className="book" type='submit'>Book</button>
                     </form>
+                    { booked ? <div id="booked-msg">Get Ready For Your Adventure!!</div> : <></> }
+                    { bookingError ? <div id="booked-msg">{bookingError}</div> : <></> }
                 </div>
             </div>
         </div>

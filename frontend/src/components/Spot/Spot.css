@@ -14,6 +14,11 @@
     grid-row: 1 / 2;
 }
 
+#spot-image > img{
+    height: 312px;
+    width: 369px;
+}
+
 #spot-information {
     grid-column: 2 / 5;
     grid-row: 1 / 2;
@@ -40,7 +45,6 @@
 }
 
 #spot-features-title{
-    padding-top: 20px;
     font-weight: bold;
     text-align: left;
     grid-column: 1 / 4;
@@ -48,14 +52,14 @@
 }
 
 #spot-features {
-    padding-top: 40px;
+    padding-top: 20px;
     text-align: left;
     grid-column: 1 / 4;
     grid-row: 2 / 3 ;
 }
 
 #spot-description-title {
-    padding-top: 90px;
+    padding-top: 105px;
     font-weight: bold;
     text-align: left;
     grid-column: 1 / 4;
@@ -63,7 +67,7 @@
 }
 
 #spot-description {
-    padding-top: 110px;
+    padding-top: 125px;
     text-align: left;
     grid-column: 1 / 4;
     grid-row: 2 / 3 ;
@@ -129,4 +133,9 @@
 
 #review-form select{
     margin-left: 5px;
+}
+
+#booked-msg{
+    font-weight: bold;
+    margin-top: 10px;
 }

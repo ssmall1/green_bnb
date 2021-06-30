@@ -3,17 +3,16 @@ import { useSelector, useDispatch } from 'react-redux';
 import * as spotReducer from '../../store/spot';
 import './Review.css';
 
-function Reviews({ review, setUpdateReviews }) {
+function Reviews({ review }) {
     const userId = useSelector(state => state.session.user.id);
     const dispatch = useDispatch();
 
     const [editedReviewContent, setEditedReviewContent] = useState("");
-    const [editReview, setEditReview] = useState(false);
+    const [openEditReview, setOpenEditReview] = useState(false);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         dispatch(spotReducer.deleteReview(review.id));
-        setUpdateReviews(Math.random());
     }
 
     async function handleEditReview(e, review){
@@ -34,9 +33,9 @@ function Reviews({ review, setUpdateReviews }) {
             body,
         }
         await dispatch(spotReducer.editReview(payload));
-        setEditReview(false);
+        setOpenEditReview(false);
         setEditedReviewContent("");
-        await dispatch(spotReducer.getReviews(spotId)); // USING THIS AS COPOUT WHEN I SHOULD UPDATE STATE
+        // await dispatch(spotReducer.getReviews(spotId)); // USING THIS AS COPOUT WHEN I SHOULD UPDATE STATE
     }
 
     let score = review.rating;
@@ -59,7 +58,7 @@ function Reviews({ review, setUpdateReviews }) {
                     </span>
         )
     })}</div>
-            {editReview === review.id ? 
+            {openEditReview === review.id ? 
                 <form id="edit-review-form">
                     <input
                         id="review-input"
@@ -72,16 +71,16 @@ function Reviews({ review, setUpdateReviews }) {
                     >
                     </input>
                     <div className="edit-review-container">
-                        <button id="delete-review" onClick={() => setEditReview(false)}>Cancel</button>
+                        <button id="delete-review" onClick={() => setOpenEditReview(false)}>Cancel</button>
                         <button id="delete-review" disabled={editedReviewContent === ""} onClick={(e) => handleEditReview(e, review)}>Save</button>
                     </div>
                 </form>
                 : 
                 <div>{review.body}</div>
             }
-            { review.authorId === userId & editReview === false ?
+            { review.authorId === userId & openEditReview === false ?
                 <>
-                    <button id="delete-review" onClick={() => setEditReview(review.id)}>Edit</button>
+                    <button id="delete-review" onClick={() => setOpenEditReview(review.id)}>Edit</button>
                     <button id='delete-review' type='submit' onClick={handleSubmit}>Delete</button>
                 </>
                 : <></> }

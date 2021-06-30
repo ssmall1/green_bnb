@@ -9,6 +9,7 @@ import Reviews from '../Reviews/';
 import './Spot.css';
 
 function Spot() { 
+    const dispatch = useDispatch();
     const { id } = useParams();
     const [body, setBody] = useState('');
     const [rating, setRating] = useState(1);
@@ -16,6 +17,7 @@ function Spot() {
     const [endDate, setEndDate] = useState(new Date());
     const [booked, setBooked] = useState(false);
     const [bookingError, setBookingError] = useState('');
+    const [renderedReviews, setRenderedReviews] = useState([]);
 
     const sessionUser = useSelector(state => state.session.user);
     const spot = useSelector(state => state.spots.currentSpot);
@@ -24,8 +26,6 @@ function Spot() {
     const updateBody = (e) => setBody(e.target.value);
     const updateRating = (e) => setRating(e.target.value);
 
-
-    const dispatch = useDispatch();
     
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -37,6 +37,21 @@ function Spot() {
         dispatch(spotReducer.getOneSpot(id));
     }, [id, dispatch]);
 
+    useEffect(() => {
+        console.log(reviews)
+        if (reviews) {
+            function listings(reviews) {
+                for (let i = 0; i < 4; i++) {
+                    let review = reviews[i]
+                    if (review) {
+                    setRenderedReviews(prevReviews => [...prevReviews, review]); 
+                    }
+                }
+            }
+            listings(reviews);
+        }
+    }, [reviews])
+
     if (!sessionUser) return (
         <Redirect to='/welcome' />
     );
@@ -47,20 +62,6 @@ function Spot() {
 
     if (!reviews) {
         return null
-    }
-
-    let renderedReviews = [];
-    if (reviews) {
-
-        function listings(reviews) {
-            for (let i = 0; i < 4; i++) {
-                let review = reviews[i]
-                if (review) {
-                renderedReviews.push(review); 
-                }
-            }
-        }
-        listings(reviews);
     }
 
     const handleSubmit = async (e) => {

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import Geocode from 'react-geocode';
-import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
+import { GoogleApiWrapper, Map, Marker, InfoWindow } from 'google-maps-react';
 const key = process.env.REACT_APP_MAPS_KEY;
 Geocode.setApiKey(key);
 
@@ -19,7 +19,7 @@ function MapContainer(props) {
     const spots = useSelector(state => state.spots);
     //it's rerendering 10 times one for each spot basically bc it's in the useeffect?
 
-    const markerClick = (id) => {
+    const redirectSpot = (id) => {
         history.push(`/spots/${id}`)
     }
 
@@ -36,7 +36,7 @@ function MapContainer(props) {
                         lat,
                         lng
                     }}
-                    onClick={() => markerClick(spot.id)}
+                    onClick={() => redirectSpot(spot.id)}
                 />
             );
             setMarkers(prevMarkers => [...prevMarkers, marker]);

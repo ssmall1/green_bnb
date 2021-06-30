@@ -23,7 +23,7 @@ function MapContainer(props) {
     }
 
     useEffect(() => {
-        things.map(async (spot) => {
+        renderedSpots.map(async (spot) => {
             const response = await Geocode.fromAddress(`${spot.street_address}, ${spot.city}, ${spot.state}`);
             const { lat, lng } = response.results[0].geometry.location;
 
@@ -45,12 +45,12 @@ function MapContainer(props) {
 
     if (!spots) return null;
 
-    let things = [];
+    let renderedSpots = [];
     if (spots) {
 
         function listings(places) {
             for (let key in places) {
-                things.push(places[key]);
+                renderedSpots.push(places[key]);
             }
         }
         listings(spots);

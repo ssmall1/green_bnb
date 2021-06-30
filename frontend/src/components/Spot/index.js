@@ -49,14 +49,14 @@ function Spot() {
         return null
     }
 
-    let things = [];
+    let renderedReviews = [];
     if (reviews) {
 
         function listings(reviews) {
             for (let i = 0; i < 4; i++) {
                 let review = reviews[i]
                 if (review) {
-                things.push(review); 
+                renderedReviews.push(review); 
                 }
             }
         }
@@ -150,7 +150,7 @@ function Spot() {
                 </div>
                 <div className="reviews">
                     <div id="review-title"> Recent Reviews </div>
-                    {things.map(review => {
+                    {renderedReviews.map(review => {
                         return (
                             <Reviews review={review} key={spot.id + review.id}/>
                         )

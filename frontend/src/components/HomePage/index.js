@@ -46,7 +46,7 @@ function HomePage() {
         <div className='home-wrapper'>
             <div className="path-wrapper">
                 <div className="home-message">
-                    Browse from coast to coast and beyond...
+                    Adventures from coast to coast and beyond...
                 </div>
                 <div className="search-comp">
                     <div id="map-button" 
@@ -54,7 +54,7 @@ function HomePage() {
                         map ? setMap(false) : setMap(true)}
                     ><a href="#home-map">Show Map</a></div>
                     <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
-                    <div id="spot-button"><a href="#home-spots">Featured Spots</a></div>
+                    <div id="spot-button"><a href="#home-spots">Browse Spots</a></div>
                 </div>
             </div>
             { map ?

@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import * as spotReducer from '../../store/spot';
 import './Review.css';
 
-function Reviews({ review, setUpdateReviews }) {
+function Reviews({ review }) {
     const userId = useSelector(state => state.session.user.id);
     const dispatch = useDispatch();
 
@@ -13,7 +13,6 @@ function Reviews({ review, setUpdateReviews }) {
     const handleSubmit = async (e) => {
         e.preventDefault();
         dispatch(spotReducer.deleteReview(review.id));
-        setUpdateReviews(Math.random());
     }
 
     async function handleEditReview(e, review){
@@ -36,7 +35,7 @@ function Reviews({ review, setUpdateReviews }) {
         await dispatch(spotReducer.editReview(payload));
         setEditReview(false);
         setEditedReviewContent("");
-        await dispatch(spotReducer.getReviews(spotId)); // USING THIS AS COPOUT WHEN I SHOULD UPDATE STATE
+        // await dispatch(spotReducer.getReviews(spotId)); // USING THIS AS COPOUT WHEN I SHOULD UPDATE STATE
     }
 
     let score = review.rating;

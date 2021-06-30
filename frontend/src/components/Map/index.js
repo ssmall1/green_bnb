@@ -30,7 +30,7 @@ function MapContainer(props) {
             const marker = (
                 <Marker
                     key={spot.id}
-                    name={spot.id}
+                    name={spot.title}
                     position={{
                         lat,
                         lng

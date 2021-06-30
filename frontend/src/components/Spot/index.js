@@ -14,7 +14,6 @@ function Spot() {
     const [rating, setRating] = useState(1);
     const [startDate, setStartDate] = useState(new Date());
     const [endDate, setEndDate] = useState(new Date());
-    const [updateReviews, setUpdateReviews] = useState('there');
     const [booked, setBooked] = useState(false);
     const [bookingError, setBookingError] = useState('');
 
@@ -36,7 +35,7 @@ function Spot() {
     useEffect(() => { 
         dispatch(spotReducer.getReviews(id));
         dispatch(spotReducer.getOneSpot(id));
-    }, [id, dispatch, updateReviews]);
+    }, [id, dispatch]);
 
     if (!sessionUser) return (
         <Redirect to='/welcome' />
@@ -153,7 +152,7 @@ function Spot() {
                     <div id="review-title"> Recent Reviews </div>
                     {things.map(review => {
                         return (
-                            <Reviews setUpdateReviews={setUpdateReviews} review={review} key={spot.id + review.id}/>
+                            <Reviews review={review} key={spot.id + review.id}/>
                         )
                     })}
                 </div>

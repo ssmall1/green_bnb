@@ -70,6 +70,6 @@ function Search({ searchTerm, setSearchTerm }) {
   - [ ] To view, edit, and delete hosted spots
 - [ ] Add edit and delete functionality to bookings
 - [ ] Add more serendipity to rendering of spots
-- [ ] Add edit functionality to reviews
-- [ ] Add eco-features to spot descriptions
-- [ ] Google maps integration
+- [X] Add edit functionality to reviews
+- [X] Add eco-features to spot descriptions
+- [X] Google maps integration

@@ -92,11 +92,11 @@ export const createSpot = (spot) => async (dispatch) => {
     formData.append("ownerId", ownerId);
   
     // for multiple files
-    if (images && images.length !== 0) {
-      for (var i = 0; i < images.length; i++) {
-        formData.append("images", images[i]);
-      }
-    }
+    // if (images && images.length !== 0) {
+    //   for (var i = 0; i < images.length; i++) {
+    //     formData.append("images", images[i]);
+    //   }
+    // }
   
     // for single file
     if (image) formData.append("image", image);
@@ -195,6 +195,12 @@ const spotsReducer = (state = {}, action) => {
         case LOAD_ONE: {
             const spotState = { ...state };
             spotState.currentSpot = action.spot;
+            return spotState;
+        }
+        case SET_SPOT: {
+            let spotState = {};
+            spotState = { ...state };
+            spotState.spots = [action.spot, ...state.spots];
             return spotState;
         }
         case GET_REVIEWS: {

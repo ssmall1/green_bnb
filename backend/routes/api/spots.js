@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const asyncHandler = require('express-async-handler');
 const { User, Spot, Booking, Review } = require('../../db/models');
+const { singlePublicFileUpload, singleMulterUpload } = require('../../awsS3');
 
 router.get('/', asyncHandler( async (req, res) => {
     const spots = await Spot.findAll();
@@ -22,6 +23,32 @@ router.get('/:id/reviews', asyncHandler(async (req, res) => {
   const reviews = await Review.findAll({where: {spotId: id}, include: User });
 
   return res.json(reviews);
+}));
+
+router.post("/", singleMulterUpload("image"), asyncHandler(async (req, res) => {
+    const { title, price, ecoFeatures, description, image, address, city, state, zip, country, ownerId } = req.body;
+    const imageUrl = await singlePublicFileUpload(image);
+    const createdAt = new Date();
+    const updatedAt = new Date();
+    const spot = await Spot.build({
+      title,
+      price,
+      ecoFeatures,
+      description,
+      imageUrl,
+      address,
+      city,
+      state,
+      zip,
+      country,
+      ownerId,
+      createdAt,
+      updatedAt,
+    });
+
+    await spot.save();
+
+    return res.json(spot);
 }));
 
 router.post('/:id/post/review', asyncHandler(async (req, res) => {

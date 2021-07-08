@@ -2,6 +2,7 @@ import { csrfFetch } from './csrf';
 
 const LOAD = 'spots/LOAD';
 const LOAD_ONE = 'spots/LOAD_ONE';
+const SET_SPOT = 'spots/SET_SPOT';
 const GET_REVIEWS = 'spot/GET_REVIEWS';
 const POST_REVIEW = 'spot/POST_REVIEW';
 const POST_BOOKING = 'spot/POST_BOOKING';
@@ -18,7 +19,12 @@ const load = spots => ({
 const loadOneSpot = spot => ({
     type: LOAD_ONE,
     spot,
-  });
+});
+
+const postSpot = spot => ({
+    type: SET_SPOT,
+    spot,
+});
 
 const loadReviews = reviews => ({
     type: GET_REVIEWS,
@@ -69,6 +75,42 @@ export const getOneSpot = (spotId) => async dispatch => {
         dispatch(loadOneSpot(spot));
         }
     }
+};
+
+export const createSpot = (spot) => async (dispatch) => {
+    const { title, price, ecoFeatures, description, image, address, city, state, zip, country, ownerId } = spot;
+    const formData = new FormData();
+    formData.append("title", title);
+    formData.append("price", price);
+    formData.append("ecoFeatures", ecoFeatures);
+    formData.append("description", description);
+    formData.append("address", address);
+    formData.append("city", city);
+    formData.append("state", state);
+    formData.append("zip", zip);
+    formData.append("country", country);
+    formData.append("ownerId", ownerId);
+  
+    // for multiple files
+    if (images && images.length !== 0) {
+      for (var i = 0; i < images.length; i++) {
+        formData.append("images", images[i]);
+      }
+    }
+  
+    // for single file
+    if (image) formData.append("image", image);
+  
+    const res = await csrfFetch(`/api/spots/`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+      body: formData,
+    });
+  
+    const data = await res.json();
+    dispatch(postSpot(data.spot));
 };
 
 export const getReviews = (id) => async dispatch => {

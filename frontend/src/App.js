@@ -10,6 +10,7 @@ import WelcomePage from './components/WelcomePage';
 import Footer from './components/Footer';
 import Spot from './components/Spot';
 import PageNotFound from './components/PageNotFound';
+import CreateSpot from './components/CreateSpot';
 
 function App() {
   const dispatch = useDispatch();
@@ -37,6 +38,9 @@ function App() {
           </Route>
           <Route path="/spots/:id">
             <Spot />
+          </Route>
+          <Route path="/host">
+            <CreateSpot />
           </Route>
           <Route>
             <PageNotFound />

@@ -26,8 +26,8 @@ router.get('/:id/reviews', asyncHandler(async (req, res) => {
 }));
 
 router.post("/", singleMulterUpload("image"), asyncHandler(async (req, res) => {
-    const { title, price, ecoFeatures, description, image, address, city, state, zip, country, ownerId } = req.body;
-    const imageUrl = await singlePublicFileUpload(image);
+    const { title, price, ecoFeatures, description, address, city, state, zip, country, ownerId } = req.body;
+    const imageUrl = await singlePublicFileUpload(req.file);
     const createdAt = new Date();
     const updatedAt = new Date();
     const spot = await Spot.build({

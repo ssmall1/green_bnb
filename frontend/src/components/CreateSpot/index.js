@@ -4,6 +4,9 @@ import { useDispatch, useSelector } from "react-redux";
 import './CreateSpot.css';
 
 const CreateSpot = () => {
+    const dispatch = useDispatch();
+    const user = useSelector((state) => state.session.user);
+
   const [title, setTitle] = useState("");
   const [price, setPrice] = useState("");
   const [ecoFeatures, setEcoFeatures] = useState("");
@@ -13,23 +16,21 @@ const CreateSpot = () => {
   const [state, setState] = useState("");
   const [zip, setZip] = useState("");
   const [country, setCountry] = useState("");
-  const [ownerId, setOwnerId] = useState(null);
+  const [ownerId, setOwnerId] = useState(user.id);
   const [image, setImage] = useState(null);
   // for multuple file upload
   //   const [images, setImages] = useState([]);
 //   const [errors, setErrors] = useState([]);
 
-  const dispatch = useDispatch();
-  const user = useSelector((state) => state.session.user);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    setOwnerId(user.id);
     const spot = {
         title, price, ecoFeatures, image, description, address, city, state, zip, country, ownerId
     }
     dispatch(createSpot(spot))
+    console.log("CREATED SPOT", spot)
 
     setTitle("");
     setPrice("");
@@ -40,7 +41,6 @@ const CreateSpot = () => {
     setState("");
     setZip("");
     setCountry("");
-    setOwnerId(null);
     setImage("");
   };
 

@@ -90,7 +90,7 @@ export const createSpot = (spot) => async (dispatch) => {
     formData.append("zip", zip);
     formData.append("country", country);
     formData.append("ownerId", ownerId);
-  
+    
     // for multiple files
     // if (images && images.length !== 0) {
     //   for (var i = 0; i < images.length; i++) {
@@ -100,6 +100,8 @@ export const createSpot = (spot) => async (dispatch) => {
   
     // for single file
     if (image) formData.append("image", image);
+
+    console.log("FORM DATA", formData.get("title"))
   
     const res = await csrfFetch(`/api/spots/`, {
       method: "POST",
@@ -110,6 +112,7 @@ export const createSpot = (spot) => async (dispatch) => {
     });
   
     const data = await res.json();
+    console.log("RES DATA", data)
     dispatch(postSpot(data.spot));
 };
 

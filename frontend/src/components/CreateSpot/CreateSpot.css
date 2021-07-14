@@ -1,5 +1,16 @@
 .host-spot-wrapper{
-    height: 42em;
+    height: 43em;
+}
+
+#create-spot-form{
+    padding-top: 8em;
+}
+
+#host-title{
+    margin-left: 3.5em;
+    font-size: 30px;
+    font-weight: bold;
+    color: #2e2e2e;
 }
 
 #create-spot-form > input, label{
@@ -16,6 +27,7 @@
     background-color: #2e2e2e;
     color: white;
     padding: 8px 8px;
+    margin-top: 20px;
     margin-left: 140px;
     width: 110px;
     text-align: center;

@@ -200,7 +200,9 @@ const spotsReducer = (state = {}, action) => {
         case SET_SPOT: {
             let spotState = {};
             spotState = { ...state };
-            spotState.spots = [action.spot, ...state.spots];
+            console.log("STATE",)
+            console.log ("state.spots", state.spots)
+            spotState[action.spot.id] = action.spot;
             return spotState;
         }
         case GET_REVIEWS: {

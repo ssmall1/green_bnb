@@ -19,6 +19,7 @@ function Navigation({ isLoaded }){
     sessionLinks = (
       <>
         <NavLink to="/" className="listings">Listings</NavLink>
+        <NavLink to="/host" className="host">Host</NavLink>
         <ProfileButton user={sessionUser} />
       </>
     );

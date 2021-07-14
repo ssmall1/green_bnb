@@ -1,4 +1,26 @@
-/* .host-spot-wrapper{
-    margin-top: 300px;
+.host-spot-wrapper{
     height: 42em;
-} */
+}
+
+#create-spot-form > input, label{
+    margin-left: 100px;
+}
+
+#file-input{
+   border-radius: 0px;
+}
+
+#create-spot{
+    border-radius: 10px;
+    border-style: none;
+    background-color: #2e2e2e;
+    color: white;
+    padding: 8px 8px;
+    margin-left: 140px;
+    width: 110px;
+    text-align: center;
+}
+
+#create-spot:hover {
+    background-color: rgba(46, 46, 46, 0.8);
+}

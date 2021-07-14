@@ -200,8 +200,6 @@ const spotsReducer = (state = {}, action) => {
         case SET_SPOT: {
             let spotState = {};
             spotState = { ...state };
-            console.log("STATE",)
-            console.log ("state.spots", state.spots)
             spotState[action.spot.id] = action.spot;
             return spotState;
         }

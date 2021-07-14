@@ -69,6 +69,7 @@ const CreateSpot = () => {
             <form
                 style={{ display: "flex", flexFlow: "column" }}
                 onSubmit={handleSubmit}
+                id="create-spot-form"
             >
                 <label>
                 <input
@@ -143,7 +144,7 @@ const CreateSpot = () => {
                 />
                 </label>
                 <label>
-                <input type="file" onChange={updateFile} />
+                <input id="file-input" type="file" onChange={updateFile} />
                 </label>
                 {/* <label>
                     Multiple Upload
@@ -152,7 +153,7 @@ const CreateSpot = () => {
                     multiple
                     onChange={updateFiles} />
                 </label> */}
-                <button type="submit">Create Spot</button>
+                <button id="create-spot" type="submit">Create Spot</button>
             </form>
         </div>
     </>

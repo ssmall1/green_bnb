@@ -1,5 +1,6 @@
 .host-spot-wrapper{
     height: 43em;
+    display: flex;
 }
 
 #create-spot-form{
@@ -7,18 +8,14 @@
 }
 
 #host-title{
-    margin-left: 3.5em;
-    font-size: 30px;
+    margin-left: 3em;
+    font-size: 2.5em;
     font-weight: bold;
     color: #2e2e2e;
 }
 
 #create-spot-form > input, label{
-    margin-left: 100px;
-}
-
-#file-input{
-   border-radius: 0px;
+    margin-left: 9em;
 }
 
 #create-spot{
@@ -28,7 +25,7 @@
     color: white;
     padding: 8px 8px;
     margin-top: 20px;
-    margin-left: 140px;
+    margin-left: 14em;
     width: 110px;
     text-align: center;
 }
@@ -38,6 +35,8 @@
 }
 
 #host-img{
-    height: 100px;
+    height: 33em;
     width: auto;
+    margin-top: 8em;
+    margin-left: 7em;
 }

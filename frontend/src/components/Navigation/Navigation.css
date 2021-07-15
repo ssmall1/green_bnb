@@ -23,8 +23,9 @@
 }
 
 .session-links {
+    margin-left: 5em;
     display: flex;
-    grid-column: 10 / 13;
+    grid-column: 9 / 13;
     grid-row: 2 / 3;
     align-items: center;
     font-size: 18px;

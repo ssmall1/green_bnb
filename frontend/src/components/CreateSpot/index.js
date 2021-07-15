@@ -155,7 +155,7 @@ const CreateSpot = () => {
             <button id="create-spot" type="submit">Create Spot</button>
         </form>
 
-        <img src="https://greenbnb.s3.us-east-2.amazonaws.com/bigsky.jpg" alt="big sky"></img>
+        <img id="host-img" src="https://greenbnb.s3.us-east-2.amazonaws.com/bigsky.jpg" alt="big sky"></img>
     </div>
   );
 };

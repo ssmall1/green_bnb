@@ -5,17 +5,13 @@
 
 #create-spot-form{
     padding-top: 8em;
+    margin-left: 9em;
 }
 
 #host-title{
-    margin-left: 3em;
     font-size: 2.5em;
     font-weight: bold;
     color: #2e2e2e;
-}
-
-#create-spot-form > input, label{
-    margin-left: 9em;
 }
 
 #create-spot{
@@ -25,7 +21,7 @@
     color: white;
     padding: 8px 8px;
     margin-top: 20px;
-    margin-left: 14em;
+    margin-left: 3em;
     width: 110px;
     text-align: center;
 }

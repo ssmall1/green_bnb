@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import * as spotReducer from "../../store/spot";
 import { useDispatch, useSelector } from "react-redux";
+import { Redirect } from 'react-router-dom';
 import './CreateSpot.css';
 
 const CreateSpot = () => {
@@ -17,7 +18,7 @@ const CreateSpot = () => {
   const [state, setState] = useState("");
   const [zip, setZip] = useState("");
   const [country, setCountry] = useState("");
-  const [ownerId, setOwnerId] = useState(user.id);
+  const [ownerId, setOwnerId] = useState("");
   const [image, setImage] = useState("");
   // for multuple file upload
   //   const [images, setImages] = useState([]);
@@ -29,7 +30,7 @@ const CreateSpot = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    setOwnerId(user.id)
     const spot = {
         title, price, ecoFeatures, image, description, address, city, state, zip, country, ownerId
     }
@@ -57,6 +58,10 @@ const CreateSpot = () => {
   //     const files = e.target.files;
   //     setImages(files);
   //   };
+
+  if (!user) return (
+    <Redirect to='/welcome' />
+    );
 
   if (!spots) return null;
 

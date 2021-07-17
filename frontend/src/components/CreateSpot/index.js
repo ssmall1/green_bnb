@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import * as spotReducer from "../../store/spot";
 import { useDispatch, useSelector } from "react-redux";
-import { Redirect } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import './CreateSpot.css';
 
 const CreateSpot = () => {
+    let history = useHistory();
     const dispatch = useDispatch();
     const user = useSelector(state => state.session.user);
     const spots = useSelector(state => state.spots);
@@ -34,7 +35,7 @@ const CreateSpot = () => {
     const spot = {
         title, price, ecoFeatures, image, description, address, city, state, zip, country, ownerId
     }
-    dispatch(spotReducer.createSpot(spot))
+    dispatch(spotReducer.createSpot(spot));
 
     setTitle("");
     setPrice("");
@@ -46,6 +47,7 @@ const CreateSpot = () => {
     setZip("");
     setCountry("");
     setImage("");
+    // history.push("/");
   };
 
   const updateFile = (e) => {
@@ -59,9 +61,7 @@ const CreateSpot = () => {
   //     setImages(files);
   //   };
 
-  if (!user) return (
-    <Redirect to='/welcome' />
-    );
+  if (!user) history.push("/welcome");
 
   if (!spots) return null;
 

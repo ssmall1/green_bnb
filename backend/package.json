@@ -17,7 +17,7 @@
     "model:generate": "sequelize-cli model:generate",
     "seed:generate": "sequelize-cli seed:generate",
     "start": "per-env",
-    "start:development": "nodemon -r dotenv/config ./bin/www",
+    "start:development": "nodemon --inspect -r dotenv/config ./bin/www",
     "start:production": "node ./bin/www"
   },
   "keywords": [],

@@ -45,7 +45,7 @@ router.post("/", singleMulterUpload("image"), asyncHandler(async (req, res) => {
       createdAt,
       updatedAt,
     });
-
+    console.log("HERE", spot)
     await spot.save();
 
     return res.json(spot);

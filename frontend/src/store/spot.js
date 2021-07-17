@@ -101,7 +101,7 @@ export const createSpot = (spot) => async (dispatch) => {
     // for single file
     if (image) formData.append("image", image);
   
-    const res = await csrfFetch(`/api/spots/`, {
+    const res = await csrfFetch(`/api/spots`, {
       method: "POST",
       headers: {
         "Content-Type": "multipart/form-data",

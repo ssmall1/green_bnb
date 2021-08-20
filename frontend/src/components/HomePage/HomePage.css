@@ -1,18 +1,13 @@
 .home-wrapper { 
     display: grid;
-    height: 2000px;
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(12, 1fr);
 }
 
 .path-wrapper {
     display: grid;
-    grid-column: 1 / 13;
-    grid-row: 1 / 6;
     background-image: url(../../images/woods.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    /* height: 725px; */
+    height: 100vh;
     
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(6, 1fr);
@@ -53,17 +48,10 @@
     color: #ece0cd;
 }
 
-.map-wrapper{
-    grid-column: 1 / 13;
-    grid-row: 6 / 9;
-}
-
 .spots-wrapper {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    grid-column: 1 / 13;
-    grid-row: 6 / 13;
     background-color: rgba(236, 224, 205, 0.5);
     border-top: 2px solid rgb(46, 46, 46);
     padding: 37px 37px;

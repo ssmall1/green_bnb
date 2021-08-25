@@ -178,8 +178,6 @@ export const editReview = (payload) => async dispatch => {
     }
 }
 
-// const initialState = { spots: [] };
-
 const spotsReducer = (state = {}, action) => {
     switch (action.type) {
         case LOAD: {

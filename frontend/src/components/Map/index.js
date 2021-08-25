@@ -17,7 +17,6 @@ function MapContainer(props) {
     const history = useHistory();
 
     const spots = useSelector(state => state.spots);
-    //it's rerendering 10 times one for each spot basically bc it's in the useeffect?
 
     const markerClick = (id) => {
         history.push(`/spots/${id}`)

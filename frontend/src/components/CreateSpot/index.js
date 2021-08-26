@@ -158,7 +158,7 @@ const CreateSpot = () => {
                 onChange={updateFiles} />
             </label> */}
             {/* <button id="create-spot" type="submit">Create Spot</button> */}
-            <span>We're currently fixing spot hosting!</span>
+            <span>We're currently updating spot hosting!</span>
         </form>
 
         <img id="host-img" src="https://greenbnb.s3.us-east-2.amazonaws.com/bigsky.jpg" alt="big sky"></img>

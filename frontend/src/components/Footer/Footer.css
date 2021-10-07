@@ -1,6 +1,6 @@
 .footer-container {
     display: grid;
-    height: 5em;
+    height: 5.8em;
     background-image: url(../../images/cream.png);
     background-repeat: no-repeat;
     background-size: cover;
@@ -14,7 +14,7 @@
 
   .quote {
     grid-column: 2 / 9;
-    grid-row: 3 / 4;
+    grid-row: 2 / 4;
     font-size: 1em;
   }
 
@@ -27,7 +27,7 @@
   .copyright {
     display: flex;
     grid-column: 11 / 13;
-    grid-row: 3 / 3;
+    grid-row: 2 / 3;
     justify-self: end;
     align-items: flex;
     padding-right: 10px;

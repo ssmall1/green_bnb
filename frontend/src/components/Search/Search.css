@@ -9,6 +9,7 @@
     align-content: flex-start;
     flex-direction: column;
     padding: 0px 10px;
+    position: sticky;
 }
 
 .search-input {

@@ -31,10 +31,9 @@
 }
 
 #host-img{
-    height: 33em;
-    width: auto;
-    margin-top: 8em;
-    margin-left: 7em;
+    height: 60%;
+    margin-top: 10em;
+    margin-left: 6em;
     border-radius: 5%;
     box-shadow: 0px 0px 40px 20px rgba(0, 0, 0, 0.2);
 }

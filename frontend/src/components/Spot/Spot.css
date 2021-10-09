@@ -76,7 +76,7 @@
 .review-form-wrapper {
     display: flex;
     width: 300px;
-    grid-column: 5 / 7;
+    grid-column: 12 / 10;
     grid-row: 2 / 3;
 }
 
@@ -92,7 +92,7 @@
 .reviews {
     margin: auto;
     margin-top: 0px;
-    grid-column: 5 / 7;
+    grid-column: 8 / 10;
     grid-row: 1 / 2 ;
 }
 
@@ -102,9 +102,8 @@
 }
 
 .booking-form {
-    margin-left: 40px;
     color: #2e2e2e;
-    grid-column: 9 / 13;
+    grid-column: 12 / 12;
 }
 
 .booking-label {

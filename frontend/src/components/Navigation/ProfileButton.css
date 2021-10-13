@@ -18,6 +18,8 @@
     list-style: square;
     font-weight: bold;
     font-size: 15px;
+    list-style-type: none;
+    margin-left: 14px;
 }
 
 .logout {

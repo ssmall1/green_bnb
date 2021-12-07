@@ -55,14 +55,14 @@ const CreateSpot = () => {
         window.localStorage.setItem('image', JSON.stringify(image));
       }, [title, priceString, ecoFeatures, description, address, city, state, zipString, country, image]);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const price = parseInt(priceString);
     const zip = parseInt(zipString);
     const spot = {
         title, price, ecoFeatures, image, description, address, city, state, zip, country, ownerId
     }
-    dispatch(spotReducer.createSpot(spot));
+    const createdSpot = await dispatch(spotReducer.createSpot(spot));
 
     setTitle("");
     setPriceString("");
@@ -74,7 +74,7 @@ const CreateSpot = () => {
     setZipString("");
     setCountry("");
     setImage("");
-    // history.push("/");
+    history.push(`/spots/${createdSpot.id}`);
   };
 
   const updateFile = (e) => {

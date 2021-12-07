@@ -111,6 +111,7 @@ export const createSpot = (spot) => async (dispatch) => {
   
     const data = await res.json();
     dispatch(postSpot(data));
+    return data;
 };
 
 export const getReviews = (id) => async dispatch => {

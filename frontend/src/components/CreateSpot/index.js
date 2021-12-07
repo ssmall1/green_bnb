@@ -11,15 +11,15 @@ const CreateSpot = () => {
     const spots = useSelector(state => state.spots);
 
   const [title, setTitle] = useState("");
-  const [price, setPrice] = useState("");
+  const [priceString, setPriceString] = useState("");
   const [ecoFeatures, setEcoFeatures] = useState("");
   const [description, setDescription] = useState("");
   const [address, setAddress] = useState("");
   const [city, setCity] = useState("");
   const [state, setState] = useState("");
-  const [zip, setZip] = useState("");
+  const [zipString, setZipString] = useState("");
   const [country, setCountry] = useState("");
-  const [ownerId, setOwnerId] = useState("");
+  const [ownerId, setOwnerId] = useState(user.id);
   const [image, setImage] = useState("");
   // for multuple file upload
   //   const [images, setImages] = useState([]);
@@ -29,25 +29,52 @@ const CreateSpot = () => {
         dispatch(spotReducer.getSpots());
     }, [dispatch]);
 
-  const handleSubmit = (e) => {
+    useEffect(() => {
+        setTitle(JSON.parse(window.localStorage.getItem('title')));
+        setPriceString(JSON.parse(window.localStorage.getItem('priceString')));
+        setEcoFeatures(JSON.parse(window.localStorage.getItem('ecoFeatures')));
+        setDescription(JSON.parse(window.localStorage.getItem('description')));
+        setAddress(JSON.parse(window.localStorage.getItem('address')));
+        setCity(JSON.parse(window.localStorage.getItem('city')));
+        setState(JSON.parse(window.localStorage.getItem('state')));
+        setZipString(JSON.parse(window.localStorage.getItem('zipString')));
+        setCountry(JSON.parse(window.localStorage.getItem('country')));
+        setImage(JSON.parse(window.localStorage.getItem('image')));
+      }, []);
+    
+      useEffect(() => {
+        window.localStorage.setItem('title', JSON.stringify(title));
+        window.localStorage.setItem('priceString', JSON.stringify(priceString));
+        window.localStorage.setItem('ecoFeatures', JSON.stringify(ecoFeatures));
+        window.localStorage.setItem('description', JSON.stringify(description));
+        window.localStorage.setItem('address', JSON.stringify(address));
+        window.localStorage.setItem('city', JSON.stringify(city));
+        window.localStorage.setItem('state', JSON.stringify(state));
+        window.localStorage.setItem('zipString', JSON.stringify(zipString));
+        window.localStorage.setItem('country', JSON.stringify(country));
+        window.localStorage.setItem('image', JSON.stringify(image));
+      }, [title, priceString, ecoFeatures, description, address, city, state, zipString, country, image]);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setOwnerId(user.id)
+    const price = parseInt(priceString);
+    const zip = parseInt(zipString);
     const spot = {
         title, price, ecoFeatures, image, description, address, city, state, zip, country, ownerId
     }
-    dispatch(spotReducer.createSpot(spot));
+    const createdSpot = await dispatch(spotReducer.createSpot(spot));
 
     setTitle("");
-    setPrice("");
+    setPriceString("");
     setEcoFeatures("");
     setDescription("");
     setAddress("");
     setCity("");
     setState("");
-    setZip("");
+    setZipString("");
     setCountry("");
     setImage("");
-    // history.push("/");
+    history.push(`/spots/${createdSpot.id}`);
   };
 
   const updateFile = (e) => {
@@ -87,8 +114,8 @@ const CreateSpot = () => {
             <input
                 type="text"
                 placeholder="Price"
-                value={price}
-                onChange={(e) => setPrice(e.target.value)}
+                value={priceString}
+                onChange={(e) => setPriceString(e.target.value)}
             />
             </label>
             <label>
@@ -135,8 +162,8 @@ const CreateSpot = () => {
             <input
                 type="text"
                 placeholder="Zip Code"
-                value={zip}
-                onChange={(e) => setZip(e.target.value)}
+                value={zipString}
+                onChange={(e) => setZipString(e.target.value)}
             />
             </label>
             <label>
@@ -157,8 +184,7 @@ const CreateSpot = () => {
                 multiple
                 onChange={updateFiles} />
             </label> */}
-            {/* <button id="create-spot" type="submit">Create Spot</button> */}
-            <span>We're currently updating spot hosting!</span>
+            <button id="create-spot" type="submit">Create Spot</button>
         </form>
 
         <img id="host-img" src="https://greenbnb.s3.us-east-2.amazonaws.com/bigsky.jpg" alt="big sky"></img>

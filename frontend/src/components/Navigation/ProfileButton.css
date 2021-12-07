@@ -11,6 +11,7 @@
     border-radius: 8px;
     cursor: pointer;
     opacity: 0.9;
+    background-color: rgb(236, 224, 205, 0.9);
 }
 
 .profile-dropdown {

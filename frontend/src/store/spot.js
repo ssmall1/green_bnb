@@ -56,7 +56,7 @@ export const searchSpots = () => ({
 });
 
 export const getSpots = () => async dispatch => {
-    const response = await fetch(`/api/spots`);
+    const response = await csrfFetch(`/api/spots`);
 
     if (response.ok) {
         const spots = await response.json();
@@ -65,7 +65,7 @@ export const getSpots = () => async dispatch => {
 };
 
 export const getOneSpot = (spotId) => async dispatch => {
-    const response = await fetch(`/api/spots/${spotId}`);
+    const response = await csrfFetch(`/api/spots/${spotId}`);
     
     if (response.ok) {
         let spot = await response.json();
@@ -115,7 +115,7 @@ export const createSpot = (spot) => async (dispatch) => {
 };
 
 export const getReviews = (id) => async dispatch => {
-  const response = await fetch(`/api/spots/${id}/reviews`);
+  const response = await csrfFetch(`/api/spots/${id}/reviews`);
 
   if (response.ok) {
       const reviews = await response.json();

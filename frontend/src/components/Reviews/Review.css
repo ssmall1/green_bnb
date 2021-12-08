@@ -8,12 +8,16 @@
 }
 
 
-#delete-review {
+#modify-review {
     border-radius: 10px;
     border-style: none;
-    background-color: #2e2e2e;
+    /* background-color: #2e2e2e; */
     color: white;
+    color: #2e2e2e;
     margin: 5px 2px;
     padding: 3px 7px;;
+}
 
+#modify-review:hover {
+    background-color: rgba(46, 46, 46, 0.2);
 }

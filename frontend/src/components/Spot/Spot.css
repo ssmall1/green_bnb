@@ -126,7 +126,7 @@
     text-align: center;
 }
 
-.review-button:hover, .book:hover, #delete-review:hover {
+.review-button:hover, .book:hover {
     background-color: rgba(46, 46, 46, 0.8);
 }
 

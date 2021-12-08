@@ -71,8 +71,8 @@ function Reviews({ review }) {
                     >
                     </input>
                     <div className="edit-review-container">
-                        <button id="delete-review" onClick={() => setOpenEditReview(false)}>Cancel</button>
-                        <button id="delete-review" disabled={editedReviewContent === ""} onClick={(e) => handleEditReview(e, review)}>Save</button>
+                        <i class="fa fa-close" id="modify-review" onClick={() => setOpenEditReview(false)}></i>
+                        <i class="fas fa-share-square" id="modify-review" disabled={editedReviewContent === ""} onClick={(e) => handleEditReview(e, review)}></i>
                     </div>
                 </form>
                 : 
@@ -80,8 +80,8 @@ function Reviews({ review }) {
             }
             { review.authorId === userId & openEditReview === false ?
                 <>
-                    <button id="delete-review" onClick={() => setOpenEditReview(review.id)}>Edit</button>
-                    <button id='delete-review' type='submit' onClick={handleSubmit}>Delete</button>
+                    <i class="fas fa-edit" id="modify-review" onClick={() => setOpenEditReview(review.id)}></i>
+                    <i id='modify-review' onClick={handleSubmit} class="fa fa-trash-o"></i>
                 </>
                 : <></> }
         </div>

@@ -99,7 +99,7 @@ module.exports = router;
 router.put('/review/:id', asyncHandler(async (req, res) => {
   const { id, authorId, spotId, rating, body } = req.body;
 
-  Review.update(
+  await Review.update(
     { authorId: authorId,
         spotId: spotId,
         rating: rating,
@@ -107,7 +107,7 @@ router.put('/review/:id', asyncHandler(async (req, res) => {
         createdAt: new Date(),
         updatedAt: new Date(),
     },
-    { where: { id: id }, include: User }
+    { where: { id: id }}
   );
 
   const newReview = await Review.findOne({where: {id: id}, include: User});

@@ -32,7 +32,7 @@ function Reviews({ review }) {
             rating,
             body,
         }
-        await dispatch(spotReducer.editReview(payload));
+        dispatch(spotReducer.editReview(payload));
         setOpenEditReview(false);
         setEditedReviewContent("");
         // await dispatch(spotReducer.getReviews(spotId)); // USING THIS AS COPOUT WHEN I SHOULD UPDATE STATE
@@ -71,8 +71,8 @@ function Reviews({ review }) {
                     >
                     </input>
                     <div className="edit-review-container">
-                        <i class="fa fa-close" id="modify-review" onClick={() => setOpenEditReview(false)}></i>
-                        <i class="fas fa-share-square" id="modify-review" disabled={editedReviewContent === ""} onClick={(e) => handleEditReview(e, review)}></i>
+                        <i className="fa fa-close" id="modify-review" onClick={() => setOpenEditReview(false)}></i>
+                        <i className="fas fa-share-square" id="modify-review" disabled={editedReviewContent === ""} onClick={(e) => handleEditReview(e, review)}></i>
                     </div>
                 </form>
                 : 
@@ -80,8 +80,8 @@ function Reviews({ review }) {
             }
             { review.authorId === userId & openEditReview === false ?
                 <>
-                    <i class="fas fa-edit" id="modify-review" onClick={() => setOpenEditReview(review.id)}></i>
-                    <i id='modify-review' onClick={handleSubmit} class="fa fa-trash-o"></i>
+                    <i className="fas fa-edit" id="modify-review" onClick={() => setOpenEditReview(review.id)}></i>
+                    <i id='modify-review' onClick={handleSubmit} className="fa fa-trash-o"></i>
                 </>
                 : <></> }
         </div>

@@ -175,7 +175,8 @@ export const editReview = (payload) => async dispatch => {
     });
 
     if (response.ok) {
-        dispatch(setEditedReview(payload));
+        const editedReview = await response.json();
+        dispatch(setEditedReview(editedReview));
     }
 }
 
@@ -233,11 +234,13 @@ const spotsReducer = (state = {}, action) => {
         case EDIT_REVIEW:
             let reviewState = {};
             reviewState = { ...state };
-            for (let i = 0; i < reviewState.reviews.length; i++) {
-                if (reviewState.reviews[i].id === action.review.id) {
-                    reviewState.reviews[i] = action.review;
+            let editedReviews = [...reviewState.reviews];
+            for (let i = 0; i < editedReviews.length; i++) {
+                if (editedReviews[i].id === action.review.id) {
+                    editedReviews[i] = action.review;
                 }
             }
+            reviewState.reviews = [...editedReviews];
             return reviewState;
         default: 
             return state;

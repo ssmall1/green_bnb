@@ -42,10 +42,6 @@ function Reviews({ review }) {
     for (let i = 0; i < score; i++) {
         scoreArr.push("s")
     }
-
-    // TODO
-    // Figure out why need to getReviews and editReview state not updating...
-    // change edit review form to include selector to change rating
     
     return (
         <div className='review-container'>

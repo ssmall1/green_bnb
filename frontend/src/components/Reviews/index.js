@@ -35,7 +35,6 @@ function Reviews({ review }) {
         dispatch(spotReducer.editReview(payload));
         setOpenEditReview(false);
         setEditedReviewContent("");
-        // await dispatch(spotReducer.getReviews(spotId)); // USING THIS AS COPOUT WHEN I SHOULD UPDATE STATE
     }
 
     let score = review.rating;

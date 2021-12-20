@@ -11,7 +11,7 @@
 #home-spot-img:hover{
     transform: scaleY(1.04);
     transform-origin: center;
-    box-shadow: 0px 0px 40px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 40px 20px rgba(0, 0, 0, 0.1);
 }
 
 .spot-container {

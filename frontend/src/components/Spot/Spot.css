@@ -6,7 +6,7 @@
     padding-top: 140px;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 400px 200px 100px;
+    grid-template-rows: 400px 275px 100px;
 }
 
 #spot-image {

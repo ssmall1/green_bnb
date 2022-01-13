@@ -29,6 +29,9 @@ app.use(helmet({
     contentSecurityPolicy: false
 }));
 
+// NEW helmet for the heroku image/file issues
+// app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
+
 // Set the _csrf token and create req.csrfToken method
 app.use(
     csurf({
